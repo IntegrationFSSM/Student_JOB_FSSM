@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="fr" data-i18n-title="title.pitch">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("sj-theme") || "light";
+          var lang = localStorage.getItem("sj-lang") || "fr";
+          document.documentElement.classList.add("i18n-pending");
+          document.documentElement.setAttribute("data-theme", theme);
+          document.documentElement.setAttribute("lang", lang);
+          document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="../assets/images/logo-forum.png" />
+    <title>Concours Pitch en 3 min | Forum Students &amp; Jobs FSSM</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="nav-overlay" data-nav-overlay></div>
+
+    <header class="header">
+      <div class="container">
+        <a href="../index.html" class="brand-logo">
+          <img
+            src="../assets/images/logo-forum.png"
+            alt="Logo Forum Students & Jobs"
+            class="brand-logo-img"
+          />
+          <div class="brand-text">
+            <span class="brand-kicker">FSSM • UCA MARRAKECH</span>
+            <div class="brand-title">
+              Students <span>&amp; Jobs</span>
+              <small class="brand-edition-pill">3e Édition</small>
+            </div>
+          </div>
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li>
+              <a href="../index.html#home" class="navbar-link" data-nav-link data-i18n="nav.home">Accueil</a>
+            </li>
+            <li>
+              <a href="../index.html#mots-officiels" class="navbar-link" data-nav-link data-i18n="nav.leaders">Mots Officiels</a>
+            </li>
+            <li>
+              <a href="../index.html#competitions" class="navbar-link active" data-nav-link data-i18n="nav.competitions">Compétitions</a>
+            </li>
+            <li>
+              <a href="../index.html#programme" class="navbar-link" data-nav-link data-i18n="nav.program">Programme</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switcher" role="group" aria-label="Langue">
+            <button type="button" class="lang-btn is-active" data-set-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-set-lang="ar">AR</button>
+            <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+          </div>
+          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Changer de thème">
+            <i class="fas fa-moon" data-theme-icon></i>
+          </button>
+          <button type="button" class="menu-toggle-btn" data-nav-toggle aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="comp-page-hero">
+        <div class="container">
+          <div class="breadcrumb-bar">
+            <a href="../index.html" data-i18n="detail.backHome">Retour à l'accueil</a>
+            <span>/</span>
+            <a href="../index.html#competitions" data-i18n="detail.allComps">Compétitions</a>
+            <span>/</span>
+            <span data-i18n="pitch.short">Pitch en 3 min</span>
+          </div>
+
+          <div class="comp-hero-circle">
+            <i class="fas fa-microphone"></i>
+          </div>
+
+          <h1 class="comp-page-title" data-i18n="pitch.title">
+            Concours Pitch en 3 min
+          </h1>
+          <p class="comp-page-quote" data-i18n="pitch.quote">
+            « 3 minutes pour convaincre. Et si c'était vous ? »
+          </p>
+        </div>
+      </section>
+
+      <div class="comp-detail-wrapper">
+        <div class="comp-detail-card">
+          <div class="comp-detail-block">
+            <h3>
+              <i class="fas fa-microphone-lines"></i>
+              <span data-i18n="pitch.sec1Title">Le Principe du Concours</span>
+            </h3>
+            <p data-i18n="pitch.p1">
+              Chers étudiants, un recruteur se fait une opinion en quelques
+              minutes. La question n'est pas de savoir si vous avez du talent,
+              mais si vous savez le raconter. Le forum Students &amp; Jobs vous
+              offre l'occasion de le prouver : le concours Pitch en 3 min.
+            </p>
+            <p data-i18n="pitch.p2">
+              Le principe est simple. Vous montez sur scène et, en 3 minutes
+              maximum, vous présentez votre parcours, vos compétences clés,
+              votre projet professionnel et le type de poste ou de stage que
+              vous recherchez. Pas de diaporama : seulement quelques notes
+              brèves, un chronomètre bien visible et votre conviction. Un jury
+              vous écoute, vous évalue et récompense les pitchs les plus
+              marquants.
+            </p>
+          </div>
+
+          <div class="comp-detail-block">
+            <h3>
+              <i class="fas fa-trophy"></i>
+              <span data-i18n="pitch.sec2Title">Pourquoi relever le défi ?</span>
+            </h3>
+            <div class="comp-steps-list">
+              <div class="comp-step-item">
+                <i class="fas fa-check-circle"></i>
+                <span data-i18n="pitch.w1"
+                  >Vous maîtrisez enfin la question que tout recruteur vous
+                  posera : « Parlez-moi de vous ».</span
+                >
+              </div>
+              <div class="comp-step-item">
+                <i class="fas fa-check-circle"></i>
+                <span data-i18n="pitch.w2"
+                  >Vous gagnez en confiance et en aisance à l'oral, devant un
+                  vrai jury.</span
+                >
+              </div>
+              <div class="comp-step-item">
+                <i class="fas fa-check-circle"></i>
+                <span data-i18n="pitch.w3"
+                  >Vous clarifiez votre projet professionnel en le formulant à
+                  voix haute.</span
+                >
+              </div>
+              <div class="comp-step-item">
+                <i class="fas fa-check-circle"></i>
+                <span data-i18n="pitch.w4"
+                  >Vous vous faites remarquer, avant même d'avoir envoyé votre
+                  premier CV.</span
+                >
+              </div>
+            </div>
+            <p data-i18n="pitch.p3" style="margin-top: 14px">
+              Nul besoin d'être un orateur né : cela s'apprend, et le meilleur
+              moment pour commencer, c'est maintenant. Préparez votre histoire,
+              entraînez-vous, chronomètre en main, et venez la défendre.
+            </p>
+          </div>
+
+          <div class="comp-detail-block">
+            <h3>
+              <i class="fas fa-circle-info"></i>
+              <span data-i18n="pitch.sec3Title">Infos pratiques</span>
+            </h3>
+            <div class="comp-info-grid">
+              <div class="comp-info-box">
+                <small data-i18n="pitch.info1Lbl">Format</small>
+                <strong data-i18n="pitch.info1Val"
+                  >Individuel, 3 minutes maximum par participant</strong
+                >
+              </div>
+              <div class="comp-info-box">
+                <small data-i18n="pitch.info2Lbl">Support</small>
+                <strong data-i18n="pitch.info2Val"
+                  >Aucun diaporama (notes brèves autorisées)</strong
+                >
+              </div>
+              <div class="comp-info-box">
+                <small data-i18n="pitch.info3Lbl">Évaluation</small>
+                <strong data-i18n="pitch.info3Val"
+                  >Chronomètre visible &amp; Jury de recruteurs</strong
+                >
+              </div>
+              <div class="comp-info-box">
+                <small data-i18n="pitch.info4Lbl">Date limite d'inscription</small>
+                <strong data-i18n="pitch.info4Val">Vendredi 20/11 à 12h00</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-cta-banner">
+            <h4 data-i18n="pitch.ctaTitle">
+              Votre parcours mérite d'être entendu !
+            </h4>
+            <p data-i18n="pitch.ctaSub">
+              Inscrivez-vous dès maintenant : 3 minutes peuvent changer la suite
+              de votre histoire.
+            </p>
+            <a href="#inscription" class="btn-sj-gold">
+              <i class="fas fa-pen-to-square"></i>
+              <span data-i18n="detail.registerNow"
+                >S'inscrire à la compétition</span
+              >
+            </a>
+          </div>
+
+          <div class="other-comps-nav">
+            <a href="hackathon.html" class="other-comp-pill">Hackathon (24-25 Nov)</a>
+            <a href="case-challenge.html" class="other-comp-pill">Case Challenge</a>
+            <a href="cv-video.html" class="other-comp-pill">CV Vidéo</a>
+            <a href="mission-emploi.html" class="other-comp-pill">Mission Emploi</a>
+            <a href="pitch-3min.html" class="other-comp-pill active">Pitch en 3 min</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <p data-i18n="footer.rights">
+            © 2026 Faculté des Sciences Semlalia Marrakech (UCA) — Service des
+            Statistiques et du Suivi des Lauréats. Tous droits réservés.
+          </p>
+          <a href="../index.html" class="btn-sj-outline" style="padding: 8px 18px; font-size: 0.85rem">
+            <i class="fas fa-arrow-left"></i>
+            <span data-i18n="detail.backHome">Retour à l'accueil</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.PAGE_I18N = {
+        fr: {
+          "pitch.short": "Pitch en 3 min",
+          "pitch.title": "Concours Pitch en 3 min",
+          "pitch.quote": "« 3 minutes pour convaincre. Et si c'était vous ? »",
+          "pitch.sec1Title": "Le Principe du Concours",
+          "pitch.p1":
+            "Chers étudiants, un recruteur se fait une opinion en quelques minutes. La question n'est pas de savoir si vous avez du talent, mais si vous savez le raconter. Le forum Students & Jobs vous offre l'occasion de le prouver : le concours Pitch en 3 min.",
+          "pitch.p2":
+            "Le principe est simple. Vous montez sur scène et, en 3 minutes maximum, vous présentez votre parcours, vos compétences clés, votre projet professionnel et le type de poste ou de stage que vous recherchez. Pas de diaporama : seulement quelques notes brèves, un chronomètre bien visible et votre conviction. Un jury vous écoute, vous évalue et récompense les pitchs les plus marquants.",
+          "pitch.sec2Title": "Pourquoi relever le défi ?",
+          "pitch.w1": "Vous maîtrisez enfin la question que tout recruteur vous posera : « Parlez-moi de vous ».",
+          "pitch.w2": "Vous gagnez en confiance et en aisance à l'oral, devant un vrai jury.",
+          "pitch.w3": "Vous clarifiez votre projet professionnel en le formulant à voix haute.",
+          "pitch.w4": "Vous vous faites remarquer, avant même d'avoir envoyé votre premier CV.",
+          "pitch.p3":
+            "Nul besoin d'être un orateur né : cela s'apprend, et le meilleur moment pour commencer, c'est maintenant. Préparez votre histoire, entraînez-vous, chronomètre en main, et venez la défendre.",
+          "pitch.sec3Title": "Infos pratiques",
+          "pitch.info1Lbl": "Format",
+          "pitch.info1Val": "Individuel, 3 minutes maximum par participant",
+          "pitch.info2Lbl": "Support",
+          "pitch.info2Val": "Aucun, notes brèves autorisées",
+          "pitch.info3Lbl": "Évaluation",
+          "pitch.info3Val": "Chronomètre visible & Jury professionnel",
+          "pitch.info4Lbl": "Date limite d'inscription",
+          "pitch.info4Val": "Vendredi 20/11 à 12h00",
+          "pitch.ctaTitle": "Votre parcours mérite d'être entendu.",
+          "pitch.ctaSub": "Inscrivez-vous dès maintenant : 3 minutes peuvent changer la suite de votre histoire."
+        },
+        ar: {
+          "pitch.short": "العرض في 3 دقائق",
+          "pitch.title": "مسابقة العرض في 3 دقائق (Pitch en 3 min)",
+          "pitch.quote": "« 3 دقائق للإقناع. ماذا لو كنت أنت الفائز؟ »",
+          "pitch.sec1Title": "مبدأ المسابقة",
+          "pitch.p1":
+            "أعزائي الطلبة، يكوّن المشغل فكرته الأولى في بضع دقائق. السؤال ليس هل تملكون الموهبة، بل هل تعرفون كيف تروونها وتبرزونها؟ يمنحكم منتدى Students & Jobs الفرصة لإثبات ذلك من خلال مسابقة Pitch en 3 min.",
+          "pitch.p2":
+            "المبدأ بسيط: تصعدون على الخشبة، وفي 3 دقائق كحد أقصى، تقدمون مساركم الدراسي، مهاراتكم الأساسية، مشروعكم المهني ونوع التدريب أو المنصب الذي تبحثون عنه. بدون عرض تقديمي (PowerPoint): فقط ملاحظات مختصرة، عداد زمني واضح وقوة إقناعكم أمام لجنة التحكيم.",
+          "pitch.sec2Title": "لماذا ترفعون هذا التحدي؟",
+          "pitch.w1": "ستتقنون أخيراً الإجابة عن السؤال الذي يطرحه كل مشغل: « حدثني عن نفسك ».",
+          "pitch.w2": "ستكتسبون ثقة كبيرة وطلاقة في التحدث أمام جمهور ولجنة تحكيم حقيقية.",
+          "pitch.w3": "ستبلورون مشروعكم المهني بوضوح من خلال صياغته شفهياً.",
+          "pitch.w4": "ستلفتون انتباه المشغلين حتى قبل إرسال سيرتكم الذاتية الأولى.",
+          "pitch.p3":
+            "لا حاجة لأن تكونوا خطباء بالفطرة: فالأمر يُكتسب بالتدرب، وأفضل وقت للبدء هو الآن. حضّروا قصتكم، تدربوا عليها مع ضبط الوقت، وتعالوا للدفاع عن طموحكم.",
+          "pitch.sec3Title": "معلومات عملية",
+          "pitch.info1Lbl": "الصيغة",
+          "pitch.info1Val": "فردي، 3 دقائق كحد أقصى لكل مشارك",
+          "pitch.info2Lbl": "الدعامة المسموحة",
+          "pitch.info2Val": "بدون عرض شرائح (يُسمح بملاحظات مكتوبة مختصرة)",
+          "pitch.info3Lbl": "التقييم",
+          "pitch.info3Val": "عداد زمني مرئي ولجنة تحكيم متخصصة",
+          "pitch.info4Lbl": "آخر أجل للتسجيل",
+          "pitch.info4Val": "الجمعة 20/11 على الساعة 12:00",
+          "pitch.ctaTitle": "مساركم يستحق أن يُسمع!",
+          "pitch.ctaSub": "سجلوا مشاركتكم الآن: 3 دقائق قد تغير مسار مستقبلكم المهني."
+        },
+        en: {
+          "pitch.short": "3-Minute Pitch",
+          "pitch.title": "3-Minute Pitch Contest",
+          "pitch.quote": "“3 minutes to convince. What if it were you?”",
+          "pitch.sec1Title": "How the Contest Works",
+          "pitch.p1":
+            "Dear students, a recruiter forms an impression in just a few minutes. The question is not whether you have talent, but whether you know how to tell your story. The Students & Jobs Forum gives you the stage to prove it: the 3-Minute Pitch Contest.",
+          "pitch.p2":
+            "The principle is simple. You step onto the stage and, in 3 minutes maximum, present your academic background, key skills, career goals, and the internship or job you are seeking. No slide deck: just brief notes, a visible timer, and your conviction. A jury listens, evaluates, and rewards the most compelling pitches.",
+          "pitch.sec2Title": "Why Take the Challenge?",
+          "pitch.w1": "Finally master the question every recruiter asks: “Tell me about yourself.”",
+          "pitch.w2": "Build confidence and public speaking poise in front of a real jury.",
+          "pitch.w3": "Clarify your career project by articulating it out loud.",
+          "pitch.w4": "Stand out to employers before even sending your first resume.",
+          "pitch.p3":
+            "You don't need to be a born speaker: it is a learnable skill, and the best time to start is now. Prepare your story, practice with a stopwatch, and come defend it on stage.",
+          "pitch.sec3Title": "Practical Information",
+          "pitch.info1Lbl": "Format",
+          "pitch.info1Val": "Individual, maximum 3 minutes per participant",
+          "pitch.info2Lbl": "Visual Aids",
+          "pitch.info2Val": "None (brief handwritten notes allowed)",
+          "pitch.info3Lbl": "Evaluation",
+          "pitch.info3Val": "Visible countdown timer & Recruiter jury",
+          "pitch.info4Lbl": "Registration Deadline",
+          "pitch.info4Val": "Friday, Nov 20 at 12:00 PM",
+          "pitch.ctaTitle": "Your journey deserves to be heard.",
+          "pitch.ctaSub": "Register now: 3 minutes can change the rest of your story."
+        }
+      };
+    </script>
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

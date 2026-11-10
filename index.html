@@ -1,0 +1,1198 @@
+<!doctype html>
+<html lang="fr" data-i18n-title="title.home">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      (function () {
+        try {
+          var theme = localStorage.getItem("sj-theme") || "light";
+          var lang = localStorage.getItem("sj-lang") || "fr";
+          document.documentElement.classList.add("i18n-pending");
+          document.documentElement.setAttribute("data-theme", theme);
+          document.documentElement.setAttribute("lang", lang);
+          document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        } catch (e) {}
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site vitrine officiel du Forum Students & Jobs — 3e Édition (24, 25 et 26 Novembre 2026) à la Faculté des Sciences Semlalia Marrakech (FSSM - Université Cadi Ayyad)."
+    />
+    <link rel="icon" type="image/png" href="assets/images/logo-forum.png" />
+    <title>Forum Students &amp; Jobs — 3e Édition | FSSM Marrakech</title>
+
+    <!-- Google Fonts (Poppins + Cairo pour l'Arabe) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Feuille de style principale (Charte du Logo) -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div class="nav-overlay" data-nav-overlay></div>
+
+    <!-- ==========================================================================
+         HEADER & NAVIGATION
+         ========================================================================== -->
+    <header class="header" id="header">
+      <div class="container">
+        <a href="#home" class="brand-logo">
+          <img
+            src="assets/images/logo-forum.png"
+            alt="Logo Forum Students & Jobs 3e Édition"
+            class="brand-logo-img"
+          />
+          <div class="brand-text">
+            <span class="brand-kicker">FSSM • UCA MARRAKECH</span>
+            <div class="brand-title">
+              Students <span>&amp; Jobs</span>
+              <small class="brand-edition-pill">3e Édition</small>
+            </div>
+          </div>
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li>
+              <a
+                href="#home"
+                class="navbar-link active"
+                data-nav-link
+                data-i18n="nav.home"
+                >Accueil</a
+              >
+            </li>
+            <li>
+              <a
+                href="#espaces"
+                class="navbar-link"
+                data-nav-link
+                data-i18n="nav.pillars"
+                >Espaces</a
+              >
+            </li>
+            <li>
+              <a
+                href="#mots-officiels"
+                class="navbar-link"
+                data-nav-link
+                data-i18n="nav.leaders"
+                >Mots Officiels</a
+              >
+            </li>
+            <li>
+              <a
+                href="#competitions"
+                class="navbar-link"
+                data-nav-link
+                data-i18n="nav.competitions"
+                >Compétitions</a
+              >
+            </li>
+            <li>
+              <a
+                href="#programme"
+                class="navbar-link"
+                data-nav-link
+                data-i18n="nav.program"
+                >Programme</a
+              >
+            </li>
+            <li>
+              <a
+                href="#partenaires"
+                class="navbar-link"
+                data-nav-link
+                data-i18n="nav.partners"
+                >Partenaires</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <div class="lang-switcher" role="group" aria-label="Sélecteur de langue">
+            <button type="button" class="lang-btn is-active" data-set-lang="fr">
+              FR
+            </button>
+            <button type="button" class="lang-btn" data-set-lang="ar">
+              AR
+            </button>
+            <button type="button" class="lang-btn" data-set-lang="en">
+              EN
+            </button>
+          </div>
+
+          <button
+            type="button"
+            class="theme-toggle"
+            data-theme-toggle
+            aria-label="Basculer le mode clair ou sombre"
+          >
+            <i class="fas fa-moon" data-theme-icon></i>
+          </button>
+
+          <button
+            type="button"
+            class="menu-toggle-btn"
+            data-nav-toggle
+            aria-label="Ouvrir le menu"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ==========================================================================
+           HERO SECTION OFFICIELLE
+           ========================================================================== -->
+      <section class="hero-sj" id="home">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Colonne Texte -->
+            <div class="hero-text-col">
+              <div class="hero-inst-bar">
+                <img
+                  src="assets/images/logo-fssm.png"
+                  alt="Faculté des Sciences Semlalia - Université Cadi Ayyad"
+                />
+                <span data-i18n="hero.inst"
+                  >Université Cadi Ayyad • Faculté des Sciences Semlalia Marrakech</span
+                >
+              </div>
+
+              <div class="hero-badges-row">
+                <span class="hero-edition-badge">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span data-i18n="hero.edition"
+                    >3e Édition • 25 &amp; 26 Novembre 2026</span
+                  >
+                </span>
+                <span class="hero-hack-badge">
+                  <i class="fas fa-laptop-code"></i>
+                  <span data-i18n="hero.hackBadge"
+                    >Hackathon : 24 &amp; 25 Novembre 2026</span
+                  >
+                </span>
+              </div>
+
+              <h1 class="hero-title">
+                <span class="word-forum" data-i18n="hero.forumWord"
+                  >FORUM OFFICIEL D'INSERTION PROFESSIONNELLE</span
+                >
+                <span class="word-students">STUDENTS</span>
+                <span class="word-amp">&amp;</span>
+                <span class="word-jobs">JOBS</span>
+              </h1>
+
+              <div class="hero-slogan-box">
+                <div class="hero-slogan-label" data-i18n="hero.sloganLabel">
+                  Slogan officiel de la 3e Édition
+                </div>
+                <p class="hero-slogan-fr" data-i18n="hero.sloganFr">
+                  « Étudiants aujourd'hui, professionnels demain »
+                </p>
+                <div class="hero-slogan-ar">« طلبة اليوم، مهنيو الغد »</div>
+              </div>
+
+              <!-- Informations clés -->
+              <div class="hero-meta-grid">
+                <div class="hero-meta-card">
+                  <div class="hero-meta-icon crimson">
+                    <i class="fas fa-rocket"></i>
+                  </div>
+                  <div class="hero-meta-text">
+                    <small data-i18n="hero.meta1Label">Hackathon d'ouverture</small>
+                    <strong data-i18n="hero.meta1Val">24 &amp; 25 Novembre 2026</strong>
+                  </div>
+                </div>
+
+                <div class="hero-meta-card">
+                  <div class="hero-meta-icon">
+                    <i class="fas fa-calendar-check"></i>
+                  </div>
+                  <div class="hero-meta-text">
+                    <small data-i18n="hero.meta2Label">Forum Students &amp; Jobs</small>
+                    <strong data-i18n="hero.meta2Val">25 &amp; 26 Novembre 2026</strong>
+                  </div>
+                </div>
+
+                <div class="hero-meta-card">
+                  <div class="hero-meta-icon teal">
+                    <i class="fas fa-location-dot"></i>
+                  </div>
+                  <div class="hero-meta-text">
+                    <small data-i18n="hero.meta3Label">Lieu de l'événement</small>
+                    <strong data-i18n="hero.meta3Val"
+                      >Faculté des Sciences Semlalia (FSSM)</strong
+                    >
+                  </div>
+                </div>
+
+                <div class="hero-meta-card">
+                  <div class="hero-meta-icon">
+                    <i class="fas fa-hourglass-half"></i>
+                  </div>
+                  <div class="hero-meta-text">
+                    <small data-i18n="hero.meta4Label">Date limite compétitions</small>
+                    <strong data-i18n="hero.meta4Val">Vendredi 20 Nov. à 12h00</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Boutons d'Action -->
+              <div class="hero-cta-group">
+                <a href="#competitions" class="btn-sj-gold">
+                  <i class="fas fa-trophy"></i>
+                  <span data-i18n="hero.btnComp">Découvrir les Compétitions</span>
+                </a>
+                <a href="#mots-officiels" class="btn-sj-crimson">
+                  <i class="fas fa-user-tie"></i>
+                  <span data-i18n="hero.btnLeaders">Mots des Responsables</span>
+                </a>
+                <a href="#programme" class="btn-sj-outline">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span data-i18n="hero.btnProg">Voir le Programme</span>
+                </a>
+              </div>
+
+              <!-- Statistiques Rapides -->
+              <div class="hero-stats">
+                <div class="hero-stat-box">
+                  <span class="hero-stat-num" data-i18n="hero.stat1Num">3e</span>
+                  <span class="hero-stat-lbl" data-i18n="hero.stat1Lbl"
+                    >Édition Officielle</span
+                  >
+                </div>
+                <div class="hero-stat-box">
+                  <span class="hero-stat-num" data-i18n="hero.stat2Num">5</span>
+                  <span class="hero-stat-lbl" data-i18n="hero.stat2Lbl"
+                    >Grandes Compétitions</span
+                  >
+                </div>
+                <div class="hero-stat-box">
+                  <span class="hero-stat-num" data-i18n="hero.stat3Num">20+</span>
+                  <span class="hero-stat-lbl" data-i18n="hero.stat3Lbl"
+                    >Entreprises &amp; Partenaires</span
+                  >
+                </div>
+                <div class="hero-stat-box">
+                  <span class="hero-stat-num" data-i18n="hero.stat4Num">3</span>
+                  <span class="hero-stat-lbl" data-i18n="hero.stat4Lbl"
+                    >Jours d'Innovation</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Colonne Visuelle (Logo & Affiche Officielle) -->
+            <div class="hero-visual-col">
+              <div class="hero-showcase-card">
+                <div class="hero-showcase-tabs">
+                  <button
+                    type="button"
+                    class="showcase-tab-btn active"
+                    data-showcase-tab="logo"
+                    data-i18n="hero.tabLogo"
+                  >
+                    Logo Officiel
+                  </button>
+                  <button
+                    type="button"
+                    class="showcase-tab-btn"
+                    data-showcase-tab="poster"
+                    data-i18n="hero.tabPoster"
+                  >
+                    Affiche 2026
+                  </button>
+                </div>
+
+                <div class="showcase-panel active" data-showcase-panel="logo">
+                  <img
+                    src="assets/images/logo-forum.png"
+                    alt="Logo Officiel Forum Students & Jobs 3e Édition"
+                    class="hero-logo-display"
+                  />
+                </div>
+
+                <div class="showcase-panel" data-showcase-panel="poster">
+                  <a
+                    href="assets/images/affiche-forum.jpg"
+                    target="_blank"
+                    rel="noopener"
+                    title="Ouvrir l'affiche en plein écran"
+                  >
+                    <img
+                      src="assets/images/affiche-forum.jpg"
+                      alt="Affiche Officielle Forum Students & Jobs 25 et 26 Novembre 2026"
+                      class="hero-poster-display"
+                    />
+                  </a>
+                </div>
+
+                <div class="hero-showcase-caption">
+                  <div data-i18n="hero.captionLeft">
+                    Charte Officielle — 3e Édition
+                  </div>
+                  <span data-i18n="hero.captionRight">FSSM Marrakech</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION LES 3 ESPACES PHARES (CONFÉRENCES, ATELIERS, STANDS)
+           ========================================================================== -->
+      <section class="sj-section" id="espaces">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-kicker gold">
+              <i class="fas fa-compass"></i>
+              <span data-i18n="pillars.kicker">Au Cœur du Forum</span>
+            </span>
+            <h2 class="section-heading" data-i18n="pillars.title">
+              Les 3 Espaces Phares du Forum
+            </h2>
+            <p class="section-subtext" data-i18n="pillars.sub">
+              Un carrefour privilégié de rencontre entre les étudiants, les jeunes
+              diplômés de la FSSM et les acteurs socio-économiques autour de trois
+              grands pôles.
+            </p>
+          </div>
+
+          <div class="pillars-3-grid">
+            <!-- Conférences -->
+            <div class="pillar-card pillar-crimson">
+              <div class="pillar-pedestal-icon">
+                <i class="fas fa-microphone-lines"></i>
+              </div>
+              <h3 class="pillar-title" data-i18n="pillars.confTitle">
+                Conférences
+              </h3>
+              <p class="pillar-desc" data-i18n="pillars.confDesc">
+                Échanges animés par des professionnels du secteur et experts invités
+                autour des métiers d'avenir, des exigences du marché du travail et
+                des parcours inspirants.
+              </p>
+            </div>
+
+            <!-- Ateliers -->
+            <div class="pillar-card pillar-gold">
+              <div class="pillar-pedestal-icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3 class="pillar-title" data-i18n="pillars.workTitle">Ateliers</h3>
+              <p class="pillar-desc" data-i18n="pillars.workDesc">
+                Formations pratiques animées par des experts en insertion
+                professionnelle : rédaction de CV impactant, préparation aux
+                entretiens, personal branding et soft skills.
+              </p>
+            </div>
+
+            <!-- Stands -->
+            <div class="pillar-card">
+              <div class="pillar-pedestal-icon">
+                <i class="fas fa-building-columns"></i>
+              </div>
+              <h3 class="pillar-title" data-i18n="pillars.standTitle">Stands</h3>
+              <p class="pillar-desc" data-i18n="pillars.standDesc">
+                Information directe sur l'emploi, les métiers et le cursus
+                universitaire : réseautage avec les entreprises partenaires,
+                opportunités de stages PFE et recrutement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION MOTS OFFICIELS & RESPONSABLES (AVEC PHOTO CERCLE)
+           ========================================================================== -->
+      <section class="sj-section bg-alt" id="mots-officiels">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-kicker crimson">
+              <i class="fas fa-quote-left"></i>
+              <span data-i18n="leaders.kicker"
+                >Allocutions &amp; Vision Institutionnelle</span
+              >
+            </span>
+            <h2 class="section-heading" data-i18n="leaders.title">
+              Mots Officiels &amp; Comité du Forum
+            </h2>
+            <p class="section-subtext" data-i18n="leaders.sub">
+              L'engagement de l'Université Cadi Ayyad et de la Faculté des Sciences
+              Semlalia pour la réussite, le suivi et l'insertion professionnelle de
+              nos lauréats.
+            </p>
+          </div>
+
+          <div class="leaders-grid">
+            <!-- 1. M. Belaïd BOUGADIR (Président UCA) -->
+            <article class="leader-card leader-president">
+              <div class="leader-circle-wrap">
+                <div class="leader-circle-inner">
+                  <img
+                    src="assets/images/comite/bougadir-circle.jpg"
+                    alt="Pr. Belaïd BOUGADIR - Président de l'Université Cadi Ayyad"
+                    onerror="this.src='assets/images/comite/homme.png'"
+                  />
+                </div>
+              </div>
+
+              <span class="leader-badge-role">
+                <i class="fas fa-university"></i>
+                <span data-i18n="leader1.badge">Président de l'Université</span>
+              </span>
+
+              <h3 class="leader-name" data-i18n="leader1.name">
+                Pr. Belaïd BOUGADIR
+              </h3>
+              <p class="leader-title" data-i18n="leader1.role">
+                Président de l'Université Cadi Ayyad (UCA)
+              </p>
+
+              <div class="leader-quote-box">
+                <div class="leader-quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="leader-speech" data-i18n="leader1.speech">
+                  « L'employabilité de nos lauréats et leur intégration harmonieuse
+                  dans le tissu socio-économique national et international
+                  constituent une priorité stratégique de l'Université Cadi Ayyad. À
+                  travers le Forum Students &amp; Jobs, nous consolidons les
+                  passerelles entre l'excellence académique, la recherche
+                  scientifique et le monde du travail afin que chaque diplômé
+                  devienne un acteur majeur du développement et de l'innovation. »
+                </p>
+              </div>
+
+              <div class="leader-footer-tag">
+                <i class="fas fa-award"></i>
+                <span data-i18n="leader1.foot"
+                  >Présidence de l'Université Cadi Ayyad</span
+                >
+              </div>
+            </article>
+
+            <!-- 2. M. El Hassan EL MOUDEN (Doyen FSSM) -->
+            <article class="leader-card leader-doyen">
+              <div class="leader-circle-wrap">
+                <div class="leader-circle-inner">
+                  <img
+                    src="assets/images/comite/elmoudden-clean.png"
+                    alt="Pr. El Hassan EL MOUDEN - Doyen de la Faculté des Sciences Semlalia"
+                    onerror="this.src='assets/images/comite/homme.png'"
+                  />
+                </div>
+              </div>
+
+              <span class="leader-badge-role">
+                <i class="fas fa-graduation-cap"></i>
+                <span data-i18n="leader2.badge">Doyen de la Faculté</span>
+              </span>
+
+              <h3 class="leader-name" data-i18n="leader2.name">
+                Pr. El Hassan EL MOUDEN
+              </h3>
+              <p class="leader-title" data-i18n="leader2.role">
+                Doyen de la Faculté des Sciences Semlalia (FSSM)
+              </p>
+
+              <div class="leader-quote-box">
+                <div class="leader-quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="leader-speech" data-i18n="leader2.speech">
+                  « La Faculté des Sciences Semlalia de Marrakech forme des
+                  générations de scientifiques dotés d'une rigueur analytique et
+                  d'un savoir-faire reconnus. Cette 3ème édition du Forum Students
+                  &amp; Jobs offre à nos étudiants de licence, master et doctorat
+                  une immersion concrète auprès des recruteurs, valorisant la
+                  richesse de nos filières scientifiques et accompagnant nos futurs
+                  lauréats vers des carrières d'excellence. »
+                </p>
+              </div>
+
+              <div class="leader-footer-tag">
+                <i class="fas fa-building-columns"></i>
+                <span data-i18n="leader2.foot">Décanat de la FSSM Marrakech</span>
+              </div>
+            </article>
+
+            <!-- 3. Mme Zineb CHAQUIQ EL BADRE (Responsable Statistiques & Suivi des Lauréats) -->
+            <article class="leader-card leader-coordinatrice">
+              <div class="leader-circle-wrap">
+                <div class="leader-circle-inner">
+                  <img
+                    src="assets/images/comite/chaquiq.png"
+                    alt="Mme Zineb CHAQUIQ EL BADRE - Responsable des Statistiques et du Suivi des Lauréats"
+                    onerror="this.src='assets/images/comite/femme.png'"
+                  />
+                </div>
+              </div>
+
+              <span class="leader-badge-role crimson-badge">
+                <i class="fas fa-star"></i>
+                <span data-i18n="leader3.badge">Coordinatrice — 3e Édition</span>
+              </span>
+
+              <h3 class="leader-name" data-i18n="leader3.name">
+                Mme Zineb CHAQUIQ EL BADRE
+              </h3>
+              <p class="leader-title" data-i18n="leader3.role">
+                Responsable du Service des Prévisions, Statistiques &amp; Suivi des
+                Lauréats — Initiatrice du Forum
+              </p>
+
+              <div class="leader-quote-box">
+                <div class="leader-quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="leader-speech" data-i18n="leader3.speech">
+                  « Initié et porté par le Service des Statistiques et du Suivi de
+                  l'Insertion des Lauréats, le Forum Students &amp; Jobs célèbre sa
+                  3ème édition sous le signe de l'action et de l'audace :
+                  "Étudiants aujourd'hui, professionnels demain". Grâce au
+                  Hackathon, au Case Challenge, au CV Vidéo, à l'Escape Game
+                  Mission Emploi et au Pitch en 3 minutes, chaque étudiant devient
+                  acteur de son avenir professionnel. »
+                </p>
+              </div>
+
+              <div class="leader-footer-tag">
+                <i class="fas fa-chart-line"></i>
+                <span data-i18n="leader3.foot"
+                  >Service des Statistiques &amp; Suivi des Lauréats (FSSM)</span
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION COMPÉTITIONS & CHALLENGES (5 PAGES HTML DÉDIÉES)
+           ========================================================================== -->
+      <section class="sj-section" id="competitions">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-kicker">
+              <i class="fas fa-trophy"></i>
+              <span data-i18n="comp.kicker"
+                >Défis &amp; Talents • Inscriptions jusqu'au 20/11 à 12h00</span
+              >
+            </span>
+            <h2 class="section-heading" data-i18n="comp.title">
+              Compétitions &amp; Challenges Officiels
+            </h2>
+            <p class="section-subtext" data-i18n="comp.sub">
+              Découvrez chaque compétition en détail sur sa page dédiée, préparez
+              votre candidature et relevez le défi devant nos jurys d'experts et de
+              recruteurs.
+            </p>
+          </div>
+
+          <div class="competitions-grid">
+            <!-- 1. Hackathon (24 & 25 Novembre) -->
+            <div class="comp-card">
+              <div class="comp-circle-icon crimson-grad">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <span class="comp-tag-pill crimson-pill" data-i18n="comp1.tag">
+                24 &amp; 25 Novembre 2026 • En équipe
+              </span>
+              <h3 class="comp-title" data-i18n="comp1.title">
+                Hackathon Students &amp; Jobs
+              </h3>
+              <p class="comp-slogan" data-i18n="comp1.slogan">
+                « 48 heures pour innover, prototyper et convaincre les entreprises ! »
+              </p>
+              <p class="comp-desc" data-i18n="comp1.desc">
+                En ouverture du forum les 24 et 25 novembre, développez en équipe
+                des solutions innovantes répondant à des problématiques réelles
+                d'entreprises et d'employabilité.
+              </p>
+              <div class="comp-meta-list">
+                <div class="comp-meta-item">
+                  <i class="fas fa-calendar-day"></i>
+                  <span data-i18n="comp1.meta1"
+                    >Dates : Mardi 24 &amp; Mercredi 25 Novembre 2026</span
+                  >
+                </div>
+                <div class="comp-meta-item">
+                  <i class="fas fa-users"></i>
+                  <span data-i18n="comp1.meta2"
+                    >Format : Équipes pluridisciplinaires &amp; Mentoring</span
+                  >
+                </div>
+              </div>
+              <a href="competitions/hackathon.html" class="comp-btn">
+                <span data-i18n="comp.btnDiscover">Découvrir &amp; Participer</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- 2. Case Challenge « Du labo à l'entreprise » -->
+            <div class="comp-card">
+              <div class="comp-circle-icon gold-grad">
+                <i class="fas fa-flask"></i>
+              </div>
+              <span class="comp-tag-pill gold-pill" data-i18n="comp2.tag">
+                Équipe de 3 étudiants • Sur place
+              </span>
+              <h3 class="comp-title" data-i18n="comp2.title">
+                Case Challenge « Du labo à l'entreprise »
+              </h3>
+              <p class="comp-slogan" data-i18n="comp2.slogan">
+                « Une idée, une équipe, un jury : défendez votre projet ! »
+              </p>
+              <p class="comp-desc" data-i18n="comp2.desc">
+                Transformez votre savoir scientifique en un projet entrepreneurial
+                structuré. Découvrez vos coéquipiers sur place, préparez votre
+                projet en 2h et défendez-le devant un jury d'experts.
+              </p>
+              <div class="comp-meta-list">
+                <div class="comp-meta-item">
+                  <i class="fas fa-stopwatch"></i>
+                  <span data-i18n="comp2.meta1"
+                    >Préparation : 2h | Pitch : 7 min + 3 min Q&amp;R</span
+                  >
+                </div>
+                <div class="comp-meta-item">
+                  <i class="fas fa-people-group"></i>
+                  <span data-i18n="comp2.meta2"
+                    >Équipes de 3 formées au début de l'épreuve</span
+                  >
+                </div>
+              </div>
+              <a href="competitions/case-challenge.html" class="comp-btn">
+                <span data-i18n="comp.btnDiscover">Découvrir &amp; Participer</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- 3. Concours CV Vidéo -->
+            <div class="comp-card">
+              <div class="comp-circle-icon">
+                <i class="fas fa-video"></i>
+              </div>
+              <span class="comp-tag-pill" data-i18n="comp3.tag">
+                Individuel • Vidéo 3 min max
+              </span>
+              <h3 class="comp-title" data-i18n="comp3.title">Concours CV Vidéo</h3>
+              <p class="comp-slogan" data-i18n="comp3.slogan">
+                « Votre CV prend vie : montrez qui vous êtes en 3 minutes. »
+              </p>
+              <p class="comp-desc" data-i18n="comp3.desc">
+                Un CV classique dit ce que vous avez fait ; un CV vidéo montre votre
+                énergie, votre assurance et votre personnalité. Toutes les vidéos
+                seront diffusées sur les écrans de la FSSM.
+              </p>
+              <div class="comp-meta-list">
+                <div class="comp-meta-item">
+                  <i class="fas fa-language"></i>
+                  <span data-i18n="comp3.meta1"
+                    >Langues : Français, Arabe ou Anglais (IA autorisée)</span
+                  >
+                </div>
+                <div class="comp-meta-item">
+                  <i class="fas fa-clock"></i>
+                  <span data-i18n="comp3.meta2"
+                    >Dépôt avant le Vendredi 20/11 à 12h00</span
+                  >
+                </div>
+              </div>
+              <a href="competitions/cv-video.html" class="comp-btn">
+                <span data-i18n="comp.btnDiscover">Découvrir &amp; Participer</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- 4. Mission Emploi (Escape Game) -->
+            <div class="comp-card">
+              <div class="comp-circle-icon navy-grad">
+                <i class="fas fa-key"></i>
+              </div>
+              <span class="comp-tag-pill" data-i18n="comp4.tag">
+                Escape Game • 45 min • Équipe de 3
+              </span>
+              <h3 class="comp-title" data-i18n="comp4.title">
+                Mission Emploi (Escape Game)
+              </h3>
+              <p class="comp-slogan" data-i18n="comp4.slogan">
+                « 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission
+                ? »
+              </p>
+              <p class="comp-desc" data-i18n="comp4.desc">
+                Affrontez les étapes clés du recrutement sous forme de jeu immersif
+                : corriger un CV, décoder une offre, déjouer les pièges d'entretien,
+                reconstituer un organigramme et choisir le bon candidat.
+              </p>
+              <div class="comp-meta-list">
+                <div class="comp-meta-item">
+                  <i class="fas fa-puzzle-piece"></i>
+                  <span data-i18n="comp4.meta1"
+                    >5 énigmes RH | Sans téléphone | 3 indices max</span
+                  >
+                </div>
+                <div class="comp-meta-item">
+                  <i class="fas fa-users-gear"></i>
+                  <span data-i18n="comp4.meta2">Équipes de 3 formées sur place</span>
+                </div>
+              </div>
+              <a href="competitions/mission-emploi.html" class="comp-btn">
+                <span data-i18n="comp.btnDiscover">Découvrir &amp; Participer</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- 5. Concours Pitch en 3 min -->
+            <div class="comp-card">
+              <div class="comp-circle-icon crimson-grad">
+                <i class="fas fa-Bullhorn fa-microphone"></i>
+              </div>
+              <span class="comp-tag-pill crimson-pill" data-i18n="comp5.tag">
+                Individuel • Scène • 3 min max
+              </span>
+              <h3 class="comp-title" data-i18n="comp5.title">
+                Concours Pitch en 3 min
+              </h3>
+              <p class="comp-slogan" data-i18n="comp5.slogan">
+                « 3 minutes pour convaincre. Et si c'était vous ? »
+              </p>
+              <p class="comp-desc" data-i18n="comp5.desc">
+                Montez sur scène sans diaporama et présentez en 3 minutes votre
+                parcours, vos compétences clés et le stage ou poste que vous visez
+                devant un jury de professionnels.
+              </p>
+              <div class="comp-meta-list">
+                <div class="comp-meta-item">
+                  <i class="fas fa-user-check"></i>
+                  <span data-i18n="comp5.meta1"
+                    >Format : Individuel sur scène, sans support visuel</span
+                  >
+                </div>
+                <div class="comp-meta-item">
+                  <i class="fas fa-stopwatch-20"></i>
+                  <span data-i18n="comp5.meta2"
+                    >Chronomètre visible &amp; Jury de recruteurs</span
+                  >
+                </div>
+              </div>
+              <a href="competitions/pitch-3min.html" class="comp-btn">
+                <span data-i18n="comp.btnDiscover">Découvrir &amp; Participer</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION PROGRAMME & AFFICHE OFFICIELLE (24, 25 & 26 NOVEMBRE)
+           ========================================================================== -->
+      <section class="sj-section bg-alt" id="programme">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-kicker gold">
+              <i class="fas fa-calendar-days"></i>
+              <span data-i18n="prog.kicker">Agenda Officiel 2026</span>
+            </span>
+            <h2 class="section-heading" data-i18n="prog.title">
+              Programme des Journées (24, 25 &amp; 26 Novembre)
+            </h2>
+            <p class="section-subtext" data-i18n="prog.sub">
+              Trois journées intenses rythmant l'innovation technologique, la
+              rencontre avec les recruteurs et les compétitions d'insertion
+              professionnelle.
+            </p>
+          </div>
+
+          <div class="schedule-showcase-grid">
+            <div class="day-cards-stack">
+              <!-- Jour 1 : Mardi 24 Novembre -->
+              <div class="day-schedule-card">
+                <div class="day-card-header crimson-head">
+                  <h3>
+                    <i class="fas fa-laptop-code"></i>
+                    <span data-i18n="prog.day1Title">Mardi 24 Novembre 2026</span>
+                  </h3>
+                  <span data-i18n="prog.day1Badge">Journée 1 • Hackathon</span>
+                </div>
+                <div class="day-card-body">
+                  <div class="schedule-row">
+                    <span class="schedule-badge-time" data-i18n="prog.d1.t1"
+                      >09h00 - 10h30</span
+                    >
+                    <div class="schedule-info">
+                      <h4 data-i18n="prog.d1.h1">
+                        Accueil des équipes &amp; Lancement du Hackathon
+                      </h4>
+                      <p data-i18n="prog.d1.p1">
+                        Présentation des défis d'innovation, constitution des
+                        espaces de travail et démarrage du brainstorming.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="schedule-row">
+                    <span class="schedule-badge-time" data-i18n="prog.d1.t2"
+                      >11h00 - 18h00</span
+                    >
+                    <div class="schedule-info">
+                      <h4 data-i18n="prog.d1.h2">
+                        Ateliers de prototypage &amp; Coaching par les mentors
+                      </h4>
+                      <p data-i18n="prog.d1.p2">
+                        Accompagnement intensif des équipes par des
+                        enseignants-chercheurs et professionnels partenaires.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Jour 2 : Mercredi 25 Novembre -->
+              <div class="day-schedule-card">
+                <div class="day-card-header">
+                  <h3>
+                    <i class="fas fa-microphone-lines"></i>
+                    <span data-i18n="prog.day2Title"
+                      >Mercredi 25 Novembre 2026</span
+                    >
+                  </h3>
+                  <span data-i18n="prog.day2Badge"
+                    >Journée 2 • Ouverture Forum &amp; Hackathon</span
+                  >
+                </div>
+                <div class="day-card-body">
+                  <div class="schedule-row">
+                    <span class="schedule-badge-time" data-i18n="prog.d2.t1"
+                      >09h00 - 10h30</span
+                    >
+                    <div class="schedule-info">
+                      <h4 data-i18n="prog.d2.h1">
+                        Cérémonie d'Ouverture Officielle — 3e Édition
+                      </h4>
+                      <p data-i18n="prog.d2.p1">
+                        Allocutions de M. le Président de l'UCA, M. le Doyen de la
+                        FSSM et Mme la Responsable du Suivi des Lauréats.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="schedule-row">
+                    <span class="schedule-badge-time" data-i18n="prog.d2.t2"
+                      >10h30 - 13h00</span
+                    >
+                    <div class="schedule-info">
+                      <h4 data-i18n="prog.d2.h2">
+                        Conférences Plénières &amp; Ouverture des Stands Entreprises
+                      </h4>
+                      <p data-i18n="prog.d2.p2">
+                        Panels avec les recruteurs et visite officielle des stands
+                        d'information sur l'emploi, les métiers et les cursus.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="schedule-row">
+                    <span class="schedule-badge-time" data-i18n="prog.d2.t3"
+                      >14h30 - 18h00</span
+                    >
+                    <div class="schedule-info">
+                      <h4 data-i18n="prog.d2.h3">
+                        Délibérations du Hackathon, Ateliers &amp; Diffusion des CV
+                        Vidéo
+                      </h4>
+                      <p data-i18n="prog.d2.p3">
+                        Pitch final du Hackathon, ateliers pratiques d'insertion et
+                        projection des CV Vidéo sur les écrans de la FSSM.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Jour 3 : Jeudi 26 Novembre -->
+              <div class="day-schedule-card">
+                <div class="day-card-header gold-head">
+                  <h3>
+                    <i class="fas fa-award"></i>
+                    <span data-i18n="prog.day3Title">Jeudi 26 Novembre 2026</span>
+                  </h3>
+                  <span data-i18n="prog.day3Badge"
+                    >Journée 3 • Compétitions, Ateliers &amp; Clôture</span
+                  >
+                </div>
+                <div class="day-card-body">
+                  <div class="schedule-row">
+                    <span class="schedule-badge-time" data-i18n="prog.d3.t1"
+                      >09h00 - 13h00</span
+                    >
+                    <div class="schedule-info">
+                      <h4 data-i18n="prog.d3.h1">
+                        Case Challenge « Du labo à l'entreprise » &amp; Mission
+                        Emploi
+                      </h4>
+                      <p data-i18n="prog.d3.p1">
+                        Épreuves par équipes de 3 étudiants (formation des équipes
+                        sur place, résolution des 5 énigmes RH et défense de
+                        projet).
+                      </p>
+                    </div>
+                  </div>
+                  <div class="schedule-row">
+                    <span class="schedule-badge-time" data-i18n="prog.d3.t2"
+                      >14h00 - 16h30</span
+                    >
+                    <div class="schedule-info">
+                      <h4 data-i18n="prog.d3.h2">
+                        Concours Pitch en 3 min &amp; Ateliers Carrière
+                      </h4>
+                      <p data-i18n="prog.d3.p2">
+                        Passages sur scène devant le jury de professionnels et
+                        sessions de coaching CV / entretiens.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="schedule-row">
+                    <span class="schedule-badge-time" data-i18n="prog.d3.t3"
+                      >16h30 - 18h00</span
+                    >
+                    <div class="schedule-info">
+                      <h4 data-i18n="prog.d3.h3">
+                        Cérémonie de Clôture &amp; Remise des Prix aux Lauréats
+                      </h4>
+                      <p data-i18n="prog.d3.p3">
+                        Annonce des gagnants de toutes les compétitions et remise
+                        des trophées et attestations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carte Affiche Officielle -->
+            <div class="poster-preview-card">
+              <img
+                src="assets/images/affiche-forum.jpg"
+                alt="Affiche Officielle Forum Students & Jobs 25 et 26 Novembre 2026"
+              />
+              <a
+                href="assets/images/affiche-forum.jpg"
+                target="_blank"
+                rel="noopener"
+                class="comp-btn"
+              >
+                <i class="fas fa-expand"></i>
+                <span data-i18n="prog.posterBtn"
+                  >Ouvrir l'Affiche en Plein Écran</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SECTION PARTENAIRES, ENTREPRISES & CLUBS (DE L'AFFICHE)
+           ========================================================================== -->
+      <section class="sj-section" id="partenaires">
+        <div class="container">
+          <div class="section-header-center">
+            <span class="section-kicker">
+              <i class="fas fa-handshake"></i>
+              <span data-i18n="partners.kicker">Écosystème &amp; Réseau</span>
+            </span>
+            <h2 class="section-heading" data-i18n="partners.title">
+              Entreprises, Institutions &amp; Clubs Partenaires
+            </h2>
+            <p class="section-subtext" data-i18n="partners.sub">
+              Un large réseau d'acteurs économiques, institutionnels et associatifs
+              mobilisés aux côtés de la Faculté des Sciences Semlalia.
+            </p>
+          </div>
+
+          <div class="partners-grid">
+            <div class="partner-pill-card">
+              <i class="fas fa-industry"></i>
+              <strong>Groupe OCP</strong>
+              <small>Partenaire Industriel</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-university"></i>
+              <strong>UM6P</strong>
+              <small>Université &amp; Recherche</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-briefcase"></i>
+              <strong>ANAPEC</strong>
+              <small>Insertion &amp; Emploi</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-Compass fa-compass"></i>
+              <strong>Career Center UCA</strong>
+              <small>Orientation &amp; Carrière</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-globe"></i>
+              <strong>UNESCO</strong>
+              <small>Organisation Internationale</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-seedling"></i>
+              <strong>High Atlas Foundation</strong>
+              <small>Développement Durable</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-microchip"></i>
+              <strong>ODEO Systems</strong>
+              <small>Technologie &amp; Ingénierie</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-stethoscope"></i>
+              <strong>ARWA Medic</strong>
+              <small>Santé &amp; Biomédical</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-solar-panel"></i>
+              <strong>Planet Volt</strong>
+              <small>Énergies &amp; Solutions</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-certificate"></i>
+              <strong>QMP Management</strong>
+              <small>Qualité &amp; Conseil</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-shield-halved"></i>
+              <strong>Angelus Quality</strong>
+              <small>Management &amp; Audit</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-scale-balanced"></i>
+              <strong>CFQMAM &amp; FPM</strong>
+              <small>Partenaires Métiers</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-microphone-alt"></i>
+              <strong>Club Fluventa</strong>
+              <small>Club FSSM</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-camera-retro"></i>
+              <strong>Club Pixelium</strong>
+              <small>Média &amp; Audiovisuel FSSM</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-heart-pulse"></i>
+              <strong>Club Vitalis</strong>
+              <small>Santé &amp; Bien-être FSSM</small>
+            </div>
+            <div class="partner-pill-card">
+              <i class="fas fa-leaf"></i>
+              <strong>MBLYA</strong>
+              <small>Biodiversité &amp; Jeunesse</small>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bouton Retour en Haut -->
+    <a
+      href="#home"
+      class="go-top-btn"
+      data-go-top
+      aria-label="Retour en haut de page"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- ==========================================================================
+         FOOTER OFFICIEL
+         ========================================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-box">
+            <div class="footer-logo-row">
+              <img
+                src="assets/images/logo-forum.png"
+                alt="Logo Forum Students & Jobs"
+              />
+              <div>
+                <h3>Forum Students <span>&amp; Jobs</span></h3>
+                <small style="color: #fde68a; font-weight: 600"
+                  >3ème Édition • 24, 25 &amp; 26 Novembre 2026</small
+                >
+              </div>
+            </div>
+            <p data-i18n="footer.desc">
+              Forum officiel d'insertion professionnelle, d'entrepreneuriat et de
+              suivi des lauréats de la Faculté des Sciences Semlalia — Université
+              Cadi Ayyad Marrakech.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-i18n="footer.col1">Navigation</h4>
+            <div class="footer-links">
+              <a href="#home" data-i18n="nav.home">Accueil</a>
+              <a href="#espaces" data-i18n="nav.pillars">Espaces</a>
+              <a href="#mots-officiels" data-i18n="nav.leaders">Mots Officiels</a>
+              <a href="#competitions" data-i18n="nav.competitions">Compétitions</a>
+              <a href="#programme" data-i18n="nav.program">Programme</a>
+              <a href="#partenaires" data-i18n="nav.partners">Partenaires</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-i18n="footer.col2">Nos Compétitions</h4>
+            <div class="footer-links">
+              <a href="competitions/hackathon.html">Hackathon (24 &amp; 25 Nov)</a>
+              <a href="competitions/case-challenge.html"
+                >Case Challenge « Du labo à l'entreprise »</a
+              >
+              <a href="competitions/cv-video.html">Concours CV Vidéo</a>
+              <a href="competitions/mission-emploi.html"
+                >Mission Emploi (Escape Game)</a
+              >
+              <a href="competitions/pitch-3min.html">Concours Pitch en 3 min</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p data-i18n="footer.rights">
+            © 2026 Faculté des Sciences Semlalia Marrakech (UCA) — Service des
+            Statistiques et du Suivi des Lauréats. Tous droits réservés.
+          </p>
+          <div>
+            <i class="fas fa-location-dot" style="color: #d49b42"></i>
+            Bd. Prince Moulay Abdellah, B.P. 2390, Marrakech
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script Principal (i18n FR/AR/EN + Thème Clair/Sombre + UI) -->
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
