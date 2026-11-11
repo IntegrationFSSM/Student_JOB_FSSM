@@ -4,23 +4,23 @@
  * SCRIPT GOOGLE APPS SCRIPT POUR GÉNÉRER LES 2 GOOGLE FORMS OFFICIELS
  * ==============================================================================
  * 
- * Ce script s'exécute directement sur Google Apps Script (https://script.google.com).
- * Il crée automatiquement dans votre Google Drive les deux formulaires complets :
- * 
- * 1. FORMULAIRE 1 : Concours du Meilleur CV Vidéo (Ouvert à tous, dépôt de vidéo)
- * 2. FORMULAIRE 2 : Formulaire Unique pour les 3 Compétitions sur place
- *                   (Case Challenge, Mission Emploi, Pitch 3 min)
- *                   avec BRANCHEMENT CONDITIONNEL selon la compétition choisie !
+ * 1. FORMULAIRE 1 : Concours du Meilleur CV Vidéo (Ouvert à tous, upload direct sur Drive)
+ * 2. FORMULAIRE 2 : Formulaire Unique avec Branchement Conditionnel (IF / ELSE) :
+ *    - PAGE 1 : Choix immédiat de la compétition (1 seul choix parmi les 3)
+ *    - SI CASE CHALLENGE : Page Équipe avec 3 Noms, Prénoms, CNE, Contacts & Filières
+ *    - SI MISSION EMPLOI : Page Équipe avec 3 Noms, Prénoms, CNE, Contacts & Filières
+ *    - SI PITCH EN 3 MIN : Page Individuelle avec 1 SEUL Nom, Prénom, CNE, Contact & Thème
+ *    - PAGE FINALE : Engagement sur l'honneur & Envoi
  * 
  * ==============================================================================
  * COMMENT UTILISER CE SCRIPT (EN 1 MINUTE) :
  * 1. Allez sur https://script.google.com/
  * 2. Cliquez sur "+ Nouveau projet".
  * 3. Effacez le code existant et collez TOUT le contenu de ce fichier.
- * 4. Cliquez sur "Enregistrer" (icône disquette).
+ * 4. Cliquez sur "Enregistrer" (icône disquette ou Ctrl+S).
  * 5. Dans la barre du haut, sélectionnez la fonction "createAllForms" et cliquez sur "Exécuter".
  * 6. Autorisez les permissions Google demandées.
- * 7. Regardez dans le "Journal d'exécution" en bas : les liens publics et liens de modification
+ * 7. Regardez dans le "Journal d'exécution" en bas : les liens publics et de modification
  *    des 2 Google Forms s'affichent instantanément !
  * ==============================================================================
  */
@@ -39,12 +39,12 @@ function createAllForms() {
   Logger.log("\n==================================================================");
   Logger.log("✅ TOUS LES FORMULAIRES ONT ÉTÉ CRÉÉS AVEC SUCCÈS DANS VOTRE DRIVE !");
   Logger.log("==================================================================");
-  Logger.log("1️⃣ FORMULAIRE CV VIDÉO :");
+  Logger.log("1️⃣ FORMULAIRE CV VIDÉO (Upload Drive) :");
   Logger.log("   - Lien de modification : " + form1.getEditUrl());
-  Logger.log("   - Lien public (pour les étudiants) : " + form1.getPublishedUrl());
-  Logger.log("\n2️⃣ FORMULAIRE DES 3 COMPÉTITIONS (CHOIX UNIQUE) :");
+  Logger.log("   - Lien public (étudiants) : " + form1.getPublishedUrl());
+  Logger.log("\n2️⃣ FORMULAIRE DES 3 COMPÉTITIONS (Branchement Conditionnel IF/ELSE) :");
   Logger.log("   - Lien de modification : " + form2.getEditUrl());
-  Logger.log("   - Lien public (pour les étudiants) : " + form2.getPublishedUrl());
+  Logger.log("   - Lien public (étudiants) : " + form2.getPublishedUrl());
   Logger.log("==================================================================");
 }
 
@@ -52,11 +52,6 @@ function createAllForms() {
  * ==============================================================================
  * FORMULAIRE 1 : CONCOURS DU MEILLEUR CV VIDÉO (FSSM - 3e ÉDITION)
  * ==============================================================================
- * - Ouvert à tous les étudiants de la faculté.
- * - Saisie des informations personnelles et académiques.
- * - Dépôt du lien de la vidéo (Google Drive, YouTube, WeTransfer...).
- * - Mention des outils d'IA utilisés (le cas échéant).
- * - Validation des règles (durée <= 3 min, présence à l'écran, accord de diffusion).
  */
 function createFormCVVideo() {
   const form = FormApp.create("Forum Students & Jobs 2026 — Concours du Meilleur CV Vidéo");
@@ -80,133 +75,7 @@ function createFormCVVideo() {
   form.setIsQuiz(false);
   form.setAllowResponseEdits(true);
 
-  // --- SECTION IDENTITÉ DE L'ÉTUDIANT ---
-  // Nom & Prénom
-  form.addTextItem()
-    .setTitle("1. Nom & Prénom complet")
-    .setHelpText("Exemple : Yassine Ennhili")
-    .setRequired(true);
-
-  // Code Apogée / CNE
-  form.addTextItem()
-    .setTitle("2. Code Apogée / CNE")
-    .setHelpText("Votre numéro d'étudiant UCA")
-    .setRequired(true);
-
-  // Email
-  form.addTextItem()
-    .setTitle("3. Adresse Email")
-    .setHelpText("Email académique (@uca.ac.ma) ou personnel actif")
-    .setRequired(true);
-
-  // Téléphone WhatsApp
-  form.addTextItem()
-    .setTitle("4. Numéro de téléphone (WhatsApp)")
-    .setHelpText("Exemple : 06 12 34 56 78 (pour vous contacter rapidement)")
-    .setRequired(true);
-
-  // Filière / Département
-  form.addListItem()
-    .setTitle("5. Filière / Département d'études à la FSSM")
-    .setChoiceValues([
-      "Informatique",
-      "Mathématiques",
-      "Physique",
-      "Chimie",
-      "Biologie",
-      "Géologie"
-    ])
-    .setRequired(true);
-
-  // Niveau d'études
-  form.addListItem()
-    .setTitle("6. Niveau d'études actuel")
-    .setChoiceValues([
-      "Licence (S1 à S6)",
-      "Master (M1 / M2)",
-      "Doctorat",
-      "Lauréat / Ancien diplômé"
-    ])
-    .setRequired(true);
-
-  // Langue du CV Vidéo
-  form.addMultipleChoiceItem()
-    .setTitle("7. Langue principale de votre CV Vidéo")
-    .setChoiceValues([
-      "Français",
-      "Arabe",
-      "Anglais"
-    ])
-    .setRequired(true);
-
-  // --- SECTION DÉPÔT DE LA VIDÉO DIRECTEMENT SUR GOOGLE DRIVE ---
-  // Remarque Google : Google Forms exige que le bouton natif "Importer un fichier (File Upload)"
-  // soit activé en 1 clic dans l'interface de Google Forms (afin d'autoriser la création du dossier Drive dédié).
-  form.addSectionHeaderItem()
-    .setTitle("📤 DÉPÔT DIRECT DE LA VIDÉO SUR LE GOOGLE DRIVE DU FORUM")
-    .setHelpText(
-      "Les vidéos déposées par les étudiants seront stockées automatiquement dans un dossier dédié sur votre Google Drive.\n\n" +
-      "👉 ASTUCE EN 5 SECONDES POUR L'UPLOAD DIRECT :\n" +
-      "Dans l'éditeur de ce formulaire, sur la question 8 ci-dessous, changez simplement le type de 'Réponse courte' en 'Importer un fichier (File Upload)' -> activez 'Vidéo' et taille max '1 Go' ou '10 Go'."
-    );
-
-  form.addTextItem()
-    .setTitle("8. Déposez votre CV Vidéo (Fichier vidéo ou Lien Google Drive)")
-    .setHelpText(
-      "Déposez votre fichier vidéo (format MP4, MOV, etc. - Max 3 minutes) ou collez le lien de partage Google Drive de votre vidéo."
-    )
-    .setRequired(true);
-
-  // Outils d'IA
-  form.addParagraphTextItem()
-    .setTitle("9. Outils d'Intelligence Artificielle (IA) utilisés (le cas échéant)")
-    .setHelpText("Exemple : CapCut pour les sous-titres, ChatGPT pour la structure du script, Canva... Si aucun outil IA n'a été utilisé, écrivez 'Aucun'.")
-    .setRequired(true);
-
-  // --- ENGAGEMENTS SUR L'HONNEUR ---
-  const checkRules = form.addCheckboxItem();
-  checkRules.setTitle("10. Engagements du candidat & Autorisation de diffusion");
-  checkRules.setChoiceValues([
-    "Je confirme que ma vidéo dure 3 minutes maximum.",
-    "Je confirme que j'apparais personnellement à l'écran (sur toute la vidéo ou au moins un tiers de la durée).",
-    "J'autorise la Faculté des Sciences Semlalia à diffuser ma vidéo sur les écrans de la faculté durant le Forum Students & Jobs 2026."
-  ]);
-  checkRules.setRequired(true);
-
-  Logger.log("Formulaire 1 (CV Vidéo) généré.");
-  return form;
-}
-
-/**
- * ==============================================================================
- * FORMULAIRE 2 : LES 3 COMPÉTITIONS SUR PLACE (CHOIX UNIQUE PARMI LES 3)
- * ==============================================================================
- * - Couvre : Case Challenge, Mission Emploi, Pitch en 3 minutes.
- * - Intègre la RÈGLE D'EXCLUSIVITÉ : 1 SEUL CHOIX AUTORISÉ parmi les 3.
- * - Utilise le BRANCHEMENT CONDITIONNEL (Sections / Pages) selon la compétition !
- */
-function createFormTroisCompetitions() {
-  const form = FormApp.create("Forum Students & Jobs 2026 — Inscription aux Compétitions sur Place");
-
-  form.setDescription(
-    "FACULTÉ DES SCIENCES SEMLALIA MARRAKECH (FSSM - UCA)\n" +
-    "Forum Students & Jobs — 3e Édition (25 & 26 Novembre 2026)\n\n" +
-    "⚠️ RÈGLE FONDAMENTALE DE PARTICIPATION :\n" +
-    "Vous ne pouvez choisir qu'UNE SEULE compétition parmi les trois suivantes :\n" +
-    "1️⃣ Case Challenge « Du labo à l'entreprise »\n" +
-    "2️⃣ Mission Emploi (Escape Game recrutement)\n" +
-    "3️⃣ Concours Pitch en 3 minutes\n\n" +
-    "👉 Si vous participez à 1 de ces trois compétitions, vous NE POUVEZ PAS participer aux deux autres !\n" +
-    "💡 Note : Le concours CV Vidéo reste quant à lui ouvert à tous et cumulable avec votre choix.\n\n" +
-    "⏳ DATE LIMITE D'INSCRIPTION : Vendredi 20 Novembre 2026 à 12h00 précises."
-  );
-
-  form.setIsQuiz(false);
-  form.setAllowResponseEdits(true);
-
-  // ============================================================================
-  // SECTION 1 : INFORMATIONS GÉNÉRALES DU CANDIDAT
-  // ============================================================================
+  // --- IDENTITÉ DE L'ÉTUDIANT ---
   form.addTextItem()
     .setTitle("1. Nom & Prénom complet")
     .setHelpText("Exemple : Yassine Ennhili")
@@ -224,11 +93,11 @@ function createFormTroisCompetitions() {
 
   form.addTextItem()
     .setTitle("4. Numéro de téléphone (WhatsApp)")
-    .setHelpText("Numéro joignable pour l'organisation")
+    .setHelpText("Exemple : 06 12 34 56 78")
     .setRequired(true);
 
   form.addListItem()
-    .setTitle("5. Filière / Département à la FSSM")
+    .setTitle("5. Filière / Département d'études à la FSSM")
     .setChoiceValues([
       "Informatique",
       "Mathématiques",
@@ -240,84 +109,17 @@ function createFormTroisCompetitions() {
     .setRequired(true);
 
   form.addListItem()
-    .setTitle("6. Niveau d'études")
+    .setTitle("6. Niveau d'études actuel")
     .setChoiceValues([
       "Licence (S1 à S6)",
       "Master (M1 / M2)",
       "Doctorat",
-      "Lauréat / Ancien étudiant"
+      "Lauréat / Ancien diplômé"
     ])
     .setRequired(true);
 
-  // ============================================================================
-  // CRÉATION DES SECTIONS SPÉCIFIQUES & DU BRANCHEMENT CONDITIONNEL
-  // ============================================================================
-  
-  // Section pour le Case Challenge
-  const pageCase = form.addPageBreakItem();
-  pageCase.setTitle("Compétition : Case Challenge « Du labo à l'entreprise »");
-  pageCase.setHelpText(
-    "« Une idée, une équipe, un jury : défendez votre projet ! »\n\n" +
-    "• Format : Équipes de 3 étudiants formées sur place au début de l'épreuve.\n" +
-    "• Préparation : 2 heures en équipe.\n" +
-    "• Présentation : 7 minutes (5 slides maximum) + 3 minutes de questions du jury.\n" +
-    "• Objectif : Valoriser vos compétences scientifiques dans un projet entrepreneurial concret."
-  );
-
-  pageCase.addParagraphTextItem()
-    .setTitle("Domaine d'intérêt ou compétences clés que vous apportez à l'équipe")
-    .setHelpText("Exemple : Biotechnologie, Intelligence Artificielle, Énergie, Chimie des matériaux, Gestion de projet, Communication...")
-    .setRequired(true);
-
-  pageCase.addMultipleChoiceItem()
-    .setTitle("Avez-vous déjà une idée de projet que vous aimeriez proposer à votre équipe le jour J ?")
-    .setChoiceValues([
-      "Oui, j'ai une idée/sujet en tête que je proposerai à mes coéquipiers",
-      "Non, je préfère brainstormer et co-créer l'idée sur place avec mon équipe"
-    ])
-    .setRequired(true);
-
-  // Section pour Mission Emploi
-  const pageMission = form.addPageBreakItem();
-  pageMission.setTitle("Compétition : Mission Emploi (Escape Game Recrutement)");
-  pageMission.setHelpText(
-    "« 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission ? »\n\n" +
-    "• Format : Équipes de 3 étudiants formées au démarrage.\n" +
-    "• Durée : 45 minutes chrono pour résoudre 5 énigmes RH (erreurs de CV, offre d'emploi, entretien, organigramme, sélection de candidat).\n" +
-    "• Règles : Téléphones non autorisés ! 3 indices maximum avec pénalité de temps."
-  );
-
-  pageMission.addMultipleChoiceItem()
-    .setTitle("Avez-vous déjà participé à un Escape Game ou un jeu de logique / d'équipe ?")
-    .setChoiceValues([
-      "Oui, j'adore les énigmes et les jeux d'équipe",
-      "Non, c'est ma toute première fois et je veux relever le défi"
-    ])
-    .setRequired(true);
-
-  pageMission.addParagraphTextItem()
-    .setTitle("Votre point fort dans un jeu d'équipe sous pression de temps :")
-    .setHelpText("Exemple : Logique d'analyse, rapidité de lecture, organisation, sang-froid...")
-    .setRequired(true);
-
-  // Section pour le Pitch en 3 min
-  const pagePitch = form.addPageBreakItem();
-  pagePitch.setTitle("Compétition : Concours Pitch en 3 minutes");
-  pagePitch.setHelpText(
-    "« 3 minutes pour convaincre. Et si c'était vous ? »\n\n" +
-    "• Format : Individuel sur scène.\n" +
-    "• Durée : 3 minutes maximum avec chronomètre visible.\n" +
-    "• Déroulement : Sans diaporama / sans slides (notes brèves autorisées).\n" +
-    "• Objectif : Présenter votre parcours, vos atouts et décrocher votre stage ou emploi cible devant un jury de recruteurs."
-  );
-
-  pagePitch.addTextItem()
-    .setTitle("Stage ou Métier recherché (Sujet de votre pitch)")
-    .setHelpText("Exemple : Stage PFE Data Analyst, Ingénieur R&D Chimie, Enseignement, Développeur Web...")
-    .setRequired(true);
-
-  pagePitch.addMultipleChoiceItem()
-    .setTitle("Langue dans laquelle vous souhaitez pitcher sur scène")
+  form.addMultipleChoiceItem()
+    .setTitle("7. Langue principale de votre CV Vidéo")
     .setChoiceValues([
       "Français",
       "Arabe",
@@ -325,46 +127,370 @@ function createFormTroisCompetitions() {
     ])
     .setRequired(true);
 
-  pagePitch.addParagraphTextItem()
-    .setTitle("En une ou deux phrases, pourquoi souhaitez-vous relever ce défi de pitch ?")
-    .setHelpText("Exemple : Vaincre le trac, m'entraîner aux entretiens d'embauche, convaincre les recruteurs présents...")
+  // --- DÉPÔT DE LA VIDÉO DIRECTEMENT SUR DRIVE ---
+  form.addSectionHeaderItem()
+    .setTitle("📤 DÉPÔT DE VOTRE FICHIER VIDÉO")
+    .setHelpText(
+      "📌 RAPPEL : Pour activer l'upload direct de fichiers vers votre Google Drive en 2 clics :\n" +
+      "Dans l'éditeur de ce formulaire, sur la question 8 ci-dessous, changez 'Réponse courte' en 'Importer un fichier (File Upload)' -> activez 'Vidéo' et taille max '1 Go' ou '10 Go'."
+    );
+
+  form.addTextItem()
+    .setTitle("8. Déposez votre CV Vidéo (Fichier vidéo ou Lien Google Drive)")
+    .setHelpText("Déposez votre fichier vidéo (MP4, MOV - Max 3 min) ou collez votre lien Google Drive en accès public.")
+    .setRequired(true);
+
+  form.addParagraphTextItem()
+    .setTitle("9. Outils d'Intelligence Artificielle (IA) utilisés (le cas échéant)")
+    .setHelpText("Exemple : CapCut pour les sous-titres, ChatGPT pour le plan... Si aucun, écrivez 'Aucun'.")
+    .setRequired(true);
+
+  const checkRules = form.addCheckboxItem();
+  checkRules.setTitle("10. Engagements du candidat & Autorisation de diffusion");
+  checkRules.setChoiceValues([
+    "Je confirme que ma vidéo dure 3 minutes maximum.",
+    "Je confirme que j'apparais personnellement à l'écran (sur toute la vidéo ou au moins un tiers de la durée).",
+    "J'autorise la Faculté des Sciences Semlalia à diffuser ma vidéo sur les écrans de la faculté durant le Forum Students & Jobs 2026."
+  ]);
+  checkRules.setRequired(true);
+
+  Logger.log("Formulaire 1 (CV Vidéo) généré.");
+  return form;
+}
+
+/**
+ * ==============================================================================
+ * FORMULAIRE 2 : LES 3 COMPÉTITIONS SUR PLACE (BRANCHEMENT CONDITIONNEL IF/ELSE)
+ * ==============================================================================
+ * - PAGE 1 : L'étudiant CHOISIT d'abord son challenge (1 seul choix possible).
+ * - SELON LE CHOIX (IF / ELSE) :
+ *   • SI Case Challenge  ➔ Page Équipe de 3 personnes (Nom, Prénom, CNE x3)
+ *   • SI Mission Emploi  ➔ Page Équipe de 3 personnes (Nom, Prénom, CNE x3)
+ *   • SI Pitch en 3 min  ➔ Page Individuelle 1 seule personne (Nom, Prénom, CNE x1)
+ * - TOUTES LES PAGES MÈNENT À LA PAGE FINALE DE VALIDATION & ENGAGEMENT.
+ */
+function createFormTroisCompetitions() {
+  const form = FormApp.create("Forum Students & Jobs 2026 — Inscription aux Compétitions sur Place");
+
+  form.setDescription(
+    "FACULTÉ DES SCIENCES SEMLALIA MARRAKECH (FSSM - UCA)\n" +
+    "Forum Students & Jobs — 3e Édition (25 & 26 Novembre 2026)\n\n" +
+    "⚠️ RÈGLE FONDAMENTALE DE PARTICIPATION :\n" +
+    "Vous devez choisir UNE SEULE compétition sur place parmi les trois suivantes :\n" +
+    "1️⃣ Case Challenge « Du labo à l'entreprise » (Équipes de 3)\n" +
+    "2️⃣ Mission Emploi — Escape Game recrutement (Équipes de 3)\n" +
+    "3️⃣ Concours Pitch en 3 minutes (Individuel sur scène)\n\n" +
+    "👉 Si vous participez à 1 de ces compétitions, vous NE POUVEZ PAS participer aux deux autres !\n" +
+    "💡 Note : Le concours CV Vidéo reste quant à lui ouvert à tous et cumulable avec votre choix.\n\n" +
+    "⏳ DATE LIMITE D'INSCRIPTION : Vendredi 20 Novembre 2026 à 12h00 précises."
+  );
+
+  form.setIsQuiz(false);
+  form.setAllowResponseEdits(true);
+
+  // ============================================================================
+  // PAGE 1 : QUESTION DE CHOIX INITIALE (DÉTERMINE LE BRANCHEMENT IF / ELSE)
+  // ============================================================================
+  const compChoice = form.addMultipleChoiceItem();
+  compChoice.setTitle("À quelle compétition sur place souhaitez-vous participer ?");
+  compChoice.setHelpText(
+    "⚠️ CHOIX UNIQUE : Veuillez sélectionner votre compétition. Le formulaire affichera ensuite automatiquement les questions correspondantes (équipe de 3 ou individuel)."
+  );
+  compChoice.setRequired(true);
+
+  // ============================================================================
+  // CRÉATION DES 4 PAGES SUIVANTES
+  // ============================================================================
+  
+  // --- PAGE 2 : CASE CHALLENGE (ÉQUIPE DE 3 ÉTUDIANTS) ---
+  const pageCase = form.addPageBreakItem();
+  pageCase.setTitle("Compétition 1 : Case Challenge « Du labo à l'entreprise » (Équipe de 3)");
+  pageCase.setHelpText(
+    "« Une idée, une équipe, un jury : défendez votre projet ! »\n\n" +
+    "• Format : Équipes de 3 étudiants.\n" +
+    "• Préparation : 2 heures en équipe.\n" +
+    "• Présentation : 7 minutes (5 slides maximum) + 3 minutes de questions du jury.\n" +
+    "• Renseignez ci-dessous les informations des 3 membres de votre équipe :"
+  );
+
+  // Nom de l'équipe
+  form.addTextItem()
+    .setTitle("[Case Challenge] Nom de l'équipe (ou Domaine du projet)")
+    .setHelpText("Exemple : BioTech Semlalia, EcoInnov...")
+    .setRequired(true);
+
+  // --- MEMBRE 1 (Chef d'équipe) ---
+  form.addSectionHeaderItem()
+    .setTitle("👤 MEMBRE 1 (Chef d'équipe / Contact principal)");
+
+  form.addTextItem()
+    .setTitle("Membre 1 — Nom & Prénom complet *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 1 — Code Apogée / CNE *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 1 — Téléphone (WhatsApp) *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 1 — Email académique ou personnel *")
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 1 — Filière FSSM *")
+    .setChoiceValues(["Biologie", "Chimie", "Géologie", "Physique", "Informatique", "Mathématiques"])
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 1 — Niveau d'études *")
+    .setChoiceValues(["Licence", "Master", "Doctorat", "Lauréat"])
+    .setRequired(true);
+
+  // --- MEMBRE 2 ---
+  form.addSectionHeaderItem()
+    .setTitle("👥 MEMBRE 2 DE L'ÉQUIPE");
+
+  form.addTextItem()
+    .setTitle("Membre 2 — Nom & Prénom complet *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 2 — Code Apogée / CNE *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 2 — Téléphone ou Email *")
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 2 — Filière FSSM *")
+    .setChoiceValues(["Biologie", "Chimie", "Géologie", "Physique", "Informatique", "Mathématiques"])
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 2 — Niveau d'études *")
+    .setChoiceValues(["Licence", "Master", "Doctorat", "Lauréat"])
+    .setRequired(true);
+
+  // --- MEMBRE 3 ---
+  form.addSectionHeaderItem()
+    .setTitle("👥 MEMBRE 3 DE L'ÉQUIPE");
+
+  form.addTextItem()
+    .setTitle("Membre 3 — Nom & Prénom complet *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 3 — Code Apogée / CNE *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 3 — Téléphone ou Email *")
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 3 — Filière FSSM *")
+    .setChoiceValues(["Biologie", "Chimie", "Géologie", "Physique", "Informatique", "Mathématiques"])
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 3 — Niveau d'études *")
+    .setChoiceValues(["Licence", "Master", "Doctorat", "Lauréat"])
+    .setRequired(true);
+
+  form.addParagraphTextItem()
+    .setTitle("[Case Challenge] Vos compétences clés / Idée de projet")
+    .setHelpText("Décrivez brièvement le domaine ou l'idée que vous souhaitez défendre devant le jury.")
+    .setRequired(true);
+
+
+  // --- PAGE 3 : MISSION EMPLOI (ESCAPE GAME EN ÉQUIPE DE 3) ---
+  const pageMission = form.addPageBreakItem();
+  pageMission.setTitle("Compétition 2 : Mission Emploi (Escape Game en équipe de 3)");
+  pageMission.setHelpText(
+    "« 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission ? »\n\n" +
+    "• Format : Équipes de 3 étudiants.\n" +
+    "• Durée : 45 minutes chrono pour résoudre 5 énigmes RH.\n" +
+    "• Règles : Téléphones non autorisés ! 3 indices maximum avec pénalité de temps.\n" +
+    "• Renseignez ci-dessous les informations des 3 membres de votre équipe :"
+  );
+
+  form.addTextItem()
+    .setTitle("[Mission Emploi] Nom de l'équipe (Optionnel)")
+    .setHelpText("Exemple : Les Détectives RH...")
     .setRequired(false);
 
-  // Section Finale : Confirmation & Engagement sur l'honneur
+  // --- MISSION EMPLOI : MEMBRE 1 ---
+  form.addSectionHeaderItem()
+    .setTitle("👤 MEMBRE 1 (Capitaine d'équipe / Contact)");
+
+  form.addTextItem()
+    .setTitle("Membre 1 — Nom & Prénom *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 1 — Code Apogée / CNE *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 1 — Téléphone (WhatsApp) *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 1 — Email *")
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 1 — Filière FSSM *")
+    .setChoiceValues(["Informatique", "Mathématiques", "Physique", "Chimie", "Biologie", "Géologie"])
+    .setRequired(true);
+
+  // --- MISSION EMPLOI : MEMBRE 2 ---
+  form.addSectionHeaderItem()
+    .setTitle("👥 MEMBRE 2 DE L'ÉQUIPE");
+
+  form.addTextItem()
+    .setTitle("Membre 2 — Nom & Prénom *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 2 — Code Apogée / CNE *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 2 — Téléphone ou Email *")
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 2 — Filière FSSM *")
+    .setChoiceValues(["Informatique", "Mathématiques", "Physique", "Chimie", "Biologie", "Géologie"])
+    .setRequired(true);
+
+  // --- MISSION EMPLOI : MEMBRE 3 ---
+  form.addSectionHeaderItem()
+    .setTitle("👥 MEMBRE 3 DE L'ÉQUIPE");
+
+  form.addTextItem()
+    .setTitle("Membre 3 — Nom & Prénom *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 3 — Code Apogée / CNE *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Membre 3 — Téléphone ou Email *")
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Membre 3 — Filière FSSM *")
+    .setChoiceValues(["Informatique", "Mathématiques", "Physique", "Chimie", "Biologie", "Géologie"])
+    .setRequired(true);
+
+  form.addMultipleChoiceItem()
+    .setTitle("[Mission Emploi] Engagement sur les règles de l'Escape Game")
+    .setChoiceValues([
+      "Nous acceptons le règlement (45 minutes, téléphones portables strictement interdits, esprit d'équipe)."
+    ])
+    .setRequired(true);
+
+
+  // --- PAGE 4 : PITCH EN 3 MIN (INDIVIDUEL - 1 SEUL CANDIDAT) ---
+  const pagePitch = form.addPageBreakItem();
+  pagePitch.setTitle("Compétition 3 : Concours Pitch en 3 minutes (Individuel)");
+  pagePitch.setHelpText(
+    "« 3 minutes pour convaincre. Et si c'était vous ? »\n\n" +
+    "• Format : Candidature INDIVIDUELLE sur scène.\n" +
+    "• Durée : 3 minutes chrono maximum (chronomètre visible).\n" +
+    "• Déroulement : Sans diaporama / sans slides (notes brèves autorisées).\n" +
+    "• Renseignez ci-dessous vos informations personnelles et le sujet de votre pitch :"
+  );
+
+  form.addTextItem()
+    .setTitle("Nom & Prénom complet *")
+    .setHelpText("Exemple : Yassine Ennhili")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Code Apogée / CNE *")
+    .setHelpText("Votre numéro d'étudiant UCA")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Numéro de téléphone (WhatsApp) *")
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Adresse Email académique ou personnelle *")
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Filière / Département à la FSSM *")
+    .setChoiceValues(["Informatique", "Mathématiques", "Physique", "Chimie", "Biologie", "Géologie"])
+    .setRequired(true);
+
+  form.addListItem()
+    .setTitle("Niveau d'études actuel *")
+    .setChoiceValues(["Licence (S1 à S6)", "Master (M1 / M2)", "Doctorat", "Lauréat / Ancien étudiant"])
+    .setRequired(true);
+
+  form.addTextItem()
+    .setTitle("Stage ou Métier recherché (Thème de votre Pitch sur scène) *")
+    .setHelpText("Exemple : Stage PFE Data Analyst, Ingénieur Chimiste, Développeur Mobile...")
+    .setRequired(true);
+
+  form.addMultipleChoiceItem()
+    .setTitle("Langue dans laquelle vous pitcherez sur scène *")
+    .setChoiceValues(["Français", "Arabe", "Anglais"])
+    .setRequired(true);
+
+
+  // --- PAGE 5 : ENGAGEMENT SUR L'HONNEUR & VALIDATION FINALE ---
   const pageConfirmation = form.addPageBreakItem();
-  pageConfirmation.setTitle("Engagement sur l'honneur & Validation de votre candidature");
+  pageConfirmation.setTitle("Validation & Engagement sur l'honneur");
   pageConfirmation.setHelpText(
-    "Veuillez lire attentivement et cocher la case d'engagement ci-dessous pour valider votre inscription officielle."
+    "Veuillez cocher la case d'engagement ci-dessous pour confirmer définitivement votre candidature au Forum Students & Jobs 2026."
   );
 
   const checkHonor = pageConfirmation.addCheckboxItem();
   checkHonor.setTitle("Engagement officiel :");
   checkHonor.setChoiceValues([
-    "J'atteste sur l'honneur que je m'inscris à UNE SEULE compétition sur place parmi (Case Challenge, Mission Emploi, Pitch en 3 min).",
-    "J'ai bien noté que si je m'inscris à l'une de ces 3 compétitions, je ne pourrai pas participer aux deux autres.",
-    "Je m'engage à être présent(e) et ponctuel(le) le jour de l'épreuve à la Faculté des Sciences Semlalia Marrakech.",
-    "Je sais que le concours CV Vidéo reste ouvert et que je peux également y participer librement."
+    "J'atteste sur l'honneur que cette inscription constitue mon CHOIX UNIQUE parmi les 3 compétitions sur place.",
+    "J'ai bien noté que ma participation à cette compétition m'interdit de participer aux deux autres compétitions sur place.",
+    "Je m'engage (ainsi que mes coéquipiers le cas échéant) à être présent(e) et ponctuel(le) le jour du Forum à la FSSM.",
+    "Je sais que le concours CV Vidéo reste ouvert et cumulable avec cette compétition."
   ]);
   checkHonor.setRequired(true);
 
-  // Maintenant, configurer les redirections de fin de section :
+  // ============================================================================
+  // CONFIGURATION DES REDIRECTIONS CONDITIONNELLES (IF / ELSE)
+  // ============================================================================
+  
+  // 1. Branchement depuis la Page 1 selon le choix :
+  compChoice.setChoices([
+    compChoice.createChoice(
+      "Case Challenge « Du labo à l'entreprise » (Équipe de 3 étudiants)",
+      pageCase
+    ),
+    compChoice.createChoice(
+      "Mission Emploi — Escape Game recrutement (Équipe de 3 étudiants)",
+      pageMission
+    ),
+    compChoice.createChoice(
+      "Concours Pitch en 3 minutes (Individuel sur scène — 1 personne)",
+      pagePitch
+    )
+  ]);
+
+  // 2. Redirections de chaque page vers la page finale de confirmation :
   pageCase.setGoToPage(pageConfirmation);
   pageMission.setGoToPage(pageConfirmation);
   pagePitch.setGoToPage(pageConfirmation);
   pageConfirmation.setGoToPage(FormApp.PageNavigationType.SUBMIT);
 
-  // Maintenant, on configure la question de CHOIX dans la SECTION 1 avec le routage conditionnel :
-  const compChoice = form.addMultipleChoiceItem();
-  compChoice.setTitle("7. À quelle compétition sur place souhaitez-vous participer ? (1 SEUL CHOIX POSSIBLE)");
-  compChoice.setHelpText("Attention : choisissez attentivement. Vous ne pouvez participer qu'à une seule de ces 3 compétitions !");
-  compChoice.setChoices([
-    compChoice.createChoice("Case Challenge « Du labo à l'entreprise » (Équipe de 3)", pageCase),
-    compChoice.createChoice("Mission Emploi (Escape Game recrutement en équipe)", pageMission),
-    compChoice.createChoice("Concours Pitch en 3 minutes (Individuel sur scène)", pagePitch)
-  ]);
-  compChoice.setRequired(true);
-
-  Logger.log("Formulaire 2 (3 Compétitions avec branchement conditionnel) généré.");
+  Logger.log("Formulaire 2 (Branchement IF/ELSE avec 3 membres pour Case & Mission, 1 seul pour Pitch) généré.");
   return form;
 }
-
