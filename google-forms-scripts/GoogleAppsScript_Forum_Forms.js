@@ -139,13 +139,21 @@ function createFormCVVideo() {
     ])
     .setRequired(true);
 
-  // --- SECTION DÉPÔT DE LA VIDÉO ---
-  // Lien vers la vidéo
-  form.addTextItem()
-    .setTitle("8. Lien vers votre CV Vidéo (Google Drive, YouTube, OneDrive, WeTransfer...)")
+  // --- SECTION DÉPÔT DE LA VIDÉO DIRECTEMENT SUR GOOGLE DRIVE ---
+  // Remarque Google : Google Forms exige que le bouton natif "Importer un fichier (File Upload)"
+  // soit activé en 1 clic dans l'interface de Google Forms (afin d'autoriser la création du dossier Drive dédié).
+  form.addSectionHeaderItem()
+    .setTitle("📤 DÉPÔT DIRECT DE LA VIDÉO SUR LE GOOGLE DRIVE DU FORUM")
     .setHelpText(
-      "IMPORTANT : Assurez-vous que le lien est en accès public ou partagé avec tout le monde disposant du lien !\n" +
-      "(Astuce : pour Google Drive, mettez 'Tous les utilisateurs disposant du lien' en lecteur)."
+      "Les vidéos déposées par les étudiants seront stockées automatiquement dans un dossier dédié sur votre Google Drive.\n\n" +
+      "👉 ASTUCE EN 5 SECONDES POUR L'UPLOAD DIRECT :\n" +
+      "Dans l'éditeur de ce formulaire, sur la question 8 ci-dessous, changez simplement le type de 'Réponse courte' en 'Importer un fichier (File Upload)' -> activez 'Vidéo' et taille max '1 Go' ou '10 Go'."
+    );
+
+  form.addTextItem()
+    .setTitle("8. Déposez votre CV Vidéo (Fichier vidéo ou Lien Google Drive)")
+    .setHelpText(
+      "Déposez votre fichier vidéo (format MP4, MOV, etc. - Max 3 minutes) ou collez le lien de partage Google Drive de votre vidéo."
     )
     .setRequired(true);
 
@@ -359,3 +367,4 @@ function createFormTroisCompetitions() {
   Logger.log("Formulaire 2 (3 Compétitions avec branchement conditionnel) généré.");
   return form;
 }
+

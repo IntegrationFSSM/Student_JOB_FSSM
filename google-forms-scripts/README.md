@@ -9,10 +9,20 @@ Ce dossier contient le script **Google Apps Script** officiel qui permet de gén
 
 ### 1️⃣ Formulaire 1 : Concours du Meilleur CV Vidéo
 - **Statut** : **Ouvert à TOUS** les étudiants FSSM (Licence, Master, Doctorat, Lauréats) sans limitation ni exclusivité.
+- **Upload Direct sur Google Drive** :
+  - Dans Google Forms, le champ d'upload direct s'appelle **« Importer un fichier »** (*File Upload*).
+  - Dès qu'un étudiant envoie sa vidéo, elle est stockée **automatiquement dans un dossier créé sur votre Google Drive** nommé `Forum Students & Jobs 2026 — Concours du Meilleur CV Vidéo (File responses)`.
+  - **Comment activer l'upload direct en 2 clics dans Google Forms** :
+    1. Ouvrez le lien de modification du formulaire.
+    2. Cliquez sur la **question 8** (*Déposez votre CV Vidéo*).
+    3. Dans la liste déroulante à droite (qui indique *Réponse courte*), choisissez **« Importer un fichier »** (Google affichera un message vous demandant l'autorisation de créer le dossier sur votre Drive ➔ cliquez sur *Continuer*).
+    4. Activez l'option :
+       - Types de fichiers autorisés : cochez **Vidéo** (MP4, MOV, etc.).
+       - Nombre maximal de fichiers : **1**.
+       - Taille maximale : **1 Go** ou **10 Go**.
 - **Contenu** :
   - Identité complète : Nom & Prénom, CNE / Code Apogée, Email, Téléphone WhatsApp, Filière FSSM, Niveau.
   - Choix de la langue de la vidéo (Français, Arabe, Anglais).
-  - Dépôt du lien de la vidéo (Google Drive, YouTube, OneDrive, WeTransfer...).
   - Outils d'Intelligence Artificielle (IA) déclarés (règle officielle : *« L'IA peut vous aider, elle ne doit pas vous remplacer »*).
   - Case d'engagement obligatoire (durée ≤ 3 min, présence à l'écran obligatoire sur au moins 1/3, accord de diffusion sur les écrans de la faculté).
 
@@ -48,3 +58,4 @@ Ce dossier contient le script **Google Apps Script** officiel qui permet de gén
 Dès que le script a fini de tourner (environ 3 secondes), le **Journal d'exécution** en bas affiche directement :
 - Le **lien de modification** de chaque formulaire (pour voir les réponses ou modifier des questions).
 - Le **lien public** prêt à partager avec les étudiants ou à insérer dans le site web !
+
