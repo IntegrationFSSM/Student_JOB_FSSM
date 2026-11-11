@@ -257,187 +257,61 @@
         </ul>
       </article>
 
-      <!-- Registration & Submission Form -->
-      <section class="form-card" id="inscription">
+      <!-- Google Form Registration CTA -->
+      <section class="gform-section" id="inscription">
+        <div class="gform-badge">
+          <i class="fa-brands fa-google"></i>
+          <span
+            data-fr="Google Forms Officiel"
+            data-ar="استمارة Google Forms الرسمية"
+            data-en="Official Google Forms"
+            >Google Forms Officiel</span
+          >
+        </div>
         <div class="form-header">
           <h2
-            data-fr="Formulaire d'Inscription & Dépôt — CV Vidéo"
-            data-ar="استمارة التسجيل وإيداع الفيديو — CV Vidéo"
-            data-en="Registration & Submission Form — Video CV"
+            data-fr="Inscription & Dépôt — Concours CV Vidéo"
+            data-ar="التسجيل وإيداع الفيديو — مسابقة CV Vidéo"
+            data-en="Registration & Submission — Video CV Contest"
           >
-            Formulaire d'Inscription & Dépôt — CV Vidéo
+            Inscription & Dépôt — Concours CV Vidéo
           </h2>
           <p
-            data-fr="Date limite d'inscription et de dépôt : Vendredi 20/11 à 12h00"
-            data-ar="آخر أجل للتسجيل وإيداع الفيديو: الجمعة 20/11 على الساعة 12:00 زوالاً"
-            data-en="Registration & submission deadline: Friday 20/11 at 12:00 PM"
+            data-fr="L'inscription et le dépôt du lien de votre vidéo de 3 min s'effectuent directement via le formulaire officiel Google Form :"
+            data-ar="يتم التسجيل وإيداع رابط الفيديو (3 دقائق) مباشرة عبر استمارة Google Form الرسمية:"
+            data-en="Registration and submission of your 3-min video link are done directly through the official Google Form:"
           >
-            Date limite d'inscription et de dépôt : Vendredi 20/11 à 12h00
+            L'inscription et le dépôt du lien de votre vidéo de 3 min s'effectuent directement via le formulaire officiel Google Form :
           </p>
         </div>
 
-        <form id="compRegistrationForm" data-comp-id="cv-video" data-exclusive="false">
-          <div class="form-row">
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Nom & Prénom *"
-                data-ar="الاسم الكامل *"
-                data-en="Full Name *"
-                >Nom & Prénom *</label
-              >
-              <input
-                type="text"
-                name="fullName"
-                class="form-control"
-                required
-                placeholder="Ex: Yassine Ennhili"
-              />
-            </div>
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Code Apogée / CNE *"
-                data-ar="رقم أبوجي / CNE *"
-                data-en="Student ID (Apogée / CNE) *"
-                >Code Apogée / CNE *</label
-              >
-              <input
-                type="text"
-                name="apogee"
-                class="form-control"
-                required
-                placeholder="Ex: 21004589"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Email académique ou personnel *"
-                data-ar="البريد الإلكتروني *"
-                data-en="Email Address *"
-                >Email académique ou personnel *</label
-              >
-              <input
-                type="email"
-                name="email"
-                class="form-control"
-                required
-                placeholder="etudiant@uca.ac.ma"
-              />
-            </div>
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Téléphone (WhatsApp) *"
-                data-ar="رقم الهاتف (واتساب) *"
-                data-en="Phone Number (WhatsApp) *"
-                >Téléphone (WhatsApp) *</label
-              >
-              <input
-                type="tel"
-                name="phone"
-                class="form-control"
-                required
-                placeholder="06 00 00 00 00"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Filière / Département FSSM *"
-                data-ar="الشعبة / التخصص بالكلية *"
-                data-en="Department / Major (FSSM) *"
-                >Filière / Département FSSM *</label
-              >
-              <select name="department" class="form-control" required>
-                <option value="">-- Choisir --</option>
-                <option value="Informatique">Informatique</option>
-                <option value="Mathématiques">Mathématiques</option>
-                <option value="Physique">Physique</option>
-                <option value="Chimie">Chimie</option>
-                <option value="Biologie">Biologie</option>
-                <option value="Géologie">Géologie</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Niveau d'études & Langue de la vidéo *"
-                data-ar="المستوى الدراسي ولغة الفيديو *"
-                data-en="Study Level & Video Language *"
-                >Niveau d'études & Langue de la vidéo *</label
-              >
-              <select name="level" class="form-control" required>
-                <option value="Licence - FR">Licence (Français)</option>
-                <option value="Master - FR">Master (Français)</option>
-                <option value="Doctorat - FR">Doctorat (Français)</option>
-                <option value="Lauréat - AR/EN">Autre / Arabe / Anglais</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label
-              class="form-label"
-              data-fr="Lien de votre CV Vidéo (Google Drive, YouTube, WeTransfer) *"
-              data-ar="رابط السيرة الذاتية بالفيديو (Google Drive أو YouTube) *"
-              data-en="Link to your Video CV (Google Drive, YouTube, etc.) *"
-              >Lien de votre CV Vidéo (Google Drive, YouTube, WeTransfer) *</label
-            >
-            <input
-              type="url"
-              name="videoUrl"
-              class="form-control"
-              required
-              placeholder="https://drive.google.com/..."
-            />
-          </div>
-
-          <div class="form-group">
-            <label
-              class="form-label"
-              data-fr="Outils d'IA utilisés (si applicable : montage, sous-titres, etc.)"
-              data-ar="أدوات الذكاء الاصطناعي المستعملة (إن وجدت: المونتاج، الترجمة...)"
-              data-en="AI tools used (if any: editing, subtitles, etc.)"
-              >Outils d'IA utilisés (si applicable : montage, sous-titres, etc.)</label
-            >
-            <input
-              type="text"
-              name="aiTools"
-              class="form-control"
-              placeholder="Ex: Aucun / CapCut pour sous-titres..."
-            />
-          </div>
-
-          <label class="form-check-box">
-            <input type="checkbox" required />
+        <div class="gform-action-box">
+          <a
+            href="https://forms.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="google-form-btn"
+          >
+            <i class="fa-brands fa-google"></i>
             <span
-              data-fr="Je confirme que ma vidéo ne dépasse pas 3 minutes, que j'apparais en personne à l'écran, et j'autorise sa diffusion sur les écrans de la FSSM durant le Forum Students & Jobs."
-              data-ar="أؤكد أن مدة الفيديو لا تتجاوز 3 دقائق، وأنني أظهر شخصياً في الفيديو، وأوافق على عرضه على شاشات كلية العلوم السملالية خلال المنتدى."
-              data-en="I confirm my video is max 3 minutes, features me speaking on screen, and I authorize its broadcast on FSSM screens during the Forum."
-              >Je confirme que ma vidéo ne dépasse pas 3 minutes, que j'apparais en personne à l'écran, et j'autorise sa diffusion sur les écrans de la FSSM durant le Forum Students & Jobs.</span
+              data-fr="Accéder au Formulaire Google Form"
+              data-ar="الانتقال إلى استمارة Google Form"
+              data-en="Open Google Form Registration"
+              >Accéder au Formulaire Google Form</span
             >
-          </label>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
 
-          <button type="submit" class="submit-pill-btn">
-            <i class="fa-solid fa-paper-plane"></i>
+          <div class="gform-deadline-note">
+            <i class="fa-regular fa-clock"></i>
             <span
-              data-fr="Valider mon inscription au CV Vidéo"
-              data-ar="تأكيد التسجيل وإرسال الفيديو"
-              data-en="Submit My Video CV Registration"
-              >Valider mon inscription au CV Vidéo</span
+              data-fr="Dernier délai : Vendredi 20 Novembre 2026 à 12h00"
+              data-ar="آخر أجل للتسجيل والإيداع: الجمعة 20 نونبر 2026 على الساعة 12:00 زوالاً"
+              data-en="Deadline: Friday, November 20, 2026 at 12:00 PM"
+              >Dernier délai : Vendredi 20 Novembre 2026 à 12h00</span
             >
-          </button>
-
-          <div id="formFeedback" class="form-feedback"></div>
-        </form>
+          </div>
+        </div>
       </section>
 
       <!-- Navigation to the other 3 competitions -->
@@ -486,3 +360,4 @@
     <script src="app.js"></script>
   </body>
 </html>
+

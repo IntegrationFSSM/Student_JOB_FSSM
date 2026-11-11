@@ -276,170 +276,61 @@
         </ul>
       </article>
 
-      <!-- Registration Form -->
-      <section class="form-card" id="inscription">
+      <!-- Google Form Registration CTA -->
+      <section class="gform-section" id="inscription">
+        <div class="gform-badge">
+          <i class="fa-brands fa-google"></i>
+          <span
+            data-fr="Google Forms Officiel"
+            data-ar="استمارة Google Forms الرسمية"
+            data-en="Official Google Forms"
+            >Google Forms Officiel</span
+          >
+        </div>
         <div class="form-header">
           <h2
-            data-fr="Formulaire d'Inscription — Case Challenge"
-            data-ar="استمارة التسجيل — Case Challenge"
-            data-en="Registration Form — Case Challenge"
+            data-fr="Inscription — Case Challenge « Du labo à l'entreprise »"
+            data-ar="التسجيل — تحدي الحالات « من المختبر إلى المقاولة »"
+            data-en="Registration — Case Challenge “From Lab to Business”"
           >
-            Formulaire d'Inscription — Case Challenge
+            Inscription — Case Challenge « Du labo à l'entreprise »
           </h2>
           <p
-            data-fr="Date limite : Vendredi 20/11 à 12h00 • ⚠️ Choix exclusif parmi les 3 compétitions sur place"
-            data-ar="آخر أجل: الجمعة 20/11 على الساعة 12:00 • ⚠️ اختيار حصري من بين المسابقات الثلاث"
-            data-en="Deadline: Friday 20/11 at 12:00 PM • ⚠️ Exclusive choice among the 3 on-site competitions"
+            data-fr="L'inscription s'effectue directement via le formulaire officiel Google Form. Cliquez sur le bouton ci-dessous pour vous inscrire :"
+            data-ar="يتم التسجيل مباشرة عبر استمارة Google Form الرسمية. اضغط على الزر أسفله للتسجيل:"
+            data-en="Registration is done directly through the official Google Form. Click the button below to register:"
           >
-            Date limite : Vendredi 20/11 à 12h00 • ⚠️ Choix exclusif parmi les 3 compétitions sur place
+            L'inscription s'effectue directement via le formulaire officiel Google Form. Cliquez sur le bouton ci-dessous pour vous inscrire :
           </p>
         </div>
 
-        <form id="compRegistrationForm" data-comp-id="case-challenge" data-exclusive="true">
-          <div class="form-row">
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Nom & Prénom *"
-                data-ar="الاسم الكامل *"
-                data-en="Full Name *"
-                >Nom & Prénom *</label
-              >
-              <input
-                type="text"
-                name="fullName"
-                class="form-control"
-                required
-                placeholder="Ex: Yassine Ennhili"
-              />
-            </div>
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Code Apogée / CNE *"
-                data-ar="رقم أبوجي / CNE *"
-                data-en="Student ID (Apogée / CNE) *"
-                >Code Apogée / CNE *</label
-              >
-              <input
-                type="text"
-                name="apogee"
-                class="form-control"
-                required
-                placeholder="Ex: 21004589"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Email académique ou personnel *"
-                data-ar="البريد الإلكتروني *"
-                data-en="Email Address *"
-                >Email académique ou personnel *</label
-              >
-              <input
-                type="email"
-                name="email"
-                class="form-control"
-                required
-                placeholder="etudiant@uca.ac.ma"
-              />
-            </div>
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Téléphone (WhatsApp) *"
-                data-ar="رقم الهاتف (واتساب) *"
-                data-en="Phone Number (WhatsApp) *"
-                >Téléphone (WhatsApp) *</label
-              >
-              <input
-                type="tel"
-                name="phone"
-                class="form-control"
-                required
-                placeholder="06 00 00 00 00"
-              />
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Filière / Département FSSM *"
-                data-ar="الشعبة / التخصص بالكلية *"
-                data-en="Department / Major (FSSM) *"
-                >Filière / Département FSSM *</label
-              >
-              <select name="department" class="form-control" required>
-                <option value="">-- Choisir --</option>
-                <option value="Biologie">Biologie</option>
-                <option value="Chimie">Chimie</option>
-                <option value="Géologie">Géologie</option>
-                <option value="Physique">Physique</option>
-                <option value="Informatique">Informatique</option>
-                <option value="Mathématiques">Mathématiques</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label
-                class="form-label"
-                data-fr="Niveau d'études *"
-                data-ar="المستوى الدراسي *"
-                data-en="Study Level *"
-                >Niveau d'études *</label
-              >
-              <select name="level" class="form-control" required>
-                <option value="Licence">Licence (S1 - S6)</option>
-                <option value="Master">Master (M1 / M2)</option>
-                <option value="Doctorat">Doctorat</option>
-                <option value="Lauréat">Lauréat FSSM</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label
-              class="form-label"
-              data-fr="Domaine d'intérêt ou compétences clés (pour l'équilibre des équipes)"
-              data-ar="مجال الاهتمام أو المهارات الأساسية"
-              data-en="Area of interest or key skills"
-              >Domaine d'intérêt ou compétences clés (pour l'équilibre des équipes)</label
-            >
-            <input
-              type="text"
-              name="skills"
-              class="form-control"
-              placeholder="Ex: Biotech, IA, Énergie, Gestion de projet, Design..."
-            />
-          </div>
-
-          <label class="form-check-box">
-            <input type="checkbox" required />
+        <div class="gform-action-box">
+          <a
+            href="https://forms.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="google-form-btn"
+          >
+            <i class="fa-brands fa-google"></i>
             <span
-              data-fr="<strong>Engagement sur l'honneur :</strong> Je prends note qu'en m'inscrivant au <strong>Case Challenge</strong>, je ne peux PAS participer à <em>Mission Emploi</em> ni au <em>Pitch en 3 min</em> (1 seul choix autorisé parmi ces 3 compétitions). Je sais que le concours <em>CV Vidéo</em> reste ouvert à tous."
-              data-ar="<strong>التزام:</strong> أقر بأن تسجيلي في <strong>Case Challenge</strong> يعني أنه لا يحق لي المشاركة في <em>Mission Emploi</em> أو <em>Pitch en 3 min</em> (يُسمح باختيار مسابقة واحدة فقط من بين هذه المسابقات الثلاث). وأعلم أن مسابقة <em>CV Vidéo</em> مفتوحة للجميع."
-              data-en="<strong>Commitment:</strong> I understand that by registering for the <strong>Case Challenge</strong>, I CANNOT participate in <em>Job Mission</em> or the <em>3-Min Pitch</em> (only 1 choice allowed among these 3). I know that the <em>Video CV</em> contest remains open to all."
-              ><strong>Engagement sur l'honneur :</strong> Je prends note qu'en m'inscrivant au <strong>Case Challenge</strong>, je ne peux PAS participer à <em>Mission Emploi</em> ni au <em>Pitch en 3 min</em> (1 seul choix autorisé parmi ces 3 compétitions). Je sais que le concours <em>CV Vidéo</em> reste ouvert à tous.</span
+              data-fr="Remplir le Formulaire Google Form"
+              data-ar="ملء استمارة التسجيل على Google Form"
+              data-en="Open Google Form Registration"
+              >Remplir le Formulaire Google Form</span
             >
-          </label>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
 
-          <button type="submit" class="submit-pill-btn">
-            <i class="fa-solid fa-paper-plane"></i>
+          <div class="gform-deadline-note">
+            <i class="fa-regular fa-clock"></i>
             <span
-              data-fr="Confirmer mon choix : Case Challenge"
-              data-ar="تأكيد اختياري: Case Challenge"
-              data-en="Confirm My Choice: Case Challenge"
-              >Confirmer mon choix : Case Challenge</span
+              data-fr="Dernier délai : Vendredi 20 Novembre 2026 à 12h00 • 1 seul choix parmi les 3"
+              data-ar="آخر أجل: الجمعة 20 نونبر 2026 على الساعة 12:00 زوالاً • خيار واحد من بين 3"
+              data-en="Deadline: Friday, November 20, 2026 at 12:00 PM • 1 choice among the 3"
+              >Dernier délai : Vendredi 20 Novembre 2026 à 12h00 • 1 seul choix parmi les 3</span
             >
-          </button>
-
-          <div id="formFeedback" class="form-feedback"></div>
-        </form>
+          </div>
+        </div>
       </section>
 
       <!-- Navigation to other competitions -->
@@ -488,3 +379,4 @@
     <script src="app.js"></script>
   </body>
 </html>
+
