@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forum Students & Jobs — 3e Édition | Les 4 Compétitions Officielles FSSM</title>
+    <meta
+      name="description"
+      content="Portail officiel des 4 compétitions du Forum Students & Jobs (3e Édition) à la Faculté des Sciences Semlalia Marrakech (FSSM - UCA) : CV Vidéo, Case Challenge, Mission Emploi et Pitch en 3 min."
+    />
+
+    <!-- Google Fonts (Outfit, Plus Jakarta Sans & Cairo for Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background Image & Overlay (Exact Taplink Structure from Chess Club FSSM) -->
+    <div class="bg-slideshow-container">
+      <div class="bg-slide" style="background-image: url('background.jpg');"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-glow-teal"></div>
+    <div class="bg-glow-crimson"></div>
+
+    <main class="shell">
+      <!-- Topbar: Link to Main Forum Showcase + Language Switcher (FR/AR/EN) + Light/Dark Toggle -->
+      <div class="topbar">
+        <a href="../index.html" class="topbar-brand-mini">
+          <i class="fa-solid fa-building-columns"></i>
+          <span
+            data-fr="Site Vitrine du Forum"
+            data-ar="الموقع الرسمي للمنتدى"
+            data-en="Forum Showcase Site"
+            >Site Vitrine du Forum</span
+          >
+        </a>
+
+        <div class="topbar-controls">
+          <div class="lang-switcher" aria-label="Language switcher">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <button
+            type="button"
+            id="themeToggle"
+            class="theme-btn"
+            aria-label="Basculer le mode clair/sombre"
+            title="Mode Clair / Sombre"
+          >
+            <i class="fa-solid fa-sun"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Taplink Header with Official Forum Students & Jobs Logo -->
+      <header class="header">
+        <div class="logo-card">
+          <img
+            src="logo.png"
+            alt="Logo Forum Students & Jobs 3e Édition FSSM"
+            class="logo"
+          />
+          <div class="logo-fssm-strip">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span
+              data-fr="Faculté des Sciences Semlalia Marrakech • UCA"
+              data-ar="كلية العلوم السملالية مراكش • جامعة القاضي عياض"
+              data-en="Faculty of Sciences Semlalia Marrakech • UCA"
+              >Faculté des Sciences Semlalia Marrakech • UCA</span
+            >
+          </div>
+        </div>
+
+        <div class="title-box">
+          <span class="edition-pill">
+            <i class="fa-solid fa-trophy"></i>
+            <span
+              data-fr="3e Édition • 25 & 26 Novembre 2026"
+              data-ar="النسخة الثالثة • 25 و 26 نونبر 2026"
+              data-en="3rd Edition • November 25 & 26, 2026"
+              >3e Édition • 25 & 26 Novembre 2026</span
+            >
+          </span>
+          <h1
+            class="site-title"
+            data-fr="Les 4 Compétitions Officielles"
+            data-ar="المسابقات الرسمية الأربع للمنتدى"
+            data-en="The 4 Official Competitions"
+          >
+            Les 4 Compétitions Officielles
+          </h1>
+          <p
+            class="site-subtitle"
+            data-fr="Cliquez sur une compétition ci-dessous pour découvrir son descriptif complet et remplir le formulaire de participation."
+            data-ar="اضغط على إحدى المسابقات الأربع أسفله لاكتشاف تفاصيلها الكاملة وملء استمارة المشاركة."
+            data-en="Click on any competition below to discover its full description and fill out the registration form."
+          >
+            Cliquez sur une compétition ci-dessous pour découvrir son descriptif complet et remplir le formulaire de participation.
+          </p>
+          <div class="deadline-banner">
+            <i class="fa-regular fa-clock"></i>
+            <span
+              data-fr="Date limite d'inscription : Vendredi 20/11 à 12h00"
+              data-ar="آخر أجل للتسجيل والمشاركة: الجمعة 20/11 على الساعة 12:00 زوالاً"
+              data-en="Registration Deadline: Friday 20/11 at 12:00 PM"
+              >Date limite d'inscription : Vendredi 20/11 à 12h00</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <!-- CRUCIAL NOTIFICATION: PARTICIPATION RULES -->
+      <section class="rules-notice-card" aria-label="Règles de participation">
+        <div class="rules-notice-header">
+          <i class="fa-solid fa-bell"></i>
+          <span
+            data-fr="Règle Importante de Participation aux 4 Compétitions"
+            data-ar="تنبيه هام بخصوص شروط المشاركة في المسابقات الأربع"
+            data-en="Important Participation Rule for the 4 Competitions"
+            >Règle Importante de Participation aux 4 Compétitions</span
+          >
+        </div>
+
+        <div class="rules-grid">
+          <!-- Rule 1: CV Vidéo open to everyone -->
+          <div class="rule-box rule-open">
+            <div class="rule-box-icon">
+              <i class="fa-solid fa-video"></i>
+            </div>
+            <div>
+              <strong
+                data-fr="1. Concours CV Vidéo : Ouvert à TOUS (Sans restriction)"
+                data-ar="1. مسابقة السيرة الذاتية بالفيديو (CV Vidéo): مفتوحة للجميع"
+                data-en="1. Video CV Contest: Open to ALL Students (Unrestricted)"
+                >1. Concours CV Vidéo : Ouvert à TOUS (Sans restriction)</strong
+              >
+              <span
+                data-fr="N'importe quel étudiant peut participer au concours CV Vidéo, même s'il participe déjà à l'une des trois autres compétitions."
+                data-ar="يمكن لأي طالب(ة) المشاركة في مسابقة CV Vidéo بحرية تامة، حتى لو كان مسجلاً في إحدى المسابقات الثلاث الأخرى."
+                data-en="Any student can participate in the Video CV contest, even if they also register for one of the other three competitions."
+                >N'importe quel étudiant peut participer au concours CV Vidéo, même s'il participe déjà à l'une des trois autres compétitions.</span
+              >
+            </div>
+          </div>
+
+          <!-- Rule 2: 1 choice among the other 3 -->
+          <div class="rule-box rule-exclusive">
+            <div class="rule-box-icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div>
+              <strong
+                data-fr="2. Les 3 autres compétitions : 1 SEUL CHOIX autorisé !"
+                data-ar="2. المسابقات الثلاث الأخرى: يحق لك اختيار مسابقة واحدة فقط!"
+                data-en="2. The Other 3 Competitions: ONLY 1 CHOICE Allowed!"
+                >2. Les 3 autres compétitions : 1 SEUL CHOIX autorisé !</strong
+              >
+              <span
+                data-fr="Parmi (Case Challenge, Mission Emploi, Pitch en 3 min), si vous participez à 1 compétition, vous NE POUVEZ PAS participer aux deux autres."
+                data-ar="من بين (Case Challenge و Mission Emploi و Pitch en 3 min)، إذا شاركت في مسابقة واحدة (1)، فلا يمكنك المشاركة في المسابقتين الأخريين."
+                data-en="Among (Case Challenge, Job Mission, 3-Min Pitch), if you participate in 1 competition, you CANNOT participate in the other two."
+                >Parmi (Case Challenge, Mission Emploi, Pitch en 3 min), si vous participez à 1 compétition, vous NE POUVEZ PAS participer aux deux autres.</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Banner if student already registered for 1 of the 3 -->
+        <div id="activeChoiceAlert" class="active-choice-alert">
+          <span id="activeChoiceText"></span>
+          <button
+            type="button"
+            id="resetChoiceBtn"
+            class="reset-choice-btn"
+            data-fr="Modifier mon choix"
+            data-ar="تغيير اختياري"
+            data-en="Change my choice"
+          >
+            Modifier mon choix
+          </button>
+        </div>
+      </section>
+
+      <!-- GROUP 1: OPEN TO ALL (CV VIDÉO) -->
+      <div class="section-group-label">
+        <span
+          data-fr="Concours Ouvert à Tous (Cumulable)"
+          data-ar="مسابقة مفتوحة لجميع الطلبة (قابلة للجمع)"
+          data-en="Open to All Students (Cumulable)"
+          >Concours Ouvert à Tous (Cumulable)</span
+        >
+        <span
+          class="section-group-badge badge-open"
+          data-fr="Ouvert à tous"
+          data-ar="متاح للجميع"
+          data-en="Open to all"
+          >Ouvert à tous</span
+        >
+      </div>
+
+      <section class="links-list" aria-label="Concours CV Vidéo">
+        <!-- 1. CV VIDÉO -->
+        <a href="cv-video.html" class="link-pill pill-teal">
+          <div class="pill-icon">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <div class="pill-content">
+            <span
+              class="pill-title"
+              data-fr="Concours du Meilleur CV Vidéo"
+              data-ar="مسابقة أفضل سيرة ذاتية بالفيديو (CV Vidéo)"
+              data-en="Best Video CV Competition"
+              >Concours du Meilleur CV Vidéo</span
+            >
+            <span
+              class="pill-subtitle"
+              data-fr="« Votre CV prend vie : montrez qui vous êtes en 3 minutes. »"
+              data-ar="« سيرتك الذاتية تنبض بالحياة: أظهر من أنت في 3 دقائق »"
+              data-en="“Your CV comes to life: show who you are in 3 minutes.”"
+              >« Votre CV prend vie : montrez qui vous êtes en 3 minutes. »</span
+            >
+            <span
+              class="pill-tag tag-open"
+              data-fr="Individuel • Tout le monde peut participer"
+              data-ar="فردي • متاح لمشاركة الجميع دون استثناء"
+              data-en="Individual • Anyone can participate"
+              >Individuel • Tout le monde peut participer</span
+            >
+          </div>
+          <div class="pill-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+      </section>
+
+      <!-- GROUP 2: THE 3 EXCLUSIVE COMPETITIONS (1 CHOICE MAX) -->
+      <div class="section-group-label">
+        <span
+          data-fr="Compétitions sur Place (Choisir 1 seule parmi les 3)"
+          data-ar="مسابقات حضورية (اختر مسابقة واحدة فقط من بين 3)"
+          data-en="On-Site Competitions (Choose ONLY 1 of the 3)"
+          >Compétitions sur Place (Choisir 1 seule parmi les 3)</span
+        >
+        <span
+          class="section-group-badge badge-exclusive"
+          data-fr="1 Seul Choix / 3"
+          data-ar="خيار واحد فقط من 3"
+          data-en="1 Choice Only / 3"
+          >1 Seul Choix / 3</span
+        >
+      </div>
+
+      <section class="links-list" aria-label="Les 3 compétitions à choix unique">
+        <!-- 2. CASE CHALLENGE -->
+        <a href="case-challenge.html" class="link-pill pill-gold">
+          <div class="pill-icon">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <div class="pill-content">
+            <span
+              class="pill-title"
+              data-fr="Case Challenge « Du labo à l'entreprise »"
+              data-ar="تحدي الحالات « من المختبر إلى المقاولة »"
+              data-en="Case Challenge “From Lab to Business”"
+              >Case Challenge « Du labo à l'entreprise »</span
+            >
+            <span
+              class="pill-subtitle"
+              data-fr="« Une idée, une équipe, un jury : défendez votre projet ! »"
+              data-ar="« فكرة، فريق، لجنة تحكيم: دافع عن مشروعك! »"
+              data-en="“One idea, one team, one jury: defend your project!”"
+              >« Une idée, une équipe, un jury : défendez votre projet ! »</span
+            >
+            <span
+              class="pill-tag tag-choice"
+              data-fr="Équipe de 3 (formée sur place) • ⚠️ 1 seul choix parmi les 3"
+              data-ar="فريق من 3 (يُشكّل بعين المكان) • ⚠️ خيار واحد من 3"
+              data-en="Team of 3 (formed on site) • ⚠️ 1 choice among the 3"
+              >Équipe de 3 (formée sur place) • ⚠️ 1 seul choix parmi les 3</span
+            >
+          </div>
+          <div class="pill-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+
+        <!-- 3. MISSION EMPLOI (ESCAPE GAME) -->
+        <a href="mission-emploi.html" class="link-pill pill-navy">
+          <div class="pill-icon">
+            <i class="fa-solid fa-key"></i>
+          </div>
+          <div class="pill-content">
+            <span
+              class="pill-title"
+              data-fr="Mission Emploi (Escape Game)"
+              data-ar="مهمة التوظيف (Mission Emploi - Escape Game)"
+              data-en="Job Mission (Recruitment Escape Game)"
+              >Mission Emploi (Escape Game)</span
+            >
+            <span
+              class="pill-subtitle"
+              data-fr="« 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission ? »"
+              data-ar="« 45 دقيقة، 5 ألغاز، خزنة واحدة: هل أنتم مستعدون للمهمة؟ »"
+              data-en="“45 minutes, 5 puzzles, 1 vault: are you ready for the mission?”"
+              >« 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission ? »</span
+            >
+            <span
+              class="pill-tag tag-choice"
+              data-fr="Équipe de 3 • 45 min • ⚠️ 1 seul choix parmi les 3"
+              data-ar="فريق من 3 • 45 دقيقة • ⚠️ خيار واحد من 3"
+              data-en="Team of 3 • 45 min • ⚠️ 1 choice among the 3"
+              >Équipe de 3 • 45 min • ⚠️ 1 seul choix parmi les 3</span
+            >
+          </div>
+          <div class="pill-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+
+        <!-- 4. PITCH EN 3 MIN -->
+        <a href="pitch-3min.html" class="link-pill pill-crimson">
+          <div class="pill-icon">
+            <i class="fa-solid fa-microphone-lines"></i>
+          </div>
+          <div class="pill-content">
+            <span
+              class="pill-title"
+              data-fr="Concours Pitch en 3 minutes"
+              data-ar="مسابقة العرض التقديمي في 3 دقائق (Pitch)"
+              data-en="3-Minute Pitch Competition"
+              >Concours Pitch en 3 minutes</span
+            >
+            <span
+              class="pill-subtitle"
+              data-fr="« 3 minutes pour convaincre. Et si c'était vous ? »"
+              data-ar="« 3 دقائق للإقناع. ماذا لو كنت أنت الفائز؟ »"
+              data-en="“3 minutes to convince. What if it were you?”"
+              >« 3 minutes pour convaincre. Et si c'était vous ? »</span
+            >
+            <span
+              class="pill-tag tag-choice"
+              data-fr="Individuel sur scène • ⚠️ 1 seul choix parmi les 3"
+              data-ar="فردي على المنصة • ⚠️ خيار واحد من 3"
+              data-en="Individual on stage • ⚠️ 1 choice among the 3"
+              >Individuel sur scène • ⚠️ 1 seul choix parmi les 3</span
+            >
+          </div>
+          <div class="pill-arrow">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p
+        data-fr="© 2026 <strong>Forum Students & Jobs — 3e Édition</strong> • Faculté des Sciences Semlalia Marrakech (FSSM - UCA)"
+        data-ar="© 2026 <strong>منتدى الطالب والمقاولة — النسخة الثالثة</strong> • كلية العلوم السملالية مراكش (FSSM - UCA)"
+        data-en="© 2026 <strong>Forum Students & Jobs — 3rd Edition</strong> • Faculty of Sciences Semlalia Marrakech (FSSM - UCA)"
+      >
+        © 2026 <strong>Forum Students & Jobs — 3e Édition</strong> • Faculté des Sciences Semlalia Marrakech (FSSM - UCA)
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

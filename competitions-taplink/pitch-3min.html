@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concours Pitch en 3 min | Forum Students & Jobs — 3e Édition (FSSM)</title>
+    <meta
+      name="description"
+      content="Concours Pitch en 3 minutes — Forum Students & Jobs (3e Édition) à la Faculté des Sciences Semlalia Marrakech. 3 minutes sur scène pour convaincre le jury !"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-slideshow-container">
+      <div class="bg-slide" style="background-image: url('background.jpg');"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-glow-teal"></div>
+    <div class="bg-glow-crimson"></div>
+
+    <main class="shell">
+      <!-- Topbar -->
+      <div class="topbar">
+        <a href="index.html" class="topbar-brand-mini">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span
+            data-fr="Retour aux 4 Compétitions"
+            data-ar="العودة إلى المسابقات الأربع"
+            data-en="Back to the 4 Competitions"
+            >Retour aux 4 Compétitions</span
+          >
+        </a>
+
+        <div class="topbar-controls">
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <button
+            type="button"
+            id="themeToggle"
+            class="theme-btn"
+            aria-label="Mode Clair / Sombre"
+          >
+            <i class="fa-solid fa-sun"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-card">
+          <img src="logo.png" alt="Logo Forum Students & Jobs" class="logo" />
+          <div class="logo-fssm-strip">
+            <i class="fa-solid fa-microphone-lines"></i>
+            <span
+              data-fr="Compétition 4/4 • Choix Exclusif (1 parmi 3)"
+              data-ar="المسابقة 4/4 • اختيار حصري (واحدة من بين 3)"
+              data-en="Competition 4/4 • Exclusive Choice (1 of 3)"
+              >Compétition 4/4 • Choix Exclusif (1 parmi 3)</span
+            >
+          </div>
+        </div>
+
+        <div class="title-box">
+          <span class="edition-pill">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span
+              data-fr="Attention : 1 Seul Choix parmi les 3 compétitions sur place"
+              data-ar="تنبيه: يحق لك اختيار مسابقة واحدة فقط من بين المسابقات الثلاث"
+              data-en="Warning: Only 1 Choice allowed among the 3 on-site competitions"
+              >Attention : 1 Seul Choix parmi les 3 compétitions sur place</span
+            >
+          </span>
+          <h1
+            class="site-title"
+            data-fr="Concours Pitch en 3 minutes"
+            data-ar="مسابقة العرض التقديمي في 3 دقائق (Pitch)"
+            data-en="3-Minute Pitch Competition"
+          >
+            Concours Pitch en 3 minutes
+          </h1>
+          <div class="comp-hero-badge-row">
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-user"></i>
+              <span data-fr="Individuel sur scène" data-ar="فردي على المنصة" data-en="Individual on stage">Individuel sur scène</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-stopwatch"></i>
+              <span data-fr="3 min max (chrono visible)" data-ar="3 دقائق كحد أقصى (عدّاد مرئي)" data-en="3 min max (visible timer)">3 min max (chrono visible)</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-ban"></i>
+              <span data-fr="Sans support de présentation" data-ar="بدون عرض شرائح (Slides)" data-en="No slide deck">Sans support de présentation</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Rule Notification Box -->
+      <section class="rules-notice-card">
+        <div class="rules-notice-header">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span
+            data-fr="Notification Importante — Règle d'Exclusivité"
+            data-ar="إشعار هام — قاعدة الاختيار الحصري"
+            data-en="Important Notice — Exclusivity Rule"
+            >Notification Importante — Règle d'Exclusivité</span
+          >
+        </div>
+        <div class="rule-box rule-exclusive">
+          <div class="rule-box-icon">
+            <i class="fa-solid fa-ban"></i>
+          </div>
+          <div>
+            <strong
+              data-fr="Si vous participez au Pitch en 3 min, vous NE POUVEZ PAS participer au Case Challenge ni à Mission Emploi !"
+              data-ar="إذا شاركت في Pitch en 3 min، فلا يمكنك المشاركة في Case Challenge ولا في Mission Emploi!"
+              data-en="If you participate in the 3-Min Pitch, you CANNOT participate in the Case Challenge or Job Mission!"
+              >Si vous participez au Pitch en 3 min, vous NE POUVEZ PAS participer au Case Challenge ni à Mission Emploi !</strong
+            >
+            <span
+              data-fr="Parmi (Case Challenge, Mission Emploi, Pitch en 3 min), chaque étudiant ne peut choisir qu'UNE SEULE compétition. En revanche, tout le monde peut participer en parallèle au concours CV Vidéo !"
+              data-ar="من بين (Case Challenge، Mission Emploi، Pitch en 3 min)، يحق لكل طالب اختيار مسابقة واحدة فقط. بالمقابل، يمكن للجميع المشاركة بالتوازي في مسابقة CV Vidéo!"
+              data-en="Among (Case Challenge, Job Mission, 3-Min Pitch), each student may only choose ONE competition. However, everyone can also participate in the Video CV contest!"
+              >Parmi (Case Challenge, Mission Emploi, Pitch en 3 min), chaque étudiant ne peut choisir qu'UNE SEULE compétition. En revanche, tout le monde peut participer en parallèle au concours CV Vidéo !</span
+            >
+          </div>
+        </div>
+
+        <div id="activeChoiceAlert" class="active-choice-alert">
+          <span id="activeChoiceText"></span>
+          <button
+            type="button"
+            id="resetChoiceBtn"
+            class="reset-choice-btn"
+            data-fr="Modifier mon choix"
+            data-ar="تغيير اختياري"
+            data-en="Change my choice"
+          >
+            Modifier mon choix
+          </button>
+        </div>
+      </section>
+
+      <!-- Official Description from PITCH EN 3 MIN.docx -->
+      <article class="comp-detail-card">
+        <div
+          class="comp-quote-box"
+          data-fr="« 3 minutes pour convaincre. Et si c'était vous ? »"
+          data-ar="« 3 دقائق للإقناع. ماذا لو كنت أنت الفائز؟ »"
+          data-en="“3 minutes to convince. What if it were you?”"
+        >
+          « 3 minutes pour convaincre. Et si c'était vous ? »
+        </div>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-bullseye"></i>
+          <span data-fr="Le principe" data-ar="مبدأ المسابقة" data-en="The Concept">Le principe</span>
+        </h2>
+        <p
+          class="comp-text"
+          data-fr="Dans le cadre du Forum Students & Jobs, la Faculté des Sciences Semlalia organise un concours de pitch. Le principe est simple : monter sur scène et disposer de 3 minutes maximum pour vous présenter, mettre en avant votre parcours, vos compétences clés, votre projet professionnel et le stage ou l'emploi que vous recherchez."
+          data-ar="في إطار منتدى Students & Jobs، تنظم كلية العلوم السملالية مسابقة للعرض التقديمي (Pitch). المبدأ بسيط: الصعود إلى المنصة والحصول على 3 دقائق كحد أقصى لتقديم نفسك، إبراز مسارك الدراسي، مهاراتك الأساسية، مشروعك المهني، والتدريب أو العمل الذي تبحث عنه."
+          data-en="As part of the Students & Jobs Forum, the Faculty of Sciences Semlalia organizes a pitch competition. The concept is simple: step onto the stage and take up to 3 minutes to introduce yourself, highlight your academic background, key skills, career plan, and the internship or job you are seeking."
+        >
+          Dans le cadre du Forum Students & Jobs, la Faculté des Sciences Semlalia organise un concours de pitch. Le principe est simple : monter sur scène et disposer de 3 minutes maximum pour vous présenter, mettre en avant votre parcours, vos compétences clés, votre projet professionnel et le stage ou l'emploi que vous recherchez.
+        </p>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-star"></i>
+          <span
+            data-fr="Pourquoi participer ?"
+            data-ar="لماذا تشارك في هذه المسابقة؟"
+            data-en="Why Participate?"
+            >Pourquoi participer ?</span
+          >
+        </h2>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-comments"></i>
+            <span
+              data-fr="C'est un excellent entraînement à la question incontournable de tout entretien : <em>« Parlez-moi de vous »</em>."
+              data-ar="تدريب ممتاز على السؤال الأساسي في كل مقابلة عمل: <em>« حدثني عن نفسك »</em>."
+              data-en="Excellent practice for the essential interview question: <em>“Tell me about yourself.”</em>"
+              >C'est un excellent entraînement à la question incontournable de tout entretien : <em>« Parlez-moi de vous »</em>.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-user-tie"></i>
+            <span
+              data-fr="Vous pitchez devant un jury et un public composé de recruteurs, d'enseignants et d'étudiants."
+              data-ar="تقدم عرضك أمام لجنة تحكيم وجمهور مكون من مشغلين، أساتذة وطلبة."
+              data-en="Pitch in front of a jury and an audience of recruiters, professors, and students."
+              >Vous pitchez devant un jury et un public composé de recruteurs, d'enseignants et d'étudiants.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-trophy"></i>
+            <span
+              data-fr="Les meilleurs pitchs seront récompensés lors du Forum."
+              data-ar="سيتم تتويج أفضل العروض التقديمية بجوائز متميزة خلال المنتدى."
+              data-en="The best pitches will be rewarded during the Forum."
+              >Les meilleurs pitchs seront récompensés lors du Forum.</span
+            >
+          </li>
+        </ul>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-circle-info"></i>
+          <span
+            data-fr="Infos pratiques"
+            data-ar="معلومات عملية"
+            data-en="Practical Information"
+            >Infos pratiques</span
+          >
+        </h2>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-stopwatch"></i>
+            <span
+              data-fr="<strong>Format :</strong> Individuel, 3 minutes maximum."
+              data-ar="<strong>الصيغة:</strong> مشاركة فردية، 3 دقائق كحد أقصى."
+              data-en="<strong>Format:</strong> Individual, 3 minutes maximum."
+              ><strong>Format :</strong> Individuel, 3 minutes maximum.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-file-lines"></i>
+            <span
+              data-fr="<strong>Déroulement :</strong> Sans support de présentation, notes brèves autorisées, chronomètre visible, évaluation par un jury."
+              data-ar="<strong>سير المسابقة:</strong> بدون دعامة عرض (Slides)، يُسمح بملاحظات مختصرة، عداد زمني مرئي، وتقييم من طرف لجنة التحكيم."
+              data-en="<strong>Rules:</strong> No presentation slides, brief notes allowed, visible timer, evaluated by a jury."
+              ><strong>Déroulement :</strong> Sans support de présentation, notes brèves autorisées, chronomètre visible, évaluation par un jury.</span
+            >
+          </li>
+          <li>
+            <i class="fa-regular fa-calendar-check"></i>
+            <span
+              data-fr="<strong>Date limite d'inscription :</strong> Vendredi 20/11 à 12h00."
+              data-ar="<strong>آخر أجل للتسجيل:</strong> الجمعة 20/11 على الساعة 12:00 زوالاً."
+              data-en="<strong>Registration deadline:</strong> Friday 20/11 at 12:00 PM."
+              ><strong>Date limite d'inscription :</strong> Vendredi 20/11 à 12h00.</span
+            >
+          </li>
+        </ul>
+      </article>
+
+      <!-- Registration Form -->
+      <section class="form-card" id="inscription">
+        <div class="form-header">
+          <h2
+            data-fr="Formulaire d'Inscription — Pitch en 3 min"
+            data-ar="استمارة التسجيل — Pitch en 3 min"
+            data-en="Registration Form — 3-Minute Pitch"
+          >
+            Formulaire d'Inscription — Pitch en 3 min
+          </h2>
+          <p
+            data-fr="Date limite : Vendredi 20/11 à 12h00 • ⚠️ Choix exclusif parmi les 3 compétitions sur place"
+            data-ar="آخر أجل: الجمعة 20/11 على الساعة 12:00 • ⚠️ اختيار حصري من بين المسابقات الثلاث"
+            data-en="Deadline: Friday 20/11 at 12:00 PM • ⚠️ Exclusive choice among the 3 on-site competitions"
+          >
+            Date limite : Vendredi 20/11 à 12h00 • ⚠️ Choix exclusif parmi les 3 compétitions sur place
+          </p>
+        </div>
+
+        <form id="compRegistrationForm" data-comp-id="pitch-3min" data-exclusive="true">
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Nom & Prénom *"
+                data-ar="الاسم الكامل *"
+                data-en="Full Name *"
+                >Nom & Prénom *</label
+              >
+              <input
+                type="text"
+                name="fullName"
+                class="form-control"
+                required
+                placeholder="Ex: Yassine Ennhili"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Code Apogée / CNE *"
+                data-ar="رقم أبوجي / CNE *"
+                data-en="Student ID (Apogée / CNE) *"
+                >Code Apogée / CNE *</label
+              >
+              <input
+                type="text"
+                name="apogee"
+                class="form-control"
+                required
+                placeholder="Ex: 21004589"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Email académique ou personnel *"
+                data-ar="البريد الإلكتروني *"
+                data-en="Email Address *"
+                >Email académique ou personnel *</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                required
+                placeholder="etudiant@uca.ac.ma"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Téléphone (WhatsApp) *"
+                data-ar="رقم الهاتف (واتساب) *"
+                data-en="Phone Number (WhatsApp) *"
+                >Téléphone (WhatsApp) *</label
+              >
+              <input
+                type="tel"
+                name="phone"
+                class="form-control"
+                required
+                placeholder="06 00 00 00 00"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Filière / Département FSSM *"
+                data-ar="الشعبة / التخصص بالكلية *"
+                data-en="Department / Major (FSSM) *"
+                >Filière / Département FSSM *</label
+              >
+              <select name="department" class="form-control" required>
+                <option value="">-- Choisir --</option>
+                <option value="Informatique">Informatique</option>
+                <option value="Mathématiques">Mathématiques</option>
+                <option value="Physique">Physique</option>
+                <option value="Chimie">Chimie</option>
+                <option value="Biologie">Biologie</option>
+                <option value="Géologie">Géologie</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Niveau d'études & Langue du Pitch *"
+                data-ar="المستوى الدراسي ولغة العرض *"
+                data-en="Study Level & Pitch Language *"
+                >Niveau d'études & Langue du Pitch *</label
+              >
+              <select name="level" class="form-control" required>
+                <option value="Licence - FR">Licence (Français)</option>
+                <option value="Master - FR">Master (Français)</option>
+                <option value="Doctorat - FR">Doctorat (Français)</option>
+                <option value="Autre - AR/EN">Autre / Arabe / Anglais</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label
+              class="form-label"
+              data-fr="Stage ou Emploi recherché (Thème de votre Pitch) *"
+              data-ar="التدريب أو العمل المبحوث عنه (موضوع عرضك) *"
+              data-en="Target Internship or Job (Pitch Topic) *"
+              >Stage ou Emploi recherché (Thème de votre Pitch) *</label
+            >
+            <input
+              type="text"
+              name="pitchTopic"
+              class="form-control"
+              required
+              placeholder="Ex: Stage PFE en Data Science / Ingénierie Chimique..."
+            />
+          </div>
+
+          <label class="form-check-box">
+            <input type="checkbox" required />
+            <span
+              data-fr="<strong>Engagement sur l'honneur :</strong> Je prends note qu'en m'inscrivant au <strong>Pitch en 3 min</strong>, je ne peux PAS participer au <em>Case Challenge</em> ni à <em>Mission Emploi</em> (1 seul choix autorisé parmi ces 3 compétitions). Je sais que le concours <em>CV Vidéo</em> reste ouvert à tous."
+              data-ar="<strong>التزام:</strong> أقر بأن تسجيلي في <strong>Pitch en 3 min</strong> يعني أنه لا يحق لي المشاركة في <em>Case Challenge</em> أو <em>Mission Emploi</em> (يُسمح باختيار مسابقة واحدة فقط من بين هذه المسابقات الثلاث). وأعلم أن مسابقة <em>CV Vidéo</em> مفتوحة للجميع."
+              data-en="<strong>Commitment:</strong> I understand that by registering for the <strong>3-Min Pitch</strong>, I CANNOT participate in the <em>Case Challenge</em> or <em>Job Mission</em> (only 1 choice allowed among these 3). I know that the <em>Video CV</em> contest remains open to all."
+              ><strong>Engagement sur l'honneur :</strong> Je prends note qu'en m'inscrivant au <strong>Pitch en 3 min</strong>, je ne peux PAS participer au <em>Case Challenge</em> ni à <em>Mission Emploi</em> (1 seul choix autorisé parmi ces 3 compétitions). Je sais que le concours <em>CV Vidéo</em> reste ouvert à tous.</span
+            >
+          </label>
+
+          <button type="submit" class="submit-pill-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span
+              data-fr="Confirmer mon choix : Pitch en 3 min"
+              data-ar="تأكيد اختياري: Pitch en 3 min"
+              data-en="Confirm My Choice: 3-Min Pitch"
+              >Confirmer mon choix : Pitch en 3 min</span
+            >
+          </button>
+
+          <div id="formFeedback" class="form-feedback"></div>
+        </form>
+      </section>
+
+      <!-- Navigation to other competitions -->
+      <div class="other-comps-nav">
+        <div class="section-group-label">
+          <span
+            data-fr="Voir les autres compétitions du Forum"
+            data-ar="تصفح باقي مسابقات المنتدى"
+            data-en="View the other Forum competitions"
+            >Voir les autres compétitions du Forum</span
+          >
+        </div>
+        <div class="links-list">
+          <a href="cv-video.html" class="link-pill pill-teal">
+            <div class="pill-icon"><i class="fa-solid fa-video"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Concours du Meilleur CV Vidéo</span>
+              <span class="pill-subtitle">Ouvert à TOUS • Cumulable avec votre choix !</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+          <a href="case-challenge.html" class="link-pill pill-gold">
+            <div class="pill-icon"><i class="fa-solid fa-flask"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Case Challenge « Du labo à l'entreprise »</span>
+              <span class="pill-subtitle">Équipe de 3 • ⚠️ 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+          <a href="mission-emploi.html" class="link-pill pill-navy">
+            <div class="pill-icon"><i class="fa-solid fa-key"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Mission Emploi (Escape Game)</span>
+              <span class="pill-subtitle">Équipe de 3 • 45 min • ⚠️ 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 <strong>Forum Students & Jobs — 3e Édition</strong> • FSSM Marrakech</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Case Challenge « Du labo à l'entreprise » | Forum Students & Jobs (FSSM)</title>
+    <meta
+      name="description"
+      content="Case Challenge « Du labo à l'entreprise » — Forum Students & Jobs (3e Édition) à la Faculté des Sciences Semlalia Marrakech. Équipes de 3 formées sur place."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-slideshow-container">
+      <div class="bg-slide" style="background-image: url('background.jpg');"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-glow-teal"></div>
+    <div class="bg-glow-crimson"></div>
+
+    <main class="shell">
+      <!-- Topbar -->
+      <div class="topbar">
+        <a href="index.html" class="topbar-brand-mini">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span
+            data-fr="Retour aux 4 Compétitions"
+            data-ar="العودة إلى المسابقات الأربع"
+            data-en="Back to the 4 Competitions"
+            >Retour aux 4 Compétitions</span
+          >
+        </a>
+
+        <div class="topbar-controls">
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+          </div>
+          <button
+            type="button"
+            id="themeToggle"
+            class="theme-btn"
+            aria-label="Mode Clair / Sombre"
+          >
+            <i class="fa-solid fa-sun"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-card">
+          <img src="logo.png" alt="Logo Forum Students & Jobs" class="logo" />
+          <div class="logo-fssm-strip">
+            <i class="fa-solid fa-flask"></i>
+            <span
+              data-fr="Compétition 2/4 • Choix Exclusif (1 parmi 3)"
+              data-ar="المسابقة 2/4 • اختيار حصري (واحدة من بين 3)"
+              data-en="Competition 2/4 • Exclusive Choice (1 of 3)"
+              >Compétition 2/4 • Choix Exclusif (1 parmi 3)</span
+            >
+          </div>
+        </div>
+
+        <div class="title-box">
+          <span class="edition-pill">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span
+              data-fr="Attention : 1 Seul Choix parmi les 3 compétitions sur place"
+              data-ar="تنبيه: يحق لك اختيار مسابقة واحدة فقط من بين المسابقات الثلاث"
+              data-en="Warning: Only 1 Choice allowed among the 3 on-site competitions"
+              >Attention : 1 Seul Choix parmi les 3 compétitions sur place</span
+            >
+          </span>
+          <h1
+            class="site-title"
+            data-fr="Case Challenge « Du labo à l'entreprise »"
+            data-ar="تحدي الحالات « من المختبر إلى المقاولة »"
+            data-en="Case Challenge “From Lab to Business”"
+          >
+            Case Challenge « Du labo à l'entreprise »
+          </h1>
+          <div class="comp-hero-badge-row">
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-users"></i>
+              <span data-fr="Équipes de 3 (formées sur place)" data-ar="فرق من 3 طلبة (تُشكّل بعين المكان)" data-en="Teams of 3 (formed on site)">Équipes de 3 (formées sur place)</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-regular fa-hourglass-half"></i>
+              <span data-fr="Préparation : 2h" data-ar="التحضير: ساعتان" data-en="Prep: 2 hours">Préparation : 2h</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-chalkboard-user"></i>
+              <span data-fr="7 min (5 slides max) + 3 min Jury" data-ar="7 دقائق عرض + 3 دقائق أسئلة" data-en="7 min pitch + 3 min Q&A">7 min (5 slides max) + 3 min Jury</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Rule Notification Box -->
+      <section class="rules-notice-card">
+        <div class="rules-notice-header">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span
+            data-fr="Notification Importante — Règle d'Exclusivité"
+            data-ar="إشعار هام — قاعدة الاختيار الحصري"
+            data-en="Important Notice — Exclusivity Rule"
+            >Notification Importante — Règle d'Exclusivité</span
+          >
+        </div>
+        <div class="rule-box rule-exclusive">
+          <div class="rule-box-icon">
+            <i class="fa-solid fa-ban"></i>
+          </div>
+          <div>
+            <strong
+              data-fr="Si vous participez au Case Challenge, vous NE POUVEZ PAS participer à Mission Emploi ni au Pitch en 3 min !"
+              data-ar="إذا شاركت في Case Challenge، فلا يمكنك المشاركة في Mission Emploi ولا في Pitch en 3 min!"
+              data-en="If you participate in the Case Challenge, you CANNOT participate in Job Mission or the 3-Min Pitch!"
+              >Si vous participez au Case Challenge, vous NE POUVEZ PAS participer à Mission Emploi ni au Pitch en 3 min !</strong
+            >
+            <span
+              data-fr="Les trois compétitions (Case Challenge, Mission Emploi, Pitch en 3 min) sont à choix unique : chaque étudiant ne peut s'inscrire qu'à 1 seule d'entre elles. En revanche, le concours CV Vidéo reste ouvert à tout le monde !"
+              data-ar="المسابقات الثلاث (Case Challenge، Mission Emploi، Pitch en 3 min) حصرية فيما بينها: يحق لكل طالب التسجيل في مسابقة واحدة فقط منها. بالمقابل، تظل مسابقة CV Vidéo مفتوحة للجميع!"
+              data-en="The three competitions (Case Challenge, Job Mission, 3-Min Pitch) are mutually exclusive: each student may only register for ONE of them. However, the Video CV contest remains open to everyone!"
+              >Les trois compétitions (Case Challenge, Mission Emploi, Pitch en 3 min) sont à choix unique : chaque étudiant ne peut s'inscrire qu'à 1 seule d'entre elles. En revanche, le concours CV Vidéo reste ouvert à tout le monde !</span
+            >
+          </div>
+        </div>
+
+        <div id="activeChoiceAlert" class="active-choice-alert">
+          <span id="activeChoiceText"></span>
+          <button
+            type="button"
+            id="resetChoiceBtn"
+            class="reset-choice-btn"
+            data-fr="Modifier mon choix"
+            data-ar="تغيير اختياري"
+            data-en="Change my choice"
+          >
+            Modifier mon choix
+          </button>
+        </div>
+      </section>
+
+      <!-- Official Description from CASE CHALLENGE.docx -->
+      <article class="comp-detail-card">
+        <div
+          class="comp-quote-box"
+          data-fr="« Une idée, une équipe, un jury : défendez votre projet ! »"
+          data-ar="« فكرة، فريق، لجنة تحكيم: دافع عن مشروعك! »"
+          data-en="“One idea, one team, one jury: defend your project!”"
+        >
+          « Une idée, une équipe, un jury : défendez votre projet ! »
+        </div>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-bullseye"></i>
+          <span data-fr="Le principe" data-ar="مبدأ المسابقة" data-en="The Concept">Le principe</span>
+        </h2>
+        <p
+          class="comp-text"
+          data-fr="Dans le cadre du Forum Students & Jobs, la Faculté des Sciences Semlalia organise le Case Challenge « Du labo à l'entreprise ». Le principe est simple : trouver une idée ou un projet, puis le présenter et le défendre devant un jury d'experts en entrepreneuriat."
+          data-ar="في إطار منتدى Students & Jobs، تنظم كلية العلوم السملالية مسابقة Case Challenge « من المختبر إلى المقاولة ». المبدأ بسيط: إيجاد فكرة أو مشروع، ثم تقديمه والدفاع عنه أمام لجنة تحكيم مكونة من خبراء في ريادة الأعمال."
+          data-en="As part of the Students & Jobs Forum, the Faculty of Sciences Semlalia organizes the Case Challenge 'From Lab to Business'. The concept is simple: develop an idea or project, then pitch and defend it before a jury of entrepreneurship experts."
+        >
+          Dans le cadre du Forum Students & Jobs, la Faculté des Sciences Semlalia organise le Case Challenge « Du labo à l'entreprise ». Le principe est simple : trouver une idée ou un projet, puis le présenter et le défendre devant un jury d'experts en entrepreneuriat.
+        </p>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-people-group"></i>
+          <span
+            data-fr="Le défi dans le défi"
+            data-ar="التحدي داخل التحدي"
+            data-en="The Challenge Within the Challenge"
+            >Le défi dans le défi</span
+          >
+        </h2>
+        <p
+          class="comp-text"
+          data-fr="Les équipes de 3 étudiants seront formées sur place au début de l'épreuve : vous découvrirez vos coéquipiers le jour même. C'est l'occasion de tester votre capacité à collaborer rapidement, à croiser les compétences (biologie, chimie, géologie, physique, informatique, mathématiques…) et à construire ensemble un projet convaincant en un temps limité."
+          data-ar="سيتم تشكيل الفرق المكونة من 3 طلبة بعين المكان في بداية المسابقة: ستكتشف زملاءك في الفريق يوم المسابقة نفسه! إنها فرصة لاختبار قدرتك على التعاون السريع وتوحيد المهارات (البيولوجيا، الكيمياء، الجيولوجيا، الفيزياء، المعلوميات، الرياضيات...) لبناء مشروع مقنع في وقت محدود."
+          data-en="Teams of 3 students will be formed on site at the start of the event: you will discover your teammates on the day itself. It is a chance to test your ability to collaborate rapidly, combine skills (biology, chemistry, geology, physics, computer science, mathematics…), and build a compelling project in limited time."
+        >
+          Les équipes de 3 étudiants seront formées sur place au début de l'épreuve : vous découvrirez vos coéquipiers le jour même. C'est l'occasion de tester votre capacité à collaborer rapidement, à croiser les compétences (biologie, chimie, géologie, physique, informatique, mathématiques…) et à construire ensemble un projet convaincant en un temps limité.
+        </p>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-star"></i>
+          <span
+            data-fr="Pourquoi participer ?"
+            data-ar="لماذا تشارك في هذه المسابقة؟"
+            data-en="Why Participate?"
+            >Pourquoi participer ?</span
+          >
+        </h2>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-lightbulb"></i>
+            <span
+              data-fr="Vivre une vraie expérience d'entrepreneuriat et de travail en équipe."
+              data-ar="عيش تجربة حقيقية في ريادة الأعمال والعمل الجماعي."
+              data-en="Experience real-world entrepreneurship and teamwork."
+              >Vivre une vraie expérience d'entrepreneuriat et de travail en équipe.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-user-tie"></i>
+            <span
+              data-fr="Bénéficier des retours et conseils d'un jury de professionnels."
+              data-ar="الاستفادة من ملاحظات ونصائح لجنة تحكيم من المهنيين والخبراء."
+              data-en="Benefit from direct feedback and advice from a professional jury."
+              >Bénéficier des retours et conseils d'un jury de professionnels.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-trophy"></i>
+            <span
+              data-fr="Les meilleures équipes seront récompensées lors du Forum."
+              data-ar="سيتم تتويج أفضل الفرق بجوائز متميزة خلال المنتدى."
+              data-en="The best teams will be rewarded during the Forum."
+              >Les meilleures équipes seront récompensées lors du Forum.</span
+            >
+          </li>
+        </ul>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-circle-info"></i>
+          <span
+            data-fr="Infos pratiques"
+            data-ar="معلومات عملية"
+            data-en="Practical Information"
+            >Infos pratiques</span
+          >
+        </h2>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-users"></i>
+            <span
+              data-fr="<strong>Format :</strong> Équipes de 3 étudiants (constituées au démarrage) • <strong>Préparation :</strong> 2 heures."
+              data-ar="<strong>الصيغة:</strong> فرق من 3 طلبة (تُشكّل عند الانطلاق) • <strong>التحضير:</strong> ساعتان."
+              data-en="<strong>Format:</strong> Teams of 3 students (formed at kickoff) • <strong>Prep time:</strong> 2 hours."
+              ><strong>Format :</strong> Équipes de 3 étudiants (constituées au démarrage) • <strong>Préparation :</strong> 2 heures.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-tv"></i>
+            <span
+              data-fr="<strong>Présentation :</strong> 7 minutes (5 slides max) + 3 minutes de questions du jury."
+              data-ar="<strong>العرض:</strong> 7 دقائق (5 شرائح كحد أقصى) + 3 دقائق لأسئلة لجنة التحكيم."
+              data-en="<strong>Presentation:</strong> 7 minutes (max 5 slides) + 3 minutes of jury Q&A."
+              ><strong>Présentation :</strong> 7 minutes (5 slides max) + 3 minutes de questions du jury.</span
+            >
+          </li>
+          <li>
+            <i class="fa-regular fa-calendar-check"></i>
+            <span
+              data-fr="<strong>Date limite d'inscription :</strong> Vendredi 20/11 à 12h00 (Inscription individuelle, les équipes sont formées sur place)."
+              data-ar="<strong>آخر أجل للتسجيل:</strong> الجمعة 20/11 على الساعة 12:00 زوالاً (التسجيل فردي وتُشكّل الفرق بعين المكان)."
+              data-en="<strong>Registration deadline:</strong> Friday 20/11 at 12:00 PM (Individual sign-up; teams are formed on site)."
+              ><strong>Date limite d'inscription :</strong> Vendredi 20/11 à 12h00 (Inscription individuelle, les équipes sont formées sur place).</span
+            >
+          </li>
+        </ul>
+      </article>
+
+      <!-- Registration Form -->
+      <section class="form-card" id="inscription">
+        <div class="form-header">
+          <h2
+            data-fr="Formulaire d'Inscription — Case Challenge"
+            data-ar="استمارة التسجيل — Case Challenge"
+            data-en="Registration Form — Case Challenge"
+          >
+            Formulaire d'Inscription — Case Challenge
+          </h2>
+          <p
+            data-fr="Date limite : Vendredi 20/11 à 12h00 • ⚠️ Choix exclusif parmi les 3 compétitions sur place"
+            data-ar="آخر أجل: الجمعة 20/11 على الساعة 12:00 • ⚠️ اختيار حصري من بين المسابقات الثلاث"
+            data-en="Deadline: Friday 20/11 at 12:00 PM • ⚠️ Exclusive choice among the 3 on-site competitions"
+          >
+            Date limite : Vendredi 20/11 à 12h00 • ⚠️ Choix exclusif parmi les 3 compétitions sur place
+          </p>
+        </div>
+
+        <form id="compRegistrationForm" data-comp-id="case-challenge" data-exclusive="true">
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Nom & Prénom *"
+                data-ar="الاسم الكامل *"
+                data-en="Full Name *"
+                >Nom & Prénom *</label
+              >
+              <input
+                type="text"
+                name="fullName"
+                class="form-control"
+                required
+                placeholder="Ex: Yassine Ennhili"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Code Apogée / CNE *"
+                data-ar="رقم أبوجي / CNE *"
+                data-en="Student ID (Apogée / CNE) *"
+                >Code Apogée / CNE *</label
+              >
+              <input
+                type="text"
+                name="apogee"
+                class="form-control"
+                required
+                placeholder="Ex: 21004589"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Email académique ou personnel *"
+                data-ar="البريد الإلكتروني *"
+                data-en="Email Address *"
+                >Email académique ou personnel *</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                required
+                placeholder="etudiant@uca.ac.ma"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Téléphone (WhatsApp) *"
+                data-ar="رقم الهاتف (واتساب) *"
+                data-en="Phone Number (WhatsApp) *"
+                >Téléphone (WhatsApp) *</label
+              >
+              <input
+                type="tel"
+                name="phone"
+                class="form-control"
+                required
+                placeholder="06 00 00 00 00"
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Filière / Département FSSM *"
+                data-ar="الشعبة / التخصص بالكلية *"
+                data-en="Department / Major (FSSM) *"
+                >Filière / Département FSSM *</label
+              >
+              <select name="department" class="form-control" required>
+                <option value="">-- Choisir --</option>
+                <option value="Biologie">Biologie</option>
+                <option value="Chimie">Chimie</option>
+                <option value="Géologie">Géologie</option>
+                <option value="Physique">Physique</option>
+                <option value="Informatique">Informatique</option>
+                <option value="Mathématiques">Mathématiques</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Niveau d'études *"
+                data-ar="المستوى الدراسي *"
+                data-en="Study Level *"
+                >Niveau d'études *</label
+              >
+              <select name="level" class="form-control" required>
+                <option value="Licence">Licence (S1 - S6)</option>
+                <option value="Master">Master (M1 / M2)</option>
+                <option value="Doctorat">Doctorat</option>
+                <option value="Lauréat">Lauréat FSSM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label
+              class="form-label"
+              data-fr="Domaine d'intérêt ou compétences clés (pour l'équilibre des équipes)"
+              data-ar="مجال الاهتمام أو المهارات الأساسية"
+              data-en="Area of interest or key skills"
+              >Domaine d'intérêt ou compétences clés (pour l'équilibre des équipes)</label
+            >
+            <input
+              type="text"
+              name="skills"
+              class="form-control"
+              placeholder="Ex: Biotech, IA, Énergie, Gestion de projet, Design..."
+            />
+          </div>
+
+          <label class="form-check-box">
+            <input type="checkbox" required />
+            <span
+              data-fr="<strong>Engagement sur l'honneur :</strong> Je prends note qu'en m'inscrivant au <strong>Case Challenge</strong>, je ne peux PAS participer à <em>Mission Emploi</em> ni au <em>Pitch en 3 min</em> (1 seul choix autorisé parmi ces 3 compétitions). Je sais que le concours <em>CV Vidéo</em> reste ouvert à tous."
+              data-ar="<strong>التزام:</strong> أقر بأن تسجيلي في <strong>Case Challenge</strong> يعني أنه لا يحق لي المشاركة في <em>Mission Emploi</em> أو <em>Pitch en 3 min</em> (يُسمح باختيار مسابقة واحدة فقط من بين هذه المسابقات الثلاث). وأعلم أن مسابقة <em>CV Vidéo</em> مفتوحة للجميع."
+              data-en="<strong>Commitment:</strong> I understand that by registering for the <strong>Case Challenge</strong>, I CANNOT participate in <em>Job Mission</em> or the <em>3-Min Pitch</em> (only 1 choice allowed among these 3). I know that the <em>Video CV</em> contest remains open to all."
+              ><strong>Engagement sur l'honneur :</strong> Je prends note qu'en m'inscrivant au <strong>Case Challenge</strong>, je ne peux PAS participer à <em>Mission Emploi</em> ni au <em>Pitch en 3 min</em> (1 seul choix autorisé parmi ces 3 compétitions). Je sais que le concours <em>CV Vidéo</em> reste ouvert à tous.</span
+            >
+          </label>
+
+          <button type="submit" class="submit-pill-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span
+              data-fr="Confirmer mon choix : Case Challenge"
+              data-ar="تأكيد اختياري: Case Challenge"
+              data-en="Confirm My Choice: Case Challenge"
+              >Confirmer mon choix : Case Challenge</span
+            >
+          </button>
+
+          <div id="formFeedback" class="form-feedback"></div>
+        </form>
+      </section>
+
+      <!-- Navigation to other competitions -->
+      <div class="other-comps-nav">
+        <div class="section-group-label">
+          <span
+            data-fr="Voir les autres compétitions du Forum"
+            data-ar="تصفح باقي مسابقات المنتدى"
+            data-en="View the other Forum competitions"
+            >Voir les autres compétitions du Forum</span
+          >
+        </div>
+        <div class="links-list">
+          <a href="cv-video.html" class="link-pill pill-teal">
+            <div class="pill-icon"><i class="fa-solid fa-video"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Concours du Meilleur CV Vidéo</span>
+              <span class="pill-subtitle">Ouvert à TOUS • Cumulable avec votre choix !</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+          <a href="mission-emploi.html" class="link-pill pill-navy">
+            <div class="pill-icon"><i class="fa-solid fa-key"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Mission Emploi (Escape Game)</span>
+              <span class="pill-subtitle">Équipe de 3 • 45 min • ⚠️ 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+          <a href="pitch-3min.html" class="link-pill pill-crimson">
+            <div class="pill-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Concours Pitch en 3 minutes</span>
+              <span class="pill-subtitle">Individuel • ⚠️ 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 <strong>Forum Students & Jobs — 3e Édition</strong> • FSSM Marrakech</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

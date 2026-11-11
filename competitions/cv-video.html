@@ -1,374 +1,488 @@
 <!doctype html>
-<html lang="fr" data-i18n-title="title.cv">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <script>
-      (function () {
-        try {
-          var theme = localStorage.getItem("sj-theme") || "light";
-          var lang = localStorage.getItem("sj-lang") || "fr";
-          document.documentElement.classList.add("i18n-pending");
-          document.documentElement.setAttribute("data-theme", theme);
-          document.documentElement.setAttribute("lang", lang);
-          document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-        } catch (e) {}
-      })();
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../assets/images/logo-forum.png" />
-    <title>Concours CV Vidéo | Forum Students &amp; Jobs FSSM</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concours CV Vidéo | Forum Students & Jobs — 3e Édition (FSSM)</title>
+    <meta
+      name="description"
+      content="Concours du meilleur CV Vidéo — Forum Students & Jobs (3e Édition) à la Faculté des Sciences Semlalia Marrakech. Ouvert à tous les étudiants !"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <div class="nav-overlay" data-nav-overlay></div>
+    <div class="bg-slideshow-container">
+      <div class="bg-slide" style="background-image: url('background.jpg');"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-glow-teal"></div>
+    <div class="bg-glow-crimson"></div>
 
-    <header class="header">
-      <div class="container">
-        <a href="../index.html" class="brand-logo">
-          <img
-            src="../assets/images/logo-forum.png"
-            alt="Logo Forum Students & Jobs"
-            class="brand-logo-img"
-          />
-          <div class="brand-text">
-            <span class="brand-kicker">FSSM • UCA MARRAKECH</span>
-            <div class="brand-title">
-              Students <span>&amp; Jobs</span>
-              <small class="brand-edition-pill">3e Édition</small>
-            </div>
-          </div>
+    <main class="shell">
+      <!-- Topbar -->
+      <div class="topbar">
+        <a href="index.html" class="topbar-brand-mini">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span
+            data-fr="Retour aux 4 Compétitions"
+            data-ar="العودة إلى المسابقات الأربع"
+            data-en="Back to the 4 Competitions"
+            >Retour aux 4 Compétitions</span
+          >
         </a>
 
-        <nav class="navbar" data-navbar>
-          <ul class="navbar-list">
-            <li>
-              <a href="../index.html#home" class="navbar-link" data-nav-link data-i18n="nav.home">Accueil</a>
-            </li>
-            <li>
-              <a href="../index.html#mots-officiels" class="navbar-link" data-nav-link data-i18n="nav.leaders">Mots Officiels</a>
-            </li>
-            <li>
-              <a href="../index.html#competitions" class="navbar-link active" data-nav-link data-i18n="nav.competitions">Compétitions</a>
-            </li>
-            <li>
-              <a href="../index.html#programme" class="navbar-link" data-nav-link data-i18n="nav.program">Programme</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="header-actions">
-          <div class="lang-switcher" role="group" aria-label="Langue">
-            <button type="button" class="lang-btn is-active" data-set-lang="fr">FR</button>
-            <button type="button" class="lang-btn" data-set-lang="ar">AR</button>
-            <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+        <div class="topbar-controls">
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
           </div>
-          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Changer de thème">
-            <i class="fas fa-moon" data-theme-icon></i>
-          </button>
-          <button type="button" class="menu-toggle-btn" data-nav-toggle aria-label="Menu">
-            <i class="fas fa-bars"></i>
+          <button
+            type="button"
+            id="themeToggle"
+            class="theme-btn"
+            aria-label="Mode Clair / Sombre"
+          >
+            <i class="fa-solid fa-sun"></i>
           </button>
         </div>
       </div>
-    </header>
 
-    <main>
-      <section class="comp-page-hero">
-        <div class="container">
-          <div class="breadcrumb-bar">
-            <a href="../index.html" data-i18n="detail.backHome">Retour à l'accueil</a>
-            <span>/</span>
-            <a href="../index.html#competitions" data-i18n="detail.allComps">Compétitions</a>
-            <span>/</span>
-            <span data-i18n="cv.short">CV Vidéo</span>
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-card">
+          <img src="logo.png" alt="Logo Forum Students & Jobs" class="logo" />
+          <div class="logo-fssm-strip">
+            <i class="fa-solid fa-video"></i>
+            <span
+              data-fr="Compétition 1/4 • Ouverte à tous les étudiants"
+              data-ar="المسابقة 1/4 • مفتوحة لجميع الطلبة دون استثناء"
+              data-en="Competition 1/4 • Open to All Students"
+              >Compétition 1/4 • Ouverte à tous les étudiants</span
+            >
           </div>
+        </div>
 
-          <div class="comp-hero-circle">
-            <i class="fas fa-video"></i>
+        <div class="title-box">
+          <span class="edition-pill">
+            <i class="fa-solid fa-circle-check"></i>
+            <span
+              data-fr="Ouvert à tous • Cumulable avec une autre compétition"
+              data-ar="مفتوحة للجميع • يمكن جمعها مع مسابقة أخرى"
+              data-en="Open to All • Can be combined with another competition"
+              >Ouvert à tous • Cumulable avec une autre compétition</span
+            >
+          </span>
+          <h1
+            class="site-title"
+            data-fr="Concours du Meilleur CV Vidéo"
+            data-ar="مسابقة أفضل سيرة ذاتية بالفيديو (CV Vidéo)"
+            data-en="Best Video CV Competition"
+          >
+            Concours du Meilleur CV Vidéo
+          </h1>
+          <div class="comp-hero-badge-row">
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-user"></i>
+              <span data-fr="Individuel" data-ar="مشاركة فردية" data-en="Individual">Individuel</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-regular fa-clock"></i>
+              <span data-fr="3 min maximum" data-ar="3 دقائق كحد أقصى" data-en="3 min max">3 min maximum</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-language"></i>
+              <span data-fr="FR / AR / EN" data-ar="فرنسية / عربية / إنجليزية" data-en="FR / AR / EN">FR / AR / EN</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-tv"></i>
+              <span data-fr="Diffusé sur les écrans FSSM" data-ar="يعرض على شاشات الكلية" data-en="Broadcast on FSSM screens">Diffusé sur les écrans FSSM</span>
+            </span>
           </div>
+        </div>
+      </header>
 
-          <h1 class="comp-page-title" data-i18n="cv.title">Concours CV Vidéo</h1>
-          <p class="comp-page-quote" data-i18n="cv.quote">
-            « Votre CV prend vie : montrez qui vous êtes en 3 minutes. »
-          </p>
+      <!-- Rule Notification Box -->
+      <section class="rules-notice-card">
+        <div class="rules-notice-header">
+          <i class="fa-solid fa-circle-info"></i>
+          <span
+            data-fr="Notification de Participation — Concours CV Vidéo"
+            data-ar="إشعار بخصوص المشاركة في مسابقة CV Vidéo"
+            data-en="Participation Notice — Video CV Contest"
+            >Notification de Participation — Concours CV Vidéo</span
+          >
+        </div>
+        <div class="rule-box rule-open">
+          <div class="rule-box-icon">
+            <i class="fa-solid fa-check-double"></i>
+          </div>
+          <div>
+            <strong
+              data-fr="Tout étudiant peut participer au CV Vidéo !"
+              data-ar="يمكن لأي طالب(ة) المشاركة في مسابقة CV Vidéo!"
+              data-en="Any student can participate in the Video CV contest!"
+              >Tout étudiant peut participer au CV Vidéo !</strong
+            >
+            <span
+              data-fr="Cette compétition est ouverte à tout le monde sans restriction. Vous pouvez participer au CV Vidéo ET choisir en plus 1 seule compétition parmi les 3 autres (Case Challenge, Mission Emploi ou Pitch en 3 min)."
+              data-ar="هذه المسابقة مفتوحة للجميع دون قيد. يمكنك المشاركة في CV Vidéo بالإضافة إلى اختيار مسابقة واحدة (1) فقط من بين المسابقات الثلاث الأخرى (Case Challenge أو Mission Emploi أو Pitch en 3 min)."
+              data-en="This competition is open to everyone without restriction. You can participate in the Video CV AND also choose 1 competition among the other 3 (Case Challenge, Job Mission, or 3-Min Pitch)."
+              >Cette compétition est ouverte à tout le monde sans restriction. Vous pouvez participer au CV Vidéo ET choisir en plus 1 seule compétition parmi les 3 autres (Case Challenge, Mission Emploi ou Pitch en 3 min).</span
+            >
+          </div>
         </div>
       </section>
 
-      <div class="comp-detail-wrapper">
-        <div class="comp-detail-card">
-          <div class="comp-detail-block">
-            <h3>
-              <i class="fas fa-clapperboard"></i>
-              <span data-i18n="cv.sec1Title">Le Défi CV Vidéo</span>
-            </h3>
-            <p data-i18n="cv.p1">
-              Chers étudiants, un CV classique dit ce que vous avez fait. Un CV
-              vidéo montre qui vous êtes : votre énergie, votre assurance, votre
-              personnalité. C'est exactement ce que cherchent les recruteurs, et
-              c'est ce que vous propose le concours CV Vidéo du forum Students
-              &amp; Jobs.
-            </p>
-            <p data-i18n="cv.p2">
-              Le défi : concevoir et envoyer une vidéo de 3 minutes maximum qui
-              présente votre profil, vos compétences et votre projet
-              professionnel. À vous de choisir votre style, votre mise en scène
-              et votre message : soyez créatif, soyez vous-même, soyez
-              mémorable.
-            </p>
-          </div>
+      <!-- Official Competition Description (from CV VIDEO.docx) -->
+      <article class="comp-detail-card">
+        <div
+          class="comp-quote-box"
+          data-fr="« Votre CV prend vie : montrez qui vous êtes en 3 minutes. »"
+          data-ar="« سيرتك الذاتية تنبض بالحياة: أظهر من أنت في 3 دقائق. »"
+          data-en="“Your CV comes to life: show who you are in 3 minutes.”"
+        >
+          « Votre CV prend vie : montrez qui vous êtes en 3 minutes. »
+        </div>
 
-          <div class="comp-detail-block">
-            <h3>
-              <i class="fas fa-gears"></i>
-              <span data-i18n="cv.sec2Title">Comment ça se passe ?</span>
-            </h3>
-            <div class="comp-steps-list">
-              <div class="comp-step-item">
-                <i class="fas fa-cloud-arrow-up"></i>
-                <span data-i18n="cv.how1"
-                  >Vous réalisez votre CV vidéo et le déposez avant la date
-                  limite (vendredi 20/11 à 12h00).</span
-                >
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-award"></i>
-                <span data-i18n="cv.how2"
-                  >Un jury visionne toutes les vidéos et sélectionne la vidéo
-                  gagnante ayant respecté toutes les normes du fond et de la
-                  forme.</span
-                >
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-tv"></i>
-                <span data-i18n="cv.how3"
-                  >N.B. : Toutes les vidéos participantes seront visibles sur les
-                  écrans au sein de la F.S.S.M. Le public et les recruteurs
-                  auront le plaisir de vous découvrir !</span
-                >
-              </div>
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-bullseye"></i>
+          <span data-fr="Le principe" data-ar="مبدأ المسابقة" data-en="The Concept">Le principe</span>
+        </h2>
+        <p
+          class="comp-text"
+          data-fr="Dans le cadre du Forum Students & Jobs, la Faculté des Sciences Semlalia organise un concours du meilleur CV vidéo. Le principe est simple : réaliser et déposer une vidéo de 3 minutes maximum pour présenter votre profil, vos compétences et votre projet professionnel de façon originale et percutante."
+          data-ar="في إطار منتدى Students & Jobs، تنظم كلية العلوم السملالية مسابقة لأفضل سيرة ذاتية بالفيديو (CV Vidéo). المبدأ بسيط: إنجاز وإيداع فيديو مدته 3 دقائق كحد أقصى لتقديم ملفك الشخصي، مهاراتك، ومشروعك المهني بطريقة مبتكرة ومؤثرة."
+          data-en="As part of the Students & Jobs Forum, the Faculty of Sciences Semlalia organizes the Best Video CV contest. The concept is simple: create and submit a video of up to 3 minutes presenting your profile, skills, and career plan in an original and impactful way."
+        >
+          Dans le cadre du Forum Students & Jobs, la Faculté des Sciences Semlalia organise un concours du meilleur CV vidéo. Le principe est simple : réaliser et déposer une vidéo de 3 minutes maximum pour présenter votre profil, vos compétences et votre projet professionnel de façon originale et percutante.
+        </p>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <span
+            data-fr="Règles essentielles"
+            data-ar="القواعد الأساسية للمشاركة"
+            data-en="Essential Rules"
+            >Règles essentielles</span
+          >
+        </h2>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-stopwatch"></i>
+            <span
+              data-fr="<strong>Durée :</strong> 3 minutes maximum."
+              data-ar="<strong>المدة:</strong> 3 دقائق كحد أقصى."
+              data-en="<strong>Duration:</strong> 3 minutes maximum."
+              ><strong>Durée :</strong> 3 minutes maximum.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-user-check"></i>
+            <span
+              data-fr="<strong>Présence à l'écran obligatoire :</strong> vous devez apparaître et vous exprimer en personne (sur toute la vidéo ou au moins un tiers de sa durée)."
+              data-ar="<strong>الظهور الشخصي إلزامي:</strong> يجب أن تظهر وتتحدث بنفسك في الفيديو (طوال الفيديو أو على الأقل خلال ثلث مدته)."
+              data-en="<strong>Mandatory on-screen presence:</strong> you must appear and speak in person (throughout the video or for at least one third of its duration)."
+              ><strong>Présence à l'écran obligatoire :</strong> vous devez apparaître et vous exprimer en personne (sur toute la vidéo ou au moins un tiers de sa durée).</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span
+              data-fr="<strong>Usage de l'IA autorisé</strong> (montage, sous-titres, images, musique…), à condition de le mentionner clairement et de préciser les outils utilisés. <em>L'IA peut vous aider, elle ne doit pas vous remplacer.</em>"
+              data-ar="<strong>يُسمح باستخدام الذكاء الاصطناعي (IA)</strong> (في المونتاج، الترجمة النصية، الصور، الموسيقى...) بشرط الإشارة إلى ذلك بوضوح وتحديد الأدوات المستعملة. <em>الذكاء الاصطناعي يساعدك لكنه لا يعوضك.</em>"
+              data-en="<strong>AI usage is allowed</strong> (editing, subtitles, visuals, music…), provided it is clearly mentioned along with the tools used. <em>AI can assist you, not replace you.</em>"
+              ><strong>Usage de l'IA autorisé</strong> (montage, sous-titres, images, musique…), à condition de le mentionner clairement et de préciser les outils utilisés. <em>L'IA peut vous aider, elle ne doit pas vous remplacer.</em></span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-globe"></i>
+            <span
+              data-fr="<strong>Participation individuelle</strong> • <strong>Langue au choix :</strong> Français, Arabe ou Anglais."
+              data-ar="<strong>مشاركة فردية</strong> • <strong>اللغة حسب الاختيار:</strong> الفرنسية، العربية أو الإنجليزية."
+              data-en="<strong>Individual participation</strong> • <strong>Language of choice:</strong> French, Arabic, or English."
+              ><strong>Participation individuelle</strong> • <strong>Langue au choix :</strong> Français, Arabe ou Anglais.</span
+            >
+          </li>
+        </ul>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-star"></i>
+          <span
+            data-fr="Pourquoi participer ?"
+            data-ar="لماذا تشارك في هذه المسابقة؟"
+            data-en="Why Participate?"
+            >Pourquoi participer ?</span
+          >
+        </h2>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-tv"></i>
+            <span
+              data-fr="<strong>Visibilité exceptionnelle :</strong> toutes les vidéos participantes seront diffusées sur les écrans de la faculté pendant toute la durée du forum, sous le regard des recruteurs, enseignants et étudiants."
+              data-ar="<strong>إشعاع استثنائي:</strong> سيتم عرض جميع الفيديوهات المشاركة على شاشات الكلية طيلة أيام المنتدى أمام المشغلين والأساتذة والطلبة."
+              data-en="<strong>Outstanding visibility:</strong> all participating videos will be broadcast on faculty screens throughout the forum in front of recruiters, professors, and students."
+              ><strong>Visibilité exceptionnelle :</strong> toutes les vidéos participantes seront diffusées sur les écrans de la faculté pendant toute la durée du forum, sous le regard des recruteurs, enseignants et étudiants.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-award"></i>
+            <span
+              data-fr="<strong>Récompenses :</strong> les meilleures réalisations seront récompensées lors du Forum."
+              data-ar="<strong>جوائز متميزة:</strong> سيتم تتويج أفضل الفيديوهات المنجزة خلال المنتدى."
+              data-en="<strong>Awards:</strong> the best video CVs will be rewarded during the Forum."
+              ><strong>Récompenses :</strong> les meilleures réalisations seront récompensées lors du Forum.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-briefcase"></i>
+            <span
+              data-fr="<strong>Un vrai plus pour vos candidatures :</strong> vous repartez avec un outil moderne et différenciant pour votre recherche de stage ou d'emploi."
+              data-ar="<strong>قيمة مضافة لترشيحاتك:</strong> ستخرج بأداة عصرية ومميزة لتعزيز بحثك عن تدريب أو عمل."
+              data-en="<strong>A real asset for your applications:</strong> walk away with a modern, standout tool for your internship or job search."
+              ><strong>Un vrai plus pour vos candidatures :</strong> vous repartez avec un outil moderne et différenciant pour votre recherche de stage ou d'emploi.</span
+            >
+          </li>
+        </ul>
+      </article>
+
+      <!-- Registration & Submission Form -->
+      <section class="form-card" id="inscription">
+        <div class="form-header">
+          <h2
+            data-fr="Formulaire d'Inscription & Dépôt — CV Vidéo"
+            data-ar="استمارة التسجيل وإيداع الفيديو — CV Vidéo"
+            data-en="Registration & Submission Form — Video CV"
+          >
+            Formulaire d'Inscription & Dépôt — CV Vidéo
+          </h2>
+          <p
+            data-fr="Date limite d'inscription et de dépôt : Vendredi 20/11 à 12h00"
+            data-ar="آخر أجل للتسجيل وإيداع الفيديو: الجمعة 20/11 على الساعة 12:00 زوالاً"
+            data-en="Registration & submission deadline: Friday 20/11 at 12:00 PM"
+          >
+            Date limite d'inscription et de dépôt : Vendredi 20/11 à 12h00
+          </p>
+        </div>
+
+        <form id="compRegistrationForm" data-comp-id="cv-video" data-exclusive="false">
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Nom & Prénom *"
+                data-ar="الاسم الكامل *"
+                data-en="Full Name *"
+                >Nom & Prénom *</label
+              >
+              <input
+                type="text"
+                name="fullName"
+                class="form-control"
+                required
+                placeholder="Ex: Yassine Ennhili"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Code Apogée / CNE *"
+                data-ar="رقم أبوجي / CNE *"
+                data-en="Student ID (Apogée / CNE) *"
+                >Code Apogée / CNE *</label
+              >
+              <input
+                type="text"
+                name="apogee"
+                class="form-control"
+                required
+                placeholder="Ex: 21004589"
+              />
             </div>
           </div>
 
-          <div class="comp-detail-block">
-            <h3>
-              <i class="fas fa-list-check"></i>
-              <span data-i18n="cv.sec3Title">Règles à respecter</span>
-            </h3>
-            <div class="comp-steps-list">
-              <div class="comp-step-item">
-                <i class="fas fa-stopwatch"></i>
-                <span data-i18n="cv.r1">Durée : 3 minutes maximum.</span>
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-user-check"></i>
-                <span data-i18n="cv.r2"
-                  >Présence à l'image obligatoire : votre visage ou votre corps
-                  doit apparaître pendant toute la vidéo, ou au minimum pendant
-                  un tiers de sa durée.</span
-                >
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-wand-magic-sparkles"></i>
-                <span data-i18n="cv.r3"
-                  >Intelligence artificielle : son usage est autorisé (montage,
-                  sous-titres, génération d'images, musique, etc.), à condition
-                  de le mentionner clairement et de préciser les outils
-                  utilisés. L'IA peut vous aider, elle ne doit pas vous
-                  remplacer.</span
-                >
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-language"></i>
-                <span data-i18n="cv.r4"
-                  >Participation individuelle — Langue au choix : Français,
-                  Arabe ou Anglais.</span
-                >
-              </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Email académique ou personnel *"
+                data-ar="البريد الإلكتروني *"
+                data-en="Email Address *"
+                >Email académique ou personnel *</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                required
+                placeholder="etudiant@uca.ac.ma"
+              />
             </div>
-            <p data-i18n="cv.p3" style="margin-top: 14px">
-              Un smartphone, un peu de lumière, un bon scénario et de l'audace
-              suffisent. Les meilleurs CV vidéo ne sont pas les plus coûteux,
-              mais les plus sincères.
-            </p>
-          </div>
-
-          <div class="comp-detail-block">
-            <h3>
-              <i class="fas fa-circle-info"></i>
-              <span data-i18n="cv.sec4Title">Infos pratiques</span>
-            </h3>
-            <div class="comp-info-grid">
-              <div class="comp-info-box">
-                <small data-i18n="cv.info1Lbl">Format</small>
-                <strong data-i18n="cv.info1Val">Participation individuelle (Vidéo ≤ 3 min)</strong>
-              </div>
-              <div class="comp-info-box">
-                <small data-i18n="cv.info2Lbl">Langues acceptées</small>
-                <strong data-i18n="cv.info2Val">Français, Arabe ou Anglais</strong>
-              </div>
-              <div class="comp-info-box">
-                <small data-i18n="cv.info3Lbl">Diffusion</small>
-                <strong data-i18n="cv.info3Val">Écrans de la FSSM durant le Forum</strong>
-              </div>
-              <div class="comp-info-box">
-                <small data-i18n="cv.info4Lbl">Date limite de dépôt</small>
-                <strong data-i18n="cv.info4Val">Vendredi 20/11 à 12h00</strong>
-              </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Téléphone (WhatsApp) *"
+                data-ar="رقم الهاتف (واتساب) *"
+                data-en="Phone Number (WhatsApp) *"
+                >Téléphone (WhatsApp) *</label
+              >
+              <input
+                type="tel"
+                name="phone"
+                class="form-control"
+                required
+                placeholder="06 00 00 00 00"
+              />
             </div>
           </div>
 
-          <div class="comp-cta-banner">
-            <h4 data-i18n="cv.ctaTitle">
-              Votre meilleure carte de visite, c'est vous !
-            </h4>
-            <p data-i18n="cv.ctaSub">
-              Prenez la caméra, lancez-vous, et faites en sorte qu'on ne puisse
-              plus vous oublier.
-            </p>
-            <a href="#depot" class="btn-sj-gold">
-              <i class="fas fa-cloud-arrow-up"></i>
-              <span data-i18n="cv.btnSubmit">Déposer mon CV Vidéo</span>
-            </a>
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Filière / Département FSSM *"
+                data-ar="الشعبة / التخصص بالكلية *"
+                data-en="Department / Major (FSSM) *"
+                >Filière / Département FSSM *</label
+              >
+              <select name="department" class="form-control" required>
+                <option value="">-- Choisir --</option>
+                <option value="Informatique">Informatique</option>
+                <option value="Mathématiques">Mathématiques</option>
+                <option value="Physique">Physique</option>
+                <option value="Chimie">Chimie</option>
+                <option value="Biologie">Biologie</option>
+                <option value="Géologie">Géologie</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Niveau d'études & Langue de la vidéo *"
+                data-ar="المستوى الدراسي ولغة الفيديو *"
+                data-en="Study Level & Video Language *"
+                >Niveau d'études & Langue de la vidéo *</label
+              >
+              <select name="level" class="form-control" required>
+                <option value="Licence - FR">Licence (Français)</option>
+                <option value="Master - FR">Master (Français)</option>
+                <option value="Doctorat - FR">Doctorat (Français)</option>
+                <option value="Lauréat - AR/EN">Autre / Arabe / Anglais</option>
+              </select>
+            </div>
           </div>
 
-          <div class="other-comps-nav">
-            <a href="hackathon.html" class="other-comp-pill">Hackathon (24-25 Nov)</a>
-            <a href="case-challenge.html" class="other-comp-pill">Case Challenge</a>
-            <a href="cv-video.html" class="other-comp-pill active">CV Vidéo</a>
-            <a href="mission-emploi.html" class="other-comp-pill">Mission Emploi</a>
-            <a href="pitch-3min.html" class="other-comp-pill">Pitch en 3 min</a>
+          <div class="form-group">
+            <label
+              class="form-label"
+              data-fr="Lien de votre CV Vidéo (Google Drive, YouTube, WeTransfer) *"
+              data-ar="رابط السيرة الذاتية بالفيديو (Google Drive أو YouTube) *"
+              data-en="Link to your Video CV (Google Drive, YouTube, etc.) *"
+              >Lien de votre CV Vidéo (Google Drive, YouTube, WeTransfer) *</label
+            >
+            <input
+              type="url"
+              name="videoUrl"
+              class="form-control"
+              required
+              placeholder="https://drive.google.com/..."
+            />
           </div>
+
+          <div class="form-group">
+            <label
+              class="form-label"
+              data-fr="Outils d'IA utilisés (si applicable : montage, sous-titres, etc.)"
+              data-ar="أدوات الذكاء الاصطناعي المستعملة (إن وجدت: المونتاج، الترجمة...)"
+              data-en="AI tools used (if any: editing, subtitles, etc.)"
+              >Outils d'IA utilisés (si applicable : montage, sous-titres, etc.)</label
+            >
+            <input
+              type="text"
+              name="aiTools"
+              class="form-control"
+              placeholder="Ex: Aucun / CapCut pour sous-titres..."
+            />
+          </div>
+
+          <label class="form-check-box">
+            <input type="checkbox" required />
+            <span
+              data-fr="Je confirme que ma vidéo ne dépasse pas 3 minutes, que j'apparais en personne à l'écran, et j'autorise sa diffusion sur les écrans de la FSSM durant le Forum Students & Jobs."
+              data-ar="أؤكد أن مدة الفيديو لا تتجاوز 3 دقائق، وأنني أظهر شخصياً في الفيديو، وأوافق على عرضه على شاشات كلية العلوم السملالية خلال المنتدى."
+              data-en="I confirm my video is max 3 minutes, features me speaking on screen, and I authorize its broadcast on FSSM screens during the Forum."
+              >Je confirme que ma vidéo ne dépasse pas 3 minutes, que j'apparais en personne à l'écran, et j'autorise sa diffusion sur les écrans de la FSSM durant le Forum Students & Jobs.</span
+            >
+          </label>
+
+          <button type="submit" class="submit-pill-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span
+              data-fr="Valider mon inscription au CV Vidéo"
+              data-ar="تأكيد التسجيل وإرسال الفيديو"
+              data-en="Submit My Video CV Registration"
+              >Valider mon inscription au CV Vidéo</span
+            >
+          </button>
+
+          <div id="formFeedback" class="form-feedback"></div>
+        </form>
+      </section>
+
+      <!-- Navigation to the other 3 competitions -->
+      <div class="other-comps-nav">
+        <div class="section-group-label">
+          <span
+            data-fr="Découvrir aussi les 3 autres compétitions (1 seul choix parmi les 3)"
+            data-ar="اكتشف أيضاً المسابقات الثلاث الأخرى (خيار واحد فقط من بين 3)"
+            data-en="Also discover the other 3 competitions (1 choice only among the 3)"
+            >Découvrir aussi les 3 autres compétitions (1 seul choix parmi les 3)</span
+          >
+        </div>
+        <div class="links-list">
+          <a href="case-challenge.html" class="link-pill pill-gold">
+            <div class="pill-icon"><i class="fa-solid fa-flask"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Case Challenge « Du labo à l'entreprise »</span>
+              <span class="pill-subtitle">Équipe de 3 • 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+          <a href="mission-emploi.html" class="link-pill pill-navy">
+            <div class="pill-icon"><i class="fa-solid fa-key"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Mission Emploi (Escape Game)</span>
+              <span class="pill-subtitle">Équipe de 3 • 45 min • 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+          <a href="pitch-3min.html" class="link-pill pill-crimson">
+            <div class="pill-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Concours Pitch en 3 minutes</span>
+              <span class="pill-subtitle">Individuel • 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
         </div>
       </div>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <div class="footer-bottom" style="border-top: none; padding-top: 0">
-          <p data-i18n="footer.rights">
-            © 2026 Faculté des Sciences Semlalia Marrakech (UCA) — Service des
-            Statistiques et du Suivi des Lauréats. Tous droits réservés.
-          </p>
-          <a href="../index.html" class="btn-sj-outline" style="padding: 8px 18px; font-size: 0.85rem">
-            <i class="fas fa-arrow-left"></i>
-            <span data-i18n="detail.backHome">Retour à l'accueil</span>
-          </a>
-        </div>
-      </div>
+      <p>© 2026 <strong>Forum Students & Jobs — 3e Édition</strong> • FSSM Marrakech</p>
     </footer>
 
-    <script>
-      window.PAGE_I18N = {
-        fr: {
-          "cv.short": "CV Vidéo",
-          "cv.title": "Concours CV Vidéo",
-          "cv.quote": "« Votre CV prend vie : montrez qui vous êtes en 3 minutes. »",
-          "cv.sec1Title": "Le Défi CV Vidéo",
-          "cv.p1":
-            "Chers étudiants, un CV classique dit ce que vous avez fait. Un CV vidéo montre qui vous êtes : votre énergie, votre assurance, votre personnalité. C'est exactement ce que cherchent les recruteurs, et c'est ce que vous propose le concours CV Vidéo du forum Students & Jobs.",
-          "cv.p2":
-            "Le défi : concevoir et envoyer une vidéo de 3 minutes maximum qui présente votre profil, vos compétences et votre projet professionnel. À vous de choisir votre style, votre mise en scène et votre message : soyez créatif, soyez vous-même, soyez mémorable.",
-          "cv.sec2Title": "Comment ça se passe ?",
-          "cv.how1": "Vous réalisez votre CV vidéo et le déposez avant la date limite.",
-          "cv.how2": "Un jury visionne toutes les vidéos et sélectionne la vidéo gagnante (qui aura respecté toutes les normes du fond et de la forme).",
-          "cv.how3": "N.B. Toutes les vidéos participantes seront visibles sur les écrans au sein de la F.S.S.M. Le public aura le plaisir de vous découvrir à travers vos vidéos.",
-          "cv.sec3Title": "Règles à respecter",
-          "cv.r1": "Durée : 3 minutes maximum.",
-          "cv.r2": "Votre présence à l'image est obligatoire : votre visage ou votre corps doit apparaître pendant toute la vidéo, ou au minimum pendant un tiers de sa durée.",
-          "cv.r3": "Intelligence artificielle : son usage est autorisé (montage, sous-titres, génération d'images, musique, etc.), à condition de le mentionner clairement et de préciser les outils utilisés. L'IA peut vous aider, elle ne doit pas vous remplacer.",
-          "cv.r4": "Participation individuelle — Langue : français, arabe ou anglais.",
-          "cv.p3": "Un smartphone, un peu de lumière, un bon scénario et de l'audace suffisent. Les meilleurs CV vidéo ne sont pas les plus coûteux, mais les plus sincères.",
-          "cv.sec4Title": "Infos pratiques",
-          "cv.info1Lbl": "Format",
-          "cv.info1Val": "Participation individuelle (Vidéo ≤ 3 min)",
-          "cv.info2Lbl": "Langues acceptées",
-          "cv.info2Val": "Français, Arabe ou Anglais",
-          "cv.info3Lbl": "Diffusion",
-          "cv.info3Val": "Écrans de la FSSM durant le Forum",
-          "cv.info4Lbl": "Date limite de dépôt",
-          "cv.info4Val": "Vendredi 20/11 à 12h00",
-          "cv.ctaTitle": "Votre meilleure carte de visite, c'est vous.",
-          "cv.ctaSub": "Prenez la caméra, lancez-vous, et faites en sorte qu'on ne puisse plus vous oublier.",
-          "cv.btnSubmit": "Déposer mon CV Vidéo"
-        },
-        ar: {
-          "cv.short": "السيرة الذاتية المصورة",
-          "cv.title": "مسابقة السيرة الذاتية المصورة (CV Vidéo)",
-          "cv.quote": "« سيرتك الذاتية تنبض بالحياة: أظهر من أنت في 3 دقائق. »",
-          "cv.sec1Title": "تحدي السيرة الذاتية المصورة",
-          "cv.p1":
-            "أعزائي الطلبة، السيرة الذاتية الكلاسيكية تذكر ما أنجزتموه، أما السيرة الذاتية المصورة (CV Vidéo) فتُظهر من أنتم: طاقتكم، ثقتكم في أنفسكم، وشخصيتكم. وهذا بالضبط ما يبحث عنه المشغلون، وهو ما تقترحه عليكم مسابقة CV Vidéo بمنتدى Students & Jobs.",
-          "cv.p2":
-            "التحدي: تصميم وإرسال فيديو لا تتجاوز مدته 3 دقائق يقدّم ملفكم الشخصي، مهاراتكم ومشروعكم المهني. لكم حرية اختيار الأسلوب والإخراج والرسالة: كونوا مبدعين، كونوا أنفسكم، وكونوا لا يُنسَون.",
-          "cv.sec2Title": "كيف تمر المسابقة؟",
-          "cv.how1": "تنجزون فيديو السيرة الذاتية وتقومون بإيداعه قبل آخر أجل.",
-          "cv.how2": "تشاهد لجنة التحكيم جميع الفيديوهات وتختار الفيديو الفائز الذي احترم كافة معايير المضمون والشكل.",
-          "cv.how3": "ملاحظة هامة: جميع الفيديوهات المشاركة ستُعرض على الشاشات داخل كلية العلوم السملالية (FSSM) ليتعرف الجمهور والمشغلون على مواهبكم.",
-          "cv.sec3Title": "القواعد الواجب احترامها",
-          "cv.r1": "المدة: 3 دقائق كحد أقصى.",
-          "cv.r2": "ظهوركم في الصورة إجباري: يجب أن يظهر وجهكم أو جسدكم طيلة الفيديو، أو على الأقل خلال ثلث مدته.",
-          "cv.r3": "الذكاء الاصطناعي: يُسمح باستعماله (المونتاج، الترجمة النصية، توليد الصور، الموسيقى...) شريطة الإشارة إلى ذلك بوضوح وذكر الأدوات المستعملة. الذكاء الاصطناعي يساعدكم ولا يعوضكم.",
-          "cv.r4": "المشاركة فردية — اللغة: العربية، الفرنسية أو الإنجليزية.",
-          "cv.p3": "هاتف ذكي، إضاءة جيدة، سيناريو متقن وقليل من الجرأة تكفي. فأفضل السير الذاتية المصورة ليست الأغلى تكلفة، بل الأكثر صدقاً.",
-          "cv.sec4Title": "معلومات عملية",
-          "cv.info1Lbl": "الصيغة",
-          "cv.info1Val": "مشاركة فردية (فيديو 3 دقائق كحد أقصى)",
-          "cv.info2Lbl": "اللغات المسموحة",
-          "cv.info2Val": "العربية، الفرنسية أو الإنجليزية",
-          "cv.info3Lbl": "العرض",
-          "cv.info3Val": "شاشات كلية العلوم السملالية طيلة أيام المنتدى",
-          "cv.info4Lbl": "آخر أجل للإيداع",
-          "cv.info4Val": "الجمعة 20/11 على الساعة 12:00",
-          "cv.ctaTitle": "أفضل بطاقة تعريف لكم هي أنتم!",
-          "cv.ctaSub": "خذوا الكاميرا، انطلقوا، واجعلوا حضوركم راسخاً في الأذهان.",
-          "cv.btnSubmit": "إيداع فيديو السيرة الذاتية"
-        },
-        en: {
-          "cv.short": "Video CV",
-          "cv.title": "Video CV Contest",
-          "cv.quote": "“Your resume comes alive: show who you are in 3 minutes.”",
-          "cv.sec1Title": "The Video CV Challenge",
-          "cv.p1":
-            "Dear students, a traditional resume says what you have done. A Video CV shows who you are: your energy, your confidence, your personality. That is exactly what recruiters are looking for, and what the Students & Jobs Forum Video CV Contest offers you.",
-          "cv.p2":
-            "The challenge: create and submit a video of maximum 3 minutes presenting your profile, your skills, and your career goals. Choose your own style, staging, and message: be creative, be yourself, be unforgettable.",
-          "cv.sec2Title": "How It Works",
-          "cv.how1": "Create your Video CV and submit it before the deadline.",
-          "cv.how2": "A jury watches all entries and selects the winning video that best meets both content and presentation standards.",
-          "cv.how3": "Note: All participating videos will be displayed on screens across FSSM so the campus audience and recruiters can discover you!",
-          "cv.sec3Title": "Rules to Follow",
-          "cv.r1": "Duration: 3 minutes maximum.",
-          "cv.r2": "On-screen presence is mandatory: your face or body must appear throughout the video, or for at least one third of its duration.",
-          "cv.r3": "Artificial Intelligence: AI tools are allowed (editing, subtitles, image generation, music, etc.) provided you clearly disclose them and specify which tools were used. AI can assist you, not replace you.",
-          "cv.r4": "Individual participation — Language: French, Arabic, or English.",
-          "cv.p3": "A smartphone, good lighting, a clear script, and boldness are all it takes. The best Video CVs are not the most expensive, but the most genuine.",
-          "cv.sec4Title": "Practical Information",
-          "cv.info1Lbl": "Format",
-          "cv.info1Val": "Individual participation (Video ≤ 3 min)",
-          "cv.info2Lbl": "Languages",
-          "cv.info2Val": "French, Arabic, or English",
-          "cv.info3Lbl": "Screening",
-          "cv.info3Val": "Broadcast on FSSM screens during the Forum",
-          "cv.info4Lbl": "Submission Deadline",
-          "cv.info4Val": "Friday, Nov 20 at 12:00 PM",
-          "cv.ctaTitle": "Your best business card is you.",
-          "cv.ctaSub": "Grab your camera, take the leap, and make yourself unforgettable.",
-          "cv.btnSubmit": "Submit my Video CV"
-        }
-      };
-    </script>
-    <script src="../assets/js/app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

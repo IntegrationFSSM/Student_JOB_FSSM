@@ -1,386 +1,513 @@
 <!doctype html>
-<html lang="fr" data-i18n-title="title.mission">
+<html lang="fr">
   <head>
-    <meta charset="UTF-8" />
-    <script>
-      (function () {
-        try {
-          var theme = localStorage.getItem("sj-theme") || "light";
-          var lang = localStorage.getItem("sj-lang") || "fr";
-          document.documentElement.classList.add("i18n-pending");
-          document.documentElement.setAttribute("data-theme", theme);
-          document.documentElement.setAttribute("lang", lang);
-          document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-        } catch (e) {}
-      })();
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="../assets/images/logo-forum.png" />
-    <title>Mission Emploi (Escape Game) | Forum Students &amp; Jobs FSSM</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mission Emploi (Escape Game) | Forum Students & Jobs — 3e Édition (FSSM)</title>
+    <meta
+      name="description"
+      content="Mission Emploi (Escape Game) — Forum Students & Jobs (3e Édition) à la Faculté des Sciences Semlalia Marrakech. 45 minutes, 5 énigmes, 1 coffre !"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Outfit:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
-    <div class="nav-overlay" data-nav-overlay></div>
+    <div class="bg-slideshow-container">
+      <div class="bg-slide" style="background-image: url('background.jpg');"></div>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-glow-teal"></div>
+    <div class="bg-glow-crimson"></div>
 
-    <header class="header">
-      <div class="container">
-        <a href="../index.html" class="brand-logo">
-          <img
-            src="../assets/images/logo-forum.png"
-            alt="Logo Forum Students & Jobs"
-            class="brand-logo-img"
-          />
-          <div class="brand-text">
-            <span class="brand-kicker">FSSM • UCA MARRAKECH</span>
-            <div class="brand-title">
-              Students <span>&amp; Jobs</span>
-              <small class="brand-edition-pill">3e Édition</small>
-            </div>
-          </div>
+    <main class="shell">
+      <!-- Topbar -->
+      <div class="topbar">
+        <a href="index.html" class="topbar-brand-mini">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span
+            data-fr="Retour aux 4 Compétitions"
+            data-ar="العودة إلى المسابقات الأربع"
+            data-en="Back to the 4 Competitions"
+            >Retour aux 4 Compétitions</span
+          >
         </a>
 
-        <nav class="navbar" data-navbar>
-          <ul class="navbar-list">
-            <li>
-              <a href="../index.html#home" class="navbar-link" data-nav-link data-i18n="nav.home">Accueil</a>
-            </li>
-            <li>
-              <a href="../index.html#mots-officiels" class="navbar-link" data-nav-link data-i18n="nav.leaders">Mots Officiels</a>
-            </li>
-            <li>
-              <a href="../index.html#competitions" class="navbar-link active" data-nav-link data-i18n="nav.competitions">Compétitions</a>
-            </li>
-            <li>
-              <a href="../index.html#programme" class="navbar-link" data-nav-link data-i18n="nav.program">Programme</a>
-            </li>
-          </ul>
-        </nav>
-
-        <div class="header-actions">
-          <div class="lang-switcher" role="group" aria-label="Langue">
-            <button type="button" class="lang-btn is-active" data-set-lang="fr">FR</button>
-            <button type="button" class="lang-btn" data-set-lang="ar">AR</button>
-            <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+        <div class="topbar-controls">
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn active" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="ar">عربي</button>
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
           </div>
-          <button type="button" class="theme-toggle" data-theme-toggle aria-label="Changer de thème">
-            <i class="fas fa-moon" data-theme-icon></i>
-          </button>
-          <button type="button" class="menu-toggle-btn" data-nav-toggle aria-label="Menu">
-            <i class="fas fa-bars"></i>
+          <button
+            type="button"
+            id="themeToggle"
+            class="theme-btn"
+            aria-label="Mode Clair / Sombre"
+          >
+            <i class="fa-solid fa-sun"></i>
           </button>
         </div>
       </div>
-    </header>
 
-    <main>
-      <section class="comp-page-hero">
-        <div class="container">
-          <div class="breadcrumb-bar">
-            <a href="../index.html" data-i18n="detail.backHome">Retour à l'accueil</a>
-            <span>/</span>
-            <a href="../index.html#competitions" data-i18n="detail.allComps">Compétitions</a>
-            <span>/</span>
-            <span data-i18n="mission.short">Mission Emploi</span>
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-card">
+          <img src="logo.png" alt="Logo Forum Students & Jobs" class="logo" />
+          <div class="logo-fssm-strip">
+            <i class="fa-solid fa-key"></i>
+            <span
+              data-fr="Compétition 3/4 • Choix Exclusif (1 parmi 3)"
+              data-ar="المسابقة 3/4 • اختيار حصري (واحدة من بين 3)"
+              data-en="Competition 3/4 • Exclusive Choice (1 of 3)"
+              >Compétition 3/4 • Choix Exclusif (1 parmi 3)</span
+            >
           </div>
+        </div>
 
-          <div class="comp-hero-circle">
-            <i class="fas fa-key"></i>
-          </div>
-
-          <h1 class="comp-page-title" data-i18n="mission.title">
+        <div class="title-box">
+          <span class="edition-pill">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span
+              data-fr="Attention : 1 Seul Choix parmi les 3 compétitions sur place"
+              data-ar="تنبيه: يحق لك اختيار مسابقة واحدة فقط من بين المسابقات الثلاث"
+              data-en="Warning: Only 1 Choice allowed among the 3 on-site competitions"
+              >Attention : 1 Seul Choix parmi les 3 compétitions sur place</span
+            >
+          </span>
+          <h1
+            class="site-title"
+            data-fr="Mission Emploi (Escape Game)"
+            data-ar="مهمة التوظيف (Mission Emploi - Escape Game)"
+            data-en="Job Mission (Recruitment Escape Game)"
+          >
             Mission Emploi (Escape Game)
           </h1>
-          <p class="comp-page-quote" data-i18n="mission.quote">
-            « 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission ? »
-          </p>
+          <div class="comp-hero-badge-row">
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-users"></i>
+              <span data-fr="Équipes de 3 (formées au démarrage)" data-ar="فرق من 3 طلبة (تُشكّل عند الانطلاق)" data-en="Teams of 3 (formed at start)">Équipes de 3 (formées au démarrage)</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-regular fa-clock"></i>
+              <span data-fr="45 minutes • 5 énigmes" data-ar="45 دقيقة • 5 ألغاز" data-en="45 minutes • 5 puzzles">45 minutes • 5 énigmes</span>
+            </span>
+            <span class="comp-meta-chip">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <span data-fr="Téléphones non autorisés" data-ar="الهواتف غير مسموح بها" data-en="No phones allowed">Téléphones non autorisés</span>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Rule Notification Box -->
+      <section class="rules-notice-card">
+        <div class="rules-notice-header">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span
+            data-fr="Notification Importante — Règle d'Exclusivité"
+            data-ar="إشعار هام — قاعدة الاختيار الحصري"
+            data-en="Important Notice — Exclusivity Rule"
+            >Notification Importante — Règle d'Exclusivité</span
+          >
+        </div>
+        <div class="rule-box rule-exclusive">
+          <div class="rule-box-icon">
+            <i class="fa-solid fa-ban"></i>
+          </div>
+          <div>
+            <strong
+              data-fr="Si vous participez à Mission Emploi, vous NE POUVEZ PAS participer au Case Challenge ni au Pitch en 3 min !"
+              data-ar="إذا شاركت في Mission Emploi، فلا يمكنك المشاركة في Case Challenge ولا في Pitch en 3 min!"
+              data-en="If you participate in Job Mission, you CANNOT participate in the Case Challenge or the 3-Min Pitch!"
+              >Si vous participez à Mission Emploi, vous NE POUVEZ PAS participer au Case Challenge ni au Pitch en 3 min !</strong
+            >
+            <span
+              data-fr="Parmi (Case Challenge, Mission Emploi, Pitch en 3 min), vous ne pouvez participer qu'à UNE SEULE compétition. En revanche, n'importe qui peut participer au concours CV Vidéo !"
+              data-ar="من بين (Case Challenge، Mission Emploi، Pitch en 3 min)، يحق لك المشاركة في مسابقة واحدة فقط. بالمقابل، يمكن لأي طالب المشاركة في مسابقة CV Vidéo!"
+              data-en="Among (Case Challenge, Job Mission, 3-Min Pitch), you can only participate in ONE competition. However, anyone can participate in the Video CV contest!"
+              >Parmi (Case Challenge, Mission Emploi, Pitch en 3 min), vous ne pouvez participer qu'à UNE SEULE compétition. En revanche, n'importe qui peut participer au concours CV Vidéo !</span
+            >
+          </div>
+        </div>
+
+        <div id="activeChoiceAlert" class="active-choice-alert">
+          <span id="activeChoiceText"></span>
+          <button
+            type="button"
+            id="resetChoiceBtn"
+            class="reset-choice-btn"
+            data-fr="Modifier mon choix"
+            data-ar="تغيير اختياري"
+            data-en="Change my choice"
+          >
+            Modifier mon choix
+          </button>
         </div>
       </section>
 
-      <div class="comp-detail-wrapper">
-        <div class="comp-detail-card">
-          <div class="comp-detail-block">
-            <h3>
-              <i class="fas fa-compass"></i>
-              <span data-i18n="mission.sec1Title">Votre Mission</span>
-            </h3>
-            <p data-i18n="mission.p1">
-              Chers étudiants, décrocher un emploi, c'est franchir une série
-              d'étapes : un CV à soigner, une offre à décoder, un entretien à
-              réussir. Et si vous les affrontiez sous forme de jeu ? Bienvenue
-              dans Mission Emploi, l'escape game du forum Students &amp; Jobs.
-            </p>
-            <p data-i18n="mission.p2">
-              Votre mission : en 45 minutes, votre équipe doit résoudre 5
-              énigmes, chacune correspondant à une étape clé du recrutement :
-            </p>
-            <div class="comp-steps-list">
-              <div class="comp-step-item">
-                <i class="fas fa-file-circle-xmark"></i>
-                <span data-i18n="mission.e1">1. Trouver les erreurs d'un CV ;</span>
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-magnifying-glass"></i>
-                <span data-i18n="mission.e2">2. Décoder une offre d'emploi ;</span>
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-comments"></i>
-                <span data-i18n="mission.e3"
-                  >3. Repérer les mauvaises réponses d'un entretien ;</span
-                >
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-sitemap"></i>
-                <span data-i18n="mission.e4"
-                  >4. Reconstituer un organigramme ;</span
-                >
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-user-tie"></i>
-                <span data-i18n="mission.e5"
-                  >5. Choisir un candidat à partir de dossiers.</span
-                >
-              </div>
-            </div>
-            <p data-i18n="mission.p3" style="font-weight: 700; margin-top: 12px">
-              La première équipe qui répond à toute l'épreuve remporte la partie.
-            </p>
-          </div>
+      <!-- Official Description from MISSION EMPLOI.docx -->
+      <article class="comp-detail-card">
+        <div
+          class="comp-quote-box"
+          data-fr="« 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission ? »"
+          data-ar="« 45 دقيقة، 5 ألغاز، خزنة واحدة: هل أنتم مستعدون للمهمة؟ »"
+          data-en="“45 minutes, 5 puzzles, 1 vault: are you ready for the mission?”"
+        >
+          « 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission ? »
+        </div>
 
-          <div class="comp-detail-block">
-            <h3>
-              <i class="fas fa-gavel"></i>
-              <span data-i18n="mission.sec2Title">Les règles du jeu</span>
-            </h3>
-            <div class="comp-steps-list">
-              <div class="comp-step-item">
-                <i class="fas fa-users"></i>
-                <span data-i18n="mission.r1"
-                  >Activité par équipes de 3 étudiants, dont les membres se
-                  découvrent au début de l'épreuve.</span
-                >
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-mobile-screen-button"></i>
-                <span data-i18n="mission.r2">Aucun téléphone autorisé.</span>
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-lightbulb"></i>
-                <span data-i18n="mission.r3"
-                  >3 indices maximum, avec pénalité.</span
-                >
-              </div>
-              <div class="comp-step-item">
-                <i class="fas fa-hourglass-start"></i>
-                <span data-i18n="mission.r4"
-                  >Le temps est compté : coopération, rapidité et sang-froid
-                  feront la différence.</span
-                >
-              </div>
-            </div>
-          </div>
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-bullseye"></i>
+          <span data-fr="Le principe" data-ar="مبدأ المسابقة" data-en="The Concept">Le principe</span>
+        </h2>
+        <p
+          class="comp-text"
+          data-fr="Dans le cadre du Forum Students & Jobs, la Faculté des Sciences Semlalia organise le jeu « Mission Emploi ». En équipe, vous avez 45 minutes pour résoudre 5 énigmes correspondant aux grandes étapes d'un recrutement :"
+          data-ar="في إطار منتدى Students & Jobs، تنظم كلية العلوم السملالية لعبة « Mission Emploi ». ضمن فريق، لديكم 45 دقيقة لحل 5 ألغاز تمثل المراحل الكبرى لعملية التوظيف:"
+          data-en="As part of the Students & Jobs Forum, the Faculty of Sciences Semlalia organizes the 'Job Mission' escape game. In teams, you have 45 minutes to solve 5 puzzles corresponding to key stages of recruitment:"
+        >
+          Dans le cadre du Forum Students & Jobs, la Faculté des Sciences Semlalia organise le jeu « Mission Emploi ». En équipe, vous avez 45 minutes pour résoudre 5 énigmes correspondant aux grandes étapes d'un recrutement :
+        </p>
 
-          <div class="comp-detail-block">
-            <h3>
-              <i class="fas fa-star"></i>
-              <span data-i18n="mission.sec3Title">Pourquoi y participer ?</span>
-            </h3>
-            <p data-i18n="mission.why">
-              Parce qu'on apprend vite quand on joue. Vous découvrirez de
-              l'intérieur ce que les recruteurs attendent, vous éviterez les
-              erreurs classiques et vous testerez votre capacité à travailler en
-              équipe sous pression, une qualité très recherchée par les
-              employeurs.
-            </p>
-          </div>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-file-circle-xmark"></i>
+            <span
+              data-fr="<strong>Énigme 1 :</strong> Trouver les erreurs d'un CV"
+              data-ar="<strong>اللغز 1:</strong> اكتشاف الأخطاء في سيرة ذاتية (CV)"
+              data-en="<strong>Puzzle 1:</strong> Spot the mistakes in a CV"
+              ><strong>Énigme 1 :</strong> Trouver les erreurs d'un CV</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <span
+              data-fr="<strong>Énigme 2 :</strong> Décoder une offre d'emploi"
+              data-ar="<strong>اللغز 2:</strong> فك شفرة عرض عمل"
+              data-en="<strong>Puzzle 2:</strong> Decode a job offer"
+              ><strong>Énigme 2 :</strong> Décoder une offre d'emploi</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-comments"></i>
+            <span
+              data-fr="<strong>Énigme 3 :</strong> Repérer les mauvaises réponses d'un entretien"
+              data-ar="<strong>اللغز 3:</strong> رصد الإجابات الخاطئة في مقابلة عمل"
+              data-en="<strong>Puzzle 3:</strong> Identify bad interview answers"
+              ><strong>Énigme 3 :</strong> Repérer les mauvaises réponses d'un entretien</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-sitemap"></i>
+            <span
+              data-fr="<strong>Énigme 4 :</strong> Reconstituer un organigramme"
+              data-ar="<strong>اللغز 4:</strong> إعادة تركيب الهيكل التنظيمي للمقاولة"
+              data-en="<strong>Puzzle 4:</strong> Reconstruct a company org chart"
+              ><strong>Énigme 4 :</strong> Reconstituer un organigramme</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-folder-open"></i>
+            <span
+              data-fr="<strong>Énigme 5 :</strong> Choisir un candidat à partir de dossiers"
+              data-ar="<strong>اللغز 5:</strong> اختيار المرشح الأنسب انطلاقاً من ملفات الترشح"
+              data-en="<strong>Puzzle 5:</strong> Select the right candidate from application files"
+              ><strong>Énigme 5 :</strong> Choisir un candidat à partir de dossiers</span
+            >
+          </li>
+        </ul>
 
-          <div class="comp-detail-block">
-            <h3>
-              <i class="fas fa-circle-info"></i>
-              <span data-i18n="mission.sec4Title">Infos pratiques</span>
-            </h3>
-            <div class="comp-info-grid">
-              <div class="comp-info-box">
-                <small data-i18n="mission.info1Lbl">Format</small>
-                <strong data-i18n="mission.info1Val"
-                  >Équipes de 3 étudiants (formées sur place)</strong
-                >
-              </div>
-              <div class="comp-info-box">
-                <small data-i18n="mission.info2Lbl">Durée de l'épreuve</small>
-                <strong data-i18n="mission.info2Val">45 minutes chrono</strong>
-              </div>
-              <div class="comp-info-box">
-                <small data-i18n="mission.info3Lbl">Défi</small>
-                <strong data-i18n="mission.info3Val">5 énigmes RH &amp; 1 coffre</strong>
-              </div>
-              <div class="comp-info-box">
-                <small data-i18n="mission.info4Lbl">Date limite d'inscription</small>
-                <strong data-i18n="mission.info4Val">Vendredi 20/11 à 12h00</strong>
-              </div>
-            </div>
-          </div>
+        <p
+          class="comp-text"
+          data-fr="<strong>La première équipe qui résout toutes les énigmes remporte la manche !</strong>"
+          data-ar="<strong>أول فريق ينجح في حل جميع الألغاز يفوز بالجولة!</strong>"
+          data-en="<strong>The first team to solve all puzzles wins the round!</strong>"
+        >
+          <strong>La première équipe qui résout toutes les énigmes remporte la manche !</strong>
+        </p>
 
-          <div class="comp-cta-banner">
-            <h4 data-i18n="mission.ctaTitle">Le compte à rebours est lancé !</h4>
-            <p data-i18n="mission.ctaSub">
-              Inscrivez-vous, formez votre équipe sur place et prouvez que vous
-              savez ouvrir les portes de l'emploi.
-            </p>
-            <a href="#inscription" class="btn-sj-gold">
-              <i class="fas fa-pen-to-square"></i>
-              <span data-i18n="detail.registerNow"
-                >S'inscrire à la compétition</span
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-star"></i>
+          <span
+            data-fr="Pourquoi participer ?"
+            data-ar="لماذا تشارك في هذه المسابقة؟"
+            data-en="Why Participate?"
+            >Pourquoi participer ?</span
+          >
+        </h2>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-puzzle-piece"></i>
+            <span
+              data-fr="Apprendre les codes du recrutement de façon ludique et concrète."
+              data-ar="تعلم قواعد وأسرار التوظيف بطريقة تفاعلية، ممتعة وعملية."
+              data-en="Learn the codes of recruitment in a fun and practical way."
+              >Apprendre les codes du recrutement de façon ludique et concrète.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-bolt"></i>
+            <span
+              data-fr="Tester votre esprit d'équipe, votre logique et votre réactivité."
+              data-ar="اختبار روح الفريق، المنطق وسرعة البديهة لديك."
+              data-en="Test your teamwork, logic, and quick thinking."
+              >Tester votre esprit d'équipe, votre logique et votre réactivité.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-trophy"></i>
+            <span
+              data-fr="Des récompenses pour les meilleures équipes."
+              data-ar="جوائز متميزة لأفضل الفرق الفائزة."
+              data-en="Rewards for the top-performing teams."
+              >Des récompenses pour les meilleures équipes.</span
+            >
+          </li>
+        </ul>
+
+        <h2 class="comp-section-title">
+          <i class="fa-solid fa-circle-info"></i>
+          <span
+            data-fr="Infos pratiques"
+            data-ar="معلومات عملية"
+            data-en="Practical Information"
+            >Infos pratiques</span
+          >
+        </h2>
+        <ul class="comp-list">
+          <li>
+            <i class="fa-solid fa-users-gear"></i>
+            <span
+              data-fr="<strong>Format :</strong> Équipes de 3 étudiants (constituées au démarrage) • <strong>Durée :</strong> 45 minutes."
+              data-ar="<strong>الصيغة:</strong> فرق من 3 طلبة (تُشكّل عند الانطلاق) • <strong>المدة:</strong> 45 دقيقة."
+              data-en="<strong>Format:</strong> Teams of 3 students (formed at start) • <strong>Duration:</strong> 45 minutes."
+              ><strong>Format :</strong> Équipes de 3 étudiants (constituées au démarrage) • <strong>Durée :</strong> 45 minutes.</span
+            >
+          </li>
+          <li>
+            <i class="fa-solid fa-ban"></i>
+            <span
+              data-fr="<strong>Règles :</strong> Téléphones non autorisés • 3 indices maximum avec pénalité."
+              data-ar="<strong>القواعد:</strong> الهواتف غير مسموح بها • 3 تلميحات كحد أقصى مع عقوبة زمنية."
+              data-en="<strong>Rules:</strong> Phones not allowed • Maximum 3 hints with time penalty."
+              ><strong>Règles :</strong> Téléphones non autorisés • 3 indices maximum avec pénalité.</span
+            >
+          </li>
+          <li>
+            <i class="fa-regular fa-calendar-check"></i>
+            <span
+              data-fr="<strong>Date limite d'inscription :</strong> Vendredi 20/11 à 12h00."
+              data-ar="<strong>آخر أجل للتسجيل:</strong> الجمعة 20/11 على الساعة 12:00 زوالاً."
+              data-en="<strong>Registration deadline:</strong> Friday 20/11 at 12:00 PM."
+              ><strong>Date limite d'inscription :</strong> Vendredi 20/11 à 12h00.</span
+            >
+          </li>
+        </ul>
+      </article>
+
+      <!-- Registration Form -->
+      <section class="form-card" id="inscription">
+        <div class="form-header">
+          <h2
+            data-fr="Formulaire d'Inscription — Mission Emploi"
+            data-ar="استمارة التسجيل — Mission Emploi"
+            data-en="Registration Form — Job Mission (Escape Game)"
+          >
+            Formulaire d'Inscription — Mission Emploi
+          </h2>
+          <p
+            data-fr="Date limite : Vendredi 20/11 à 12h00 • ⚠️ Choix exclusif parmi les 3 compétitions sur place"
+            data-ar="آخر أجل: الجمعة 20/11 على الساعة 12:00 • ⚠️ اختيار حصري من بين المسابقات الثلاث"
+            data-en="Deadline: Friday 20/11 at 12:00 PM • ⚠️ Exclusive choice among the 3 on-site competitions"
+          >
+            Date limite : Vendredi 20/11 à 12h00 • ⚠️ Choix exclusif parmi les 3 compétitions sur place
+          </p>
+        </div>
+
+        <form id="compRegistrationForm" data-comp-id="mission-emploi" data-exclusive="true">
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Nom & Prénom *"
+                data-ar="الاسم الكامل *"
+                data-en="Full Name *"
+                >Nom & Prénom *</label
               >
-            </a>
+              <input
+                type="text"
+                name="fullName"
+                class="form-control"
+                required
+                placeholder="Ex: Yassine Ennhili"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Code Apogée / CNE *"
+                data-ar="رقم أبوجي / CNE *"
+                data-en="Student ID (Apogée / CNE) *"
+                >Code Apogée / CNE *</label
+              >
+              <input
+                type="text"
+                name="apogee"
+                class="form-control"
+                required
+                placeholder="Ex: 21004589"
+              />
+            </div>
           </div>
 
-          <div class="other-comps-nav">
-            <a href="hackathon.html" class="other-comp-pill">Hackathon (24-25 Nov)</a>
-            <a href="case-challenge.html" class="other-comp-pill">Case Challenge</a>
-            <a href="cv-video.html" class="other-comp-pill">CV Vidéo</a>
-            <a href="mission-emploi.html" class="other-comp-pill active">Mission Emploi</a>
-            <a href="pitch-3min.html" class="other-comp-pill">Pitch en 3 min</a>
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Email académique ou personnel *"
+                data-ar="البريد الإلكتروني *"
+                data-en="Email Address *"
+                >Email académique ou personnel *</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                required
+                placeholder="etudiant@uca.ac.ma"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Téléphone (WhatsApp) *"
+                data-ar="رقم الهاتف (واتساب) *"
+                data-en="Phone Number (WhatsApp) *"
+                >Téléphone (WhatsApp) *</label
+              >
+              <input
+                type="tel"
+                name="phone"
+                class="form-control"
+                required
+                placeholder="06 00 00 00 00"
+              />
+            </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Filière / Département FSSM *"
+                data-ar="الشعبة / التخصص بالكلية *"
+                data-en="Department / Major (FSSM) *"
+                >Filière / Département FSSM *</label
+              >
+              <select name="department" class="form-control" required>
+                <option value="">-- Choisir --</option>
+                <option value="Informatique">Informatique</option>
+                <option value="Mathématiques">Mathématiques</option>
+                <option value="Physique">Physique</option>
+                <option value="Chimie">Chimie</option>
+                <option value="Biologie">Biologie</option>
+                <option value="Géologie">Géologie</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label
+                class="form-label"
+                data-fr="Niveau d'études *"
+                data-ar="المستوى الدراسي *"
+                data-en="Study Level *"
+                >Niveau d'études *</label
+              >
+              <select name="level" class="form-control" required>
+                <option value="Licence">Licence (S1 - S6)</option>
+                <option value="Master">Master (M1 / M2)</option>
+                <option value="Doctorat">Doctorat</option>
+                <option value="Lauréat">Lauréat FSSM</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="form-check-box">
+            <input type="checkbox" required />
+            <span
+              data-fr="<strong>Engagement sur l'honneur :</strong> Je prends note qu'en m'inscrivant à <strong>Mission Emploi</strong>, je ne peux PAS participer au <em>Case Challenge</em> ni au <em>Pitch en 3 min</em> (1 seul choix autorisé parmi ces 3 compétitions). Je sais que le concours <em>CV Vidéo</em> reste ouvert à tous."
+              data-ar="<strong>التزام:</strong> أقر بأن تسجيلي في <strong>Mission Emploi</strong> يعني أنه لا يحق لي المشاركة في <em>Case Challenge</em> أو <em>Pitch en 3 min</em> (يُسمح باختيار مسابقة واحدة فقط من بين هذه المسابقات الثلاث). وأعلم أن مسابقة <em>CV Vidéo</em> مفتوحة للجميع."
+              data-en="<strong>Commitment:</strong> I understand that by registering for <strong>Job Mission</strong>, I CANNOT participate in the <em>Case Challenge</em> or the <em>3-Min Pitch</em> (only 1 choice allowed among these 3). I know that the <em>Video CV</em> contest remains open to all."
+              ><strong>Engagement sur l'honneur :</strong> Je prends note qu'en m'inscrivant à <strong>Mission Emploi</strong>, je ne peux PAS participer au <em>Case Challenge</em> ni au <em>Pitch en 3 min</em> (1 seul choix autorisé parmi ces 3 compétitions). Je sais que le concours <em>CV Vidéo</em> reste ouvert à tous.</span
+            >
+          </label>
+
+          <button type="submit" class="submit-pill-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span
+              data-fr="Confirmer mon choix : Mission Emploi"
+              data-ar="تأكيد اختياري: Mission Emploi"
+              data-en="Confirm My Choice: Job Mission"
+              >Confirmer mon choix : Mission Emploi</span
+            >
+          </button>
+
+          <div id="formFeedback" class="form-feedback"></div>
+        </form>
+      </section>
+
+      <!-- Navigation to other competitions -->
+      <div class="other-comps-nav">
+        <div class="section-group-label">
+          <span
+            data-fr="Voir les autres compétitions du Forum"
+            data-ar="تصفح باقي مسابقات المنتدى"
+            data-en="View the other Forum competitions"
+            >Voir les autres compétitions du Forum</span
+          >
+        </div>
+        <div class="links-list">
+          <a href="cv-video.html" class="link-pill pill-teal">
+            <div class="pill-icon"><i class="fa-solid fa-video"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Concours du Meilleur CV Vidéo</span>
+              <span class="pill-subtitle">Ouvert à TOUS • Cumulable avec votre choix !</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+          <a href="case-challenge.html" class="link-pill pill-gold">
+            <div class="pill-icon"><i class="fa-solid fa-flask"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Case Challenge « Du labo à l'entreprise »</span>
+              <span class="pill-subtitle">Équipe de 3 • ⚠️ 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
+          <a href="pitch-3min.html" class="link-pill pill-crimson">
+            <div class="pill-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+            <div class="pill-content">
+              <span class="pill-title">Concours Pitch en 3 minutes</span>
+              <span class="pill-subtitle">Individuel • ⚠️ 1 seul choix parmi les 3</span>
+            </div>
+            <div class="pill-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          </a>
         </div>
       </div>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <div class="footer-bottom" style="border-top: none; padding-top: 0">
-          <p data-i18n="footer.rights">
-            © 2026 Faculté des Sciences Semlalia Marrakech (UCA) — Service des
-            Statistiques et du Suivi des Lauréats. Tous droits réservés.
-          </p>
-          <a href="../index.html" class="btn-sj-outline" style="padding: 8px 18px; font-size: 0.85rem">
-            <i class="fas fa-arrow-left"></i>
-            <span data-i18n="detail.backHome">Retour à l'accueil</span>
-          </a>
-        </div>
-      </div>
+      <p>© 2026 <strong>Forum Students & Jobs — 3e Édition</strong> • FSSM Marrakech</p>
     </footer>
 
-    <script>
-      window.PAGE_I18N = {
-        fr: {
-          "mission.short": "Mission Emploi",
-          "mission.title": "Mission Emploi (Escape Game)",
-          "mission.quote": "« 45 minutes, 5 énigmes, 1 coffre : êtes-vous prêts pour la mission ? »",
-          "mission.sec1Title": "Votre Mission",
-          "mission.p1":
-            "Chers étudiants, décrocher un emploi, c'est franchir une série d'étapes : un CV à soigner, une offre à décoder, un entretien à réussir. Et si vous les affrontiez sous forme de jeu ? Bienvenue dans Mission Emploi, l'escape game du forum Students & Jobs.",
-          "mission.p2":
-            "Votre mission : en 45 minutes, votre équipe doit résoudre 5 énigmes, chacune correspondant à une étape clé du recrutement. Il faudra :",
-          "mission.e1": "1. Trouver les erreurs d'un CV ;",
-          "mission.e2": "2. Décoder une offre d'emploi ;",
-          "mission.e3": "3. Repérer les mauvaises réponses d'un entretien ;",
-          "mission.e4": "4. Reconstituer un organigramme ;",
-          "mission.e5": "5. Choisir un candidat à partir de dossiers.",
-          "mission.p3": "La première équipe qui répond à toute l'épreuve remporte la partie.",
-          "mission.sec2Title": "Les règles du jeu",
-          "mission.r1": "Activité par équipes de 3 étudiants, dont les membres se découvrent au début de l'épreuve.",
-          "mission.r2": "Aucun téléphone autorisé.",
-          "mission.r3": "3 indices maximum, avec pénalité.",
-          "mission.r4": "Le temps est compté : coopération, rapidité et sang-froid feront la différence.",
-          "mission.sec3Title": "Pourquoi y participer ?",
-          "mission.why":
-            "Parce qu'on apprend vite quand on joue. Vous découvrirez de l'intérieur ce que les recruteurs attendent, vous éviterez les erreurs classiques et vous testerez votre capacité à travailler en équipe sous pression, une qualité très recherchée par les employeurs.",
-          "mission.sec4Title": "Infos pratiques",
-          "mission.info1Lbl": "Format",
-          "mission.info1Val": "Équipes de 3 étudiants (formées sur place)",
-          "mission.info2Lbl": "Durée",
-          "mission.info2Val": "45 minutes",
-          "mission.info3Lbl": "Épreuves",
-          "mission.info3Val": "5 énigmes RH & 1 coffre",
-          "mission.info4Lbl": "Date limite d'inscription",
-          "mission.info4Val": "Vendredi 20/11 à 12h00",
-          "mission.ctaTitle": "Le compte à rebours est lancé !",
-          "mission.ctaSub": "Inscrivez-vous, formez votre équipe sur place et prouvez que vous savez ouvrir les portes de l'emploi."
-        },
-        ar: {
-          "mission.short": "مهمة التوظيف",
-          "mission.title": "مهمة التوظيف Mission Emploi (Escape Game)",
-          "mission.quote": "« 45 دقيقة، 5 ألغاز، صندوق واحد: هل أنتم مستعدون للمهمة؟ »",
-          "mission.sec1Title": "مهمتكم في اللعبة",
-          "mission.p1":
-            "أعزائي الطلبة، إن الحصول على وظيفة يعني اجتياز سلسلة من المراحل: سيرة ذاتية متقنة، عرض عمل يجب فك شفرته، ومقابلة عمل ينبغي النجاح فيها. ماذا لو خضتم هذه المراحل في شكل لعبة مشوقة؟ مرحباً بكم في Mission Emploi، لعبة التحدي (Escape Game) بمنتدى Students & Jobs.",
-          "mission.p2":
-            "مهمتكم: خلال 45 دقيقة، يجب على فريقكم حل 5 ألغاز، يمثل كل لغز منها مرحلة أساسية في عملية التوظيف:",
-          "mission.e1": "1. اكتشاف الأخطاء الموجودة في سيرة ذاتية (CV)؛",
-          "mission.e2": "2. فك شفرة وتحليل عرض عمل؛",
-          "mission.e3": "3. رصد الإجابات الخاطئة خلال مقابلة عمل؛",
-          "mission.e4": "4. إعادة تركيب هيكل تنظيمي للمقاولة (Organigramme)؛",
-          "mission.e5": "5. اختيار المرشح الأنسب انطلاقاً من ملفات الترشح.",
-          "mission.p3": "أول فريق يتمكن من حل جميع الألغاز يفوز بالمسابقة!",
-          "mission.sec2Title": "قواعد اللعبة",
-          "mission.r1": "تُجرى المسابقة في فرق من 3 طلبة يتعرفون على بعضهم عند بداية الاختبار.",
-          "mission.r2": "يُمنع استعمال الهواتف النقالة منعاً كلياً.",
-          "mission.r3": "يُسمح بـ 3 تلميحات (Indices) كحد أقصى مع احتساب عقوبة زمنية.",
-          "mission.r4": "الوقت محسوب: التعاون، السرعة ورباطة الجأش هي مفتاح الفوز.",
-          "mission.sec3Title": "لماذا تشاركون في هذه المسابقة؟",
-          "mission.why":
-            "لأننا نتعلم بسرعة أكبر عندما نلعب! ستكتشفون من الداخل ما ينتظره المشغلون، وستتجنبون الأخطاء الشائعة، كما ستختبرون قدرتكم على العمل الجماعي تحت الضغط، وهي مهارة أساسية يبحث عنها أرباب العمل.",
-          "mission.sec4Title": "معلومات عملية",
-          "mission.info1Lbl": "الصيغة",
-          "mission.info1Val": "فرق من 3 طلبة (تُشكّل بعين المكان)",
-          "mission.info2Lbl": "المدة الزمنية",
-          "mission.info2Val": "45 دقيقة",
-          "mission.info3Lbl": "المحتوى",
-          "mission.info3Val": "5 ألغاز توظيف وصندوق واحد",
-          "mission.info4Lbl": "آخر أجل للتسجيل",
-          "mission.info4Val": "الجمعة 20/11 على الساعة 12:00",
-          "mission.ctaTitle": "بدأ العد التنازلي!",
-          "mission.ctaSub": "سجلوا مشاركتكم الآن، شكّلوا فريقكم بعين المكان وأثبتوا قدرتكم على فتح أبواب التشغيل."
-        },
-        en: {
-          "mission.short": "Job Mission",
-          "mission.title": "Job Mission (Escape Game)",
-          "mission.quote": "“45 minutes, 5 puzzles, 1 vault: are you ready for the mission?”",
-          "mission.sec1Title": "Your Mission",
-          "mission.p1":
-            "Dear students, landing a job means passing through a series of key steps: polishing a resume, decoding a job posting, and acing an interview. What if you tackled them as a game? Welcome to Job Mission (Mission Emploi), the official Escape Game of the Students & Jobs Forum.",
-          "mission.p2":
-            "Your mission: in 45 minutes, your team must solve 5 puzzles, each corresponding to a critical stage of recruitment:",
-          "mission.e1": "1. Spot the errors in a resume (CV);",
-          "mission.e2": "2. Decode a job offer;",
-          "mission.e3": "3. Identify the wrong answers in a job interview;",
-          "mission.e4": "4. Rebuild a company organizational chart;",
-          "mission.e5": "5. Select the best candidate from application files.",
-          "mission.p3": "The first team to solve the entire challenge wins the game!",
-          "mission.sec2Title": "Rules of the Game",
-          "mission.r1": "Played in teams of 3 students who meet each other at the start of the game.",
-          "mission.r2": "No phones allowed.",
-          "mission.r3": "Maximum 3 hints allowed, with a time penalty.",
-          "mission.r4": "The clock is ticking: cooperation, speed, and composure will make the difference.",
-          "mission.sec3Title": "Why Participate?",
-          "mission.why":
-            "Because we learn fast when we play! You will discover from the inside what recruiters truly expect, avoid classic pitfalls, and test your ability to work as a team under pressure—a quality highly valued by employers.",
-          "mission.sec4Title": "Practical Information",
-          "mission.info1Lbl": "Format",
-          "mission.info1Val": "Teams of 3 students (formed on-site)",
-          "mission.info2Lbl": "Duration",
-          "mission.info2Val": "45 minutes",
-          "mission.info3Lbl": "Challenge",
-          "mission.info3Val": "5 HR Puzzles & 1 Vault",
-          "mission.info4Lbl": "Registration Deadline",
-          "mission.info4Val": "Friday, Nov 20 at 12:00 PM",
-          "mission.ctaTitle": "The countdown has begun!",
-          "mission.ctaSub": "Register now, form your team on-site, and prove you have what it takes to unlock career opportunities."
-        }
-      };
-    </script>
-    <script src="../assets/js/app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

@@ -1,0 +1,1032 @@
+/* ==========================================================================
+   FORUM STUDENTS & JOBS — 3e ÉDITION (FSSM - UCA)
+   PORTAIL OFFICIEL DES 4 COMPÉTITIONS — FORMAT TAPLINK / LINKTREE
+   Charte Graphique Officielle du Logo :
+   - Navy (Bleu Foncé) : #0A2647
+   - Teal / Bleu Clair : #0D6E7E / #1594A8
+   - Crimson / Bordeaux : #8B0D32
+   - Gold / Doré       : #D49B42
+   ========================================================================== */
+
+:root {
+  /* Logo Color Palette */
+  --navy: #0a2647;
+  --navy-deep: #06172d;
+  --teal: #0d6e7e;
+  --teal-light: #1594a8;
+  --crimson: #8b0d32;
+  --crimson-light: #b01642;
+  --gold: #d49b42;
+  --gold-light: #e5b363;
+
+  /* Dark Mode (Default Taplink Style like Chess Club FSSM) */
+  --bg-overlay-top: rgba(6, 23, 45, 0.72);
+  --bg-overlay-mid: rgba(10, 38, 71, 0.85);
+  --bg-overlay-bot: rgba(6, 23, 45, 0.96);
+
+  --card-bg: rgba(255, 255, 255, 0.96);
+  --card-bg-glass: rgba(12, 36, 66, 0.82);
+  --card-border: rgba(212, 155, 66, 0.32);
+
+  --pill-bg: rgba(255, 255, 255, 0.96);
+  --pill-text: #0a2647;
+  --pill-sub: #475569;
+  --pill-icon-bg: rgba(13, 110, 126, 0.12);
+
+  --text-main: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.85);
+  --surface-panel: rgba(10, 38, 71, 0.84);
+  --surface-text: #f8fafc;
+  --surface-sub: #cbd5e1;
+  --input-bg: rgba(6, 23, 45, 0.75);
+  --input-border: rgba(21, 148, 168, 0.4);
+  --input-text: #ffffff;
+
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.28);
+  --shadow-hover: 0 16px 38px rgba(0, 0, 0, 0.42);
+}
+
+[data-theme="light"] {
+  --bg-overlay-top: rgba(244, 248, 251, 0.86);
+  --bg-overlay-mid: rgba(235, 244, 248, 0.92);
+  --bg-overlay-bot: rgba(226, 238, 245, 0.97);
+
+  --card-bg: #ffffff;
+  --card-bg-glass: rgba(255, 255, 255, 0.94);
+  --card-border: rgba(13, 110, 126, 0.25);
+
+  --pill-bg: #ffffff;
+  --pill-text: #0a2647;
+  --pill-sub: #475569;
+  --pill-icon-bg: rgba(13, 110, 126, 0.1);
+
+  --text-main: #0a2647;
+  --text-muted: #334155;
+  --surface-panel: rgba(255, 255, 255, 0.95);
+  --surface-text: #0a2647;
+  --surface-sub: #334155;
+  --input-bg: #f8fafc;
+  --input-border: rgba(10, 38, 71, 0.22);
+  --input-text: #0a2647;
+
+  --shadow-soft: 0 10px 28px rgba(10, 38, 71, 0.12);
+  --shadow-hover: 0 16px 36px rgba(10, 38, 71, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  position: relative;
+  background-color: var(--navy-deep);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+html[dir="rtl"] body {
+  font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ==========================================================================
+   BACKGROUND SLIDESHOW & OVERLAY (Exact Chess Club FSSM Taplink Setup)
+   ========================================================================== */
+.bg-slideshow-container {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  background-color: var(--navy-deep);
+}
+
+.bg-slide {
+  position: absolute;
+  inset: -20px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(5px);
+  transform: scale(1.06);
+  opacity: 0.65;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    180deg,
+    var(--bg-overlay-top) 0%,
+    var(--bg-overlay-mid) 50%,
+    var(--bg-overlay-bot) 100%
+  );
+  transition: background 0.35s ease;
+}
+
+/* Decorative Subtle Glows in Logo Colors */
+.bg-glow-teal {
+  position: fixed;
+  top: -120px;
+  left: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(21, 148, 168, 0.28), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-glow-crimson {
+  position: fixed;
+  bottom: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 13, 50, 0.26), transparent 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   SHELL CONTAINER (Taplink Centered Column)
+   ========================================================================== */
+.shell {
+  width: 100%;
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 1.5rem 1.2rem 3.5rem;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   TOP BAR (Language FR/AR/EN + Theme Toggle + Back Button)
+   ========================================================================== */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.topbar-brand-mini {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 0.9rem;
+  border-radius: 999px;
+  background: var(--surface-panel);
+  border: 1px solid var(--card-border);
+  color: var(--surface-text);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.25s ease;
+}
+
+.topbar-brand-mini:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.topbar-brand-mini i {
+  color: var(--gold);
+}
+
+.topbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-inline-start: auto;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  background: var(--surface-panel);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 0.2rem;
+  backdrop-filter: blur(12px);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--surface-sub);
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.32rem 0.68rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--crimson), var(--navy));
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(139, 13, 50, 0.35);
+}
+
+.theme-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: var(--surface-panel);
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.theme-btn:hover {
+  transform: rotate(15deg) scale(1.06);
+  border-color: var(--gold);
+}
+
+/* ==========================================================================
+   HEADER & LOGO CARD (Chess Club FSSM Style + Logo Colors)
+   ========================================================================== */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  animation: fadeInDown 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.logo-card {
+  background: #ffffff;
+  padding: 1.35rem 2.2rem;
+  border-radius: 28px;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.26);
+  margin-bottom: 1.4rem;
+  border: 3px solid rgba(212, 155, 66, 0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--navy), var(--teal), var(--crimson), var(--gold));
+}
+
+.logo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px rgba(13, 110, 126, 0.35);
+}
+
+.logo {
+  width: 240px;
+  max-width: 72vw;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.logo-fssm-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--navy);
+  background: rgba(13, 110, 126, 0.08);
+  padding: 0.28rem 0.85rem;
+  border-radius: 999px;
+  letter-spacing: 0.03em;
+}
+
+.title-box {
+  max-width: 580px;
+}
+
+.edition-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, var(--crimson), #640822);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.38rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(212, 155, 66, 0.55);
+  box-shadow: 0 6px 18px rgba(139, 13, 50, 0.35);
+}
+
+.site-title {
+  font-family: 'Outfit', 'Cairo', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.55rem;
+  color: var(--text-main);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .site-title {
+  text-shadow: none;
+}
+
+.site-subtitle {
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.deadline-banner {
+  margin-top: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.05rem;
+  border-radius: 999px;
+  background: rgba(212, 155, 66, 0.18);
+  border: 1px solid var(--gold);
+  color: var(--gold-light);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+[data-theme="light"] .deadline-banner {
+  background: rgba(212, 155, 66, 0.15);
+  color: #8b5e12;
+}
+
+/* ==========================================================================
+   PARTICIPATION RULE NOTIFICATION CARD (Crucial User Requirement)
+   ========================================================================== */
+.rules-notice-card {
+  background: var(--surface-panel);
+  border: 2px solid var(--gold);
+  border-radius: 22px;
+  padding: 1.15rem 1.3rem;
+  margin-bottom: 1.65rem;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+  animation: fadeInUp 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  animation-delay: 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+
+.rules-notice-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+   inset-inline-start: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--teal-light), var(--gold), var(--crimson));
+}
+
+.rules-notice-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Outfit', 'Cairo', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="light"] .rules-notice-header {
+  color: var(--crimson);
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+}
+
+.rule-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+  font-size: 0.86rem;
+  line-height: 1.48;
+}
+
+.rule-box.rule-open {
+  background: rgba(13, 110, 126, 0.22);
+  border: 1px solid rgba(21, 148, 168, 0.5);
+  color: var(--surface-text);
+}
+
+[data-theme="light"] .rule-box.rule-open {
+  background: rgba(13, 110, 126, 0.09);
+}
+
+.rule-box.rule-exclusive {
+  background: rgba(139, 13, 50, 0.24);
+  border: 1px solid rgba(212, 155, 66, 0.55);
+  color: var(--surface-text);
+}
+
+[data-theme="light"] .rule-box.rule-exclusive {
+  background: rgba(139, 13, 50, 0.08);
+}
+
+.rule-box-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+}
+
+.rule-open .rule-box-icon {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+.rule-exclusive .rule-box-icon {
+  background: var(--crimson);
+  color: #ffffff;
+}
+
+.rule-box strong {
+  display: block;
+  font-weight: 800;
+  margin-bottom: 0.15rem;
+}
+
+/* Active Registration Status Indicator (if student already chose 1 of the 3) */
+.active-choice-alert {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 12px;
+  background: rgba(212, 155, 66, 0.2);
+  border: 1px dashed var(--gold);
+  font-size: 0.82rem;
+  color: var(--surface-text);
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.active-choice-alert.visible {
+  display: flex;
+}
+
+.reset-choice-btn {
+  border: 1px solid var(--crimson);
+  background: var(--crimson);
+  color: #ffffff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   TAPLINK PILL BUTTONS (.links-list & .link-pill from Chess Club FSSM)
+   ========================================================================== */
+.section-group-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--gold-light);
+  margin: 0.3rem 0.4rem 0.65rem;
+}
+
+[data-theme="light"] .section-group-label {
+  color: var(--navy);
+}
+
+.section-group-badge {
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.badge-open {
+  background: var(--teal);
+  color: #ffffff;
+}
+
+.badge-exclusive {
+  background: var(--crimson);
+  color: #ffffff;
+}
+
+.links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.link-pill {
+  display: flex;
+  align-items: center;
+  background: var(--pill-bg);
+  color: var(--pill-text);
+  text-decoration: none;
+  padding: 0.75rem 1.15rem;
+  border-radius: 50px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(13, 110, 126, 0.18);
+  animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.link-pill:nth-child(1) { animation-delay: 0.12s; }
+.link-pill:nth-child(2) { animation-delay: 0.2s; }
+.link-pill:nth-child(3) { animation-delay: 0.28s; }
+.link-pill:nth-child(4) { animation-delay: 0.36s; }
+
+/* Hover states matching logo palette */
+.link-pill.pill-teal { --hover-color: #0d6e7e; --icon-color: #0d6e7e; }
+.link-pill.pill-gold { --hover-color: #b87d1e; --icon-color: #b87d1e; }
+.link-pill.pill-navy { --hover-color: #0a2647; --icon-color: #0a2647; }
+.link-pill.pill-crimson { --hover-color: #8b0d32; --icon-color: #8b0d32; }
+
+.link-pill:hover {
+  transform: translateY(-4px) scale(1.015);
+  box-shadow: var(--shadow-hover);
+  background: var(--hover-color);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.pill-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--pill-icon-bg);
+  color: var(--icon-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.link-pill:hover .pill-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.pill-content {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0 0.75rem;
+}
+
+.pill-title {
+  display: block;
+  font-family: 'Outfit', 'Cairo', sans-serif;
+  font-weight: 800;
+  font-size: 1.06rem;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.pill-subtitle {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--pill-sub);
+  font-weight: 500;
+  margin-top: 0.18rem;
+  transition: color 0.3s ease;
+}
+
+.link-pill:hover .pill-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.pill-tag {
+  display: inline-block;
+  margin-top: 0.3rem;
+  padding: 0.14rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pill-tag.tag-open {
+  background: rgba(13, 110, 126, 0.14);
+  color: var(--teal);
+}
+
+.pill-tag.tag-choice {
+  background: rgba(139, 13, 50, 0.12);
+  color: var(--crimson);
+}
+
+.link-pill:hover .pill-tag {
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+.pill-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--icon-color);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.link-pill:hover .pill-arrow {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+html[dir="rtl"] .link-pill:hover .pill-arrow {
+  transform: translateX(-4px);
+}
+
+/* ==========================================================================
+   COMPETITION DETAIL PAGE CARDS (When clicking one of the 4 competitions)
+   ========================================================================== */
+.comp-detail-card {
+  background: var(--surface-panel);
+  border: 1px solid var(--card-border);
+  border-radius: 26px;
+  padding: 1.6rem 1.4rem;
+  margin-bottom: 1.35rem;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+  animation: fadeInUp 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+}
+
+.comp-hero-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.85rem;
+}
+
+.comp-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.36rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(13, 110, 126, 0.22);
+  border: 1px solid rgba(21, 148, 168, 0.45);
+  color: var(--surface-text);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+[data-theme="light"] .comp-meta-chip {
+  background: rgba(13, 110, 126, 0.1);
+}
+
+.comp-quote-box {
+  background: linear-gradient(135deg, rgba(13, 110, 126, 0.22), rgba(139, 13, 50, 0.22));
+  border-inline-start: 4px solid var(--gold);
+  padding: 0.95rem 1.15rem;
+  border-radius: 14px;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--surface-text);
+  margin-bottom: 1.25rem;
+}
+
+.comp-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: 'Outfit', 'Cairo', sans-serif;
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  margin: 1.2rem 0 0.65rem;
+}
+
+.comp-section-title:first-of-type {
+  margin-top: 0;
+}
+
+[data-theme="light"] .comp-section-title {
+  color: var(--navy);
+}
+
+.comp-section-title i {
+  color: var(--teal-light);
+}
+
+.comp-text {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--surface-sub);
+  margin-bottom: 0.75rem;
+}
+
+.comp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+
+.comp-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--surface-text);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.6rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+[data-theme="light"] .comp-list li {
+  background: rgba(10, 38, 71, 0.03);
+  border-color: rgba(10, 38, 71, 0.08);
+}
+
+.comp-list li i {
+  color: var(--gold);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   REGISTRATION FORM ON EACH COMPETITION PAGE
+   ========================================================================== */
+.form-card {
+  background: var(--surface-panel);
+  border: 2px solid var(--teal-light);
+  border-radius: 26px;
+  padding: 1.65rem 1.4rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(14px);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.form-header h2 {
+  font-family: 'Outfit', 'Cairo', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--surface-text);
+  margin-bottom: 0.3rem;
+}
+
+.form-header p {
+  font-size: 0.85rem;
+  color: var(--surface-sub);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: var(--surface-text);
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.78rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212, 155, 66, 0.22);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+}
+
+.form-check-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: rgba(139, 13, 50, 0.18);
+  border: 1px solid rgba(212, 155, 66, 0.5);
+  margin: 1.1rem 0;
+  font-size: 0.83rem;
+  line-height: 1.48;
+  color: var(--surface-text);
+}
+
+[data-theme="light"] .form-check-box {
+  background: rgba(139, 13, 50, 0.07);
+}
+
+.form-check-box input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.15rem;
+  accent-color: var(--crimson);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.submit-pill-btn {
+  width: 100%;
+  padding: 0.95rem 1.4rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--crimson), var(--navy), var(--teal));
+  color: #ffffff;
+  font-family: 'Outfit', 'Cairo', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  box-shadow: 0 12px 26px rgba(139, 13, 50, 0.38);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.submit-pill-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(13, 110, 126, 0.45);
+}
+
+.form-feedback {
+  display: none;
+  margin-top: 1rem;
+  padding: 0.95rem 1.1rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.form-feedback.success {
+  display: block;
+  background: rgba(13, 110, 126, 0.28);
+  border: 1px solid var(--teal-light);
+  color: #ffffff;
+}
+
+[data-theme="light"] .form-feedback.success {
+  background: rgba(13, 110, 126, 0.12);
+  color: var(--navy);
+}
+
+.form-feedback.error {
+  display: block;
+  background: rgba(139, 13, 50, 0.35);
+  border: 1px solid var(--gold);
+  color: #ffffff;
+}
+
+[data-theme="light"] .form-feedback.error {
+  background: rgba(139, 13, 50, 0.12);
+  color: var(--crimson);
+}
+
+/* Quick Navigation Pills at Bottom of Competition Pages */
+.other-comps-nav {
+  margin-top: 1.5rem;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  text-align: center;
+  padding: 1.5rem 1rem 2rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  z-index: 1;
+}
+
+.footer strong {
+  color: var(--gold-light);
+}
+
+[data-theme="light"] .footer strong {
+  color: var(--crimson);
+}
+
+/* ==========================================================================
+   ANIMATIONS & RESPONSIVE
+   ========================================================================== */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 540px) {
+  .shell {
+    padding: 1.1rem 0.95rem 2.8rem;
+  }
+  .logo-card {
+    padding: 1.1rem 1.5rem;
+    border-radius: 22px;
+  }
+  .logo {
+    width: 200px;
+  }
+  .link-pill {
+    padding: 0.65rem 0.9rem;
+  }
+  .pill-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.15rem;
+  }
+  .pill-title {
+    font-size: 0.96rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
